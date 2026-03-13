@@ -59,7 +59,13 @@ buffered signals are:
 
 CSV file format supports raw CSVs such as https://gist.github.com/adisuciu/7aa30bc9e545db23a17e86d23ae4f53c, as well as Scopy formatted CSVs such as https://gist.github.com/adisuciu/5abffa8233707c7b95585e80fbb1dde9. This means it is possible to acquire a signal in the oscilloscope and play it back in the signal generator.
 
-.. collapsible:: Click to expand XHIDDENSTARTSTOP This in not entirely true. The scope sample rate is 100 MSPS (or factors of ten less) and the signal generator sample rate is 75MSPS (or factors of 10 less) so scope samples do not inherently match up with generator samples. Scope samples would need to be re-sampled by a factor of 3 to 4 to have the signal frequency played back properly. XHIDDENEND
+.. collapsible:: Click to expand
+
+   This in not entirely true. The scope sample rate is 100 MSPS (or factors of
+   ten less) and the signal generator sample rate is 75MSPS (or factors of 10
+   less) so scope samples do not inherently match up with generator samples.
+   Scope samples would need to be re-sampled by a factor of 3 to 4 to have the
+   signal frequency played back properly.
 
 MAT file format only supports arrays of type real (no complex waveforms)
 
@@ -91,7 +97,7 @@ Create loopback between CH1 and CH2 of the oscilloscope and the signal generator
 Run a single channel
 ~~~~~~~~~~~~~~~~~~~~
 
-XHIDDENSTART Click to expand
+.. collapsible:: Click to expand
 
    .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/scopy_2018-05-16_17-25-33.png
       :align: center

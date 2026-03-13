@@ -953,7 +953,7 @@ IIO pointers
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/youtube>p_vntewue24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24
 
 AD9122 Clocking concept
 -----------------------
@@ -1084,4 +1084,4 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dds/youtube>p_vntewue24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24

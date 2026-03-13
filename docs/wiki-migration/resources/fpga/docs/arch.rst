@@ -165,28 +165,30 @@ the base design of the carrier!
 
 Always check which are used (in */projects/common/:math:`carrier/`\ carrier_system_bd.tcl*)
 
-++++ Click here to see the interrupts table \|
+.. collapsible:: Click here to see the interrupts table
 
-============= ========== =========== ============ =============
-HDL interrupt Linux Zynq Actual Zynq Linux ZynqMP Actual ZynqMP
-============= ========== =========== ============ =============
-15            59         91          111          143
-14            58         90          110          142
-13            57         89          109          141
-12            56         88          108          140
-11            55         87          107          139
-10            54         86          106          138
-9             53         85          105          137
-8             52         84          104          136
-7             36         68          96           128
-6             35         67          95           127
-5             34         66          94           126
-4             33         65          93           125
-3             32         64          92           124
-2             31         63          91           123
-1             30         62          90           122
-0             29         61          89           121
-============= ========== =========== ============ =============
+   ============= ========== =========== ============ =============
+   HDL interrupt Linux Zynq Actual Zynq Linux ZynqMP Actual ZynqMP
+   ============= ========== =========== ============ =============
+   15            59         91          111          143
+   14            58         90          110          142
+   13            57         89          109          141
+   12            56         88          108          140
+   11            55         87          107          139
+   10            54         86          106          138
+   9             53         85          105          137
+   8             52         84          104          136
+   7             36         68          96           128
+   6             35         67          95           127
+   5             34         66          94           126
+   4             33         65          93           125
+   3             32         64          92           124
+   2             31         63          91           123
+   1             30         62          90           122
+   0             29         61          89           121
+   ============= ========== =========== ============ =============
+
+--------------
 
 Board design
 ~~~~~~~~~~~~
@@ -196,7 +198,7 @@ Board capabilities - Xilinx platforms
 
 .. collapsible:: Click to expand
 
-   ++++ Board capabilities \|
+   XHIDDENSTART Board capabilities XHIDDENSTARTSTOP
 
    Board capabilities - Xilinx
 
@@ -273,14 +275,14 @@ Board capabilities - Xilinx platforms
    | (\* bold) = default VADJ
    | FMC1 & FMC2 columns -> depending on the power supply of the device connected to the FMC, the custom VADJ will have the value supported by both the carrier and the device(s)
 
-   ++++
+XHIDDENEND
 
 Board capabilities - Intel platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. collapsible:: Click to expand
 
-   ++++ Board capabilities \|
+   XHIDDENSTART Board capabilities XHIDDENSTARTSTOP
 
    **Board capabilities - Intel**
 
@@ -309,7 +311,7 @@ Board capabilities - Intel platforms
    | (\* bold) = default VADJ
    | FMC1 & FMC2 columns -> depending on the power supply of the device connected to the FMC, the custom VADJ will have the value supported by both the carrier and the device(s)
 
-   ++++
+XHIDDENEND
 
 --------------
 

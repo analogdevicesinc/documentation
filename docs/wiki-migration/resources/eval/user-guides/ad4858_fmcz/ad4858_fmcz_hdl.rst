@@ -60,16 +60,18 @@ Therefore, the external clocks given to AXI_AD4858 IP are:
 
    -  ``external_clk`` = 100MHz (F_CLK0)
 
-++++About the frequency calculation for the MMCM from axi_pwm_gen\| :math:`F_VCO = 1000 \times (CLKFBOUT__MULT__F) / (CLKIN_PERIOD \times DIVCLK_DIVIDE)` (MHz) :math:`F_CLK0 = F_VCO / CLKOUT0_DIVIDE_F` (MHz) :math:`F_CLK1 = F_VCO / CLKOUT1_DIVIDE_F` (MHz)
+.. collapsible:: About the frequency calculation for the MMCM from axi_pwm_gen
 
-In :git-hdl:`our designs <projects/ad485x_fmcz/common/ad485x_fmcz_bd.tcl>`, the following parameters mean:
+   :math:`F_VCO = 1000 \times (CLKFBOUT__MULT__F) / (CLKIN_PERIOD \times DIVCLK_DIVIDE)` (MHz) :math:`F_CLK0 = F_VCO / CLKOUT0_DIVIDE_F` (MHz) :math:`F_CLK1 = F_VCO / CLKOUT1_DIVIDE_F` (MHz)
 
--  VCO_DIV = DIVCLK_DIVIDE
--  VCO_MUL = CLKFBOUT_MULT_F
--  CLK0_DIV = CLKOUT0_DIVIDE_F
--  CLK1_DIV = CLKOUT1_DIVIDE_F
+   In :git-hdl:`our designs <projects/ad485x_fmcz/common/ad485x_fmcz_bd.tcl>`, the following parameters mean:
 
-For more details regarding the MMCM clock frequencies, check the `UG472 (7 series) <https://www.xilinx.com/content/dam/xilinx/support/documents/user_guides/ug472_7Series_Clocking.pdf>`_ and `UG572 (UltraScale/+) <https://www.xilinx.com/support/documents/user_guides/ug572-ultrascale-clocking.pdf>`_. ++++
+   -  VCO_DIV = DIVCLK_DIVIDE
+   -  VCO_MUL = CLKFBOUT_MULT_F
+   -  CLK0_DIV = CLKOUT0_DIVIDE_F
+   -  CLK1_DIV = CLKOUT1_DIVIDE_F
+
+   For more details regarding the MMCM clock frequencies, check the `UG472 (7 series) <https://www.xilinx.com/content/dam/xilinx/support/documents/user_guides/ug472_7Series_Clocking.pdf>`_ and `UG572 (UltraScale/+) <https://www.xilinx.com/support/documents/user_guides/ug572-ultrascale-clocking.pdf>`_.
 
 For custom systems where the :adi:`AD4858 <en/products/ad4858.html>` chip is used, we recommend using an external clock, and not a clock from the FPGA like it is done in this reference design.
 
@@ -125,22 +127,20 @@ Interrupts
 
 Below are the Programmable Logic interrupts used in this project.
 
-++++ Click here to see the interrupts table \|
+.. collapsible:: Click here to see the interrupts table
 
-============== === ========== =========== ============ =============
-Instance name  HDL Linux Zynq Actual Zynq Linux ZynqMP Actual ZynqMP
-============== === ========== =========== ============ =============
----            15  59         91          111          143
-...            ..  ..         ..          ..           ..
-**ad4858_dma** 10  54         86          106          138
----            9   53         85          105          137
----            8   52         84          104          136
----            7   36         68          96           128
----            ..  ..         ..          ..           ..
----            0   29         61          89           121
-============== === ========== =========== ============ =============
-
-++++
+   ============== === ========== =========== ============ =============
+   Instance name  HDL Linux Zynq Actual Zynq Linux ZynqMP Actual ZynqMP
+   ============== === ========== =========== ============ =============
+   ---            15  59         91          111          143
+   ...            ..  ..         ..          ..           ..
+   **ad4858_dma** 10  54         86          106          138
+   ---            9   53         85          105          137
+   ---            8   52         84          104          136
+   ---            7   36         68          96           128
+   ---            ..  ..         ..          ..           ..
+   ---            0   29         61          89           121
+   ============== === ========== =========== ============ =============
 
 Building the HDL project
 ------------------------

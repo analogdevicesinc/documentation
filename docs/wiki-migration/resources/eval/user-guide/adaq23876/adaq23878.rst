@@ -125,24 +125,21 @@ to on-board signals for troubleshooting and evaluation purposes. Table 3 details
 the different gain positions for the links of the EVAL-ADAQ23876FMCZ and
 EVAL-ADAQ23878FMCZ.
 
-++++ Click here to see the different Connector Configurations \|
+.. collapsible:: Click here to see the different Connector Configurations
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   |image4| **Figure 2: Gain=0.37**
+      |image4| **Figure 2: Gain=0.37**
 
-   
-   |image5| **Figure 3: Gain=0.73**
-   
-   |image6| **Figure 4: Gain=0.87**
-   
-   |image7| **Figure 5: Gain=1.38**
-   
-   |image8| **Figure 6: Gain=2.25**
+      |image5| **Figure 3: Gain=0.73**
 
-++++
+      |image6| **Figure 4: Gain=0.87**
 
-|image9|
+      |image7| **Figure 5: Gain=1.38**
+
+      |image8| **Figure 6: Gain=2.25**
+
+ |image9|
 
 .. container:: centeralign
 

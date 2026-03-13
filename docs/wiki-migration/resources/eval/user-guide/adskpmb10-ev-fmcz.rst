@@ -72,110 +72,112 @@ Warning
 Installing the ADSKPMB10-EV-FMCZ Evaluation Software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-++++ Click here to see the complete installation instructions. \| To install the ADSKPMB10-EV-FMCZ Evaluation Software, follow these steps:
+.. collapsible:: Click here to see the complete installation instructions.
 
--  Start the Windows operating system and download the software from the ADSKPMB10-EV-FMCZ product page on the Analog Devices website.
--  Unzip the downloaded file.
+   To install the ADSKPMB10-EV-FMCZ Evaluation Software, follow these steps:
 
-.. container:: centeralign
+   -  Start the Windows operating system and download the software from the ADSKPMB10-EV-FMCZ product page on the Analog Devices website.
+   -  Unzip the downloaded file.
 
-   |image2|\ *Figure 2. Unzip the ADSKPMB10-EV-FMCZ Evaluation Software Installer*
+   .. container:: centeralign
 
--  Double-click the **setup.exe** file to begin the evaluation board software installation (see Figure 3).
+      |image2|\ *Figure 2. Unzip the ADSKPMB10-EV-FMCZ Evaluation Software Installer*
 
-.. container:: centeralign
+   -  Double-click the **setup.exe** file to begin the evaluation board software installation (see Figure 3).
 
-   |image3| *Figure 3. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Begins*
+   .. container:: centeralign
 
--  Select a location to install the software and click **Next**. The default location is **C:\\Program Files (x86)\\Analog Devices**. This location also contains the executable software and example files.
+      |image3| *Figure 3. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Begins*
 
-.. container:: centeralign
+   -  Select a location to install the software and click **Next**. The default location is **C:\\Program Files (x86)\\Analog Devices**. This location also contains the executable software and example files.
 
-   |image4|\ *Figure 4. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Selecting the Location for Software Installation (Default Location Shown)*
+   .. container:: centeralign
 
--  A license agreement appears. Read the agreement, and then select **I accept the License Agreement**, and click **Next**.
+      |image4|\ *Figure 4. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Selecting the Location for Software Installation (Default Location Shown)*
 
-.. container:: centeralign
+   -  A license agreement appears. Read the agreement, and then select **I accept the License Agreement**, and click **Next**.
 
-   |image5| *Figure 5. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Accept the License Agreement*
+   .. container:: centeralign
 
--  An installation summary displays. Click **Next** to continue.
+      |image5| *Figure 5. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Accept the License Agreement*
 
-.. container:: centeralign
+   -  An installation summary displays. Click **Next** to continue.
 
-   |image6|\ *Figure 6. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Summary*
+   .. container:: centeralign
 
--  A dialog box shows the installation progress.
+      |image6|\ *Figure 6. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Summary*
 
-.. container:: centeralign
+   -  A dialog box shows the installation progress.
 
-   |image7| *Figure 7. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Progress*
+   .. container:: centeralign
 
--  The dialog box informs the user when the installation is complete. Click **Finish**.
+      |image7| *Figure 7. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Progress*
 
-.. container:: centeralign
+   -  The dialog box informs the user when the installation is complete. Click **Finish**.
 
-   |image8|\ *Figure 8. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Complete*
+   .. container:: centeralign
 
--  The setup for the installation of the SDP-H1 board drivers automatically
-   loads.
+      |image8|\ *Figure 8. ADSKPMB10-EV-FMCZ Evaluation Software Installation — Installation Complete*
 
-++++
+   -  The setup for the installation of the SDP-H1 board drivers automatically
+      loads.
 
 Installing the SDP-H1 Board Drivers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-++++ Click here to see the complete installation instructions. \| After installation of the evaluation board software completes, a welcome window displays for the installation of the SDP-H1 system demonstration platform board drivers. Then, take the following steps:
+.. collapsible:: Click here to see the complete installation instructions.
 
--  Ensure all other applications are closed and click **Next**.
+   After installation of the evaluation board software completes, a welcome
+   window displays for the installation of the SDP-H1 system demonstration
+   platform board drivers. Then, take the following steps:
 
-.. container:: centeralign
+   -  Ensure all other applications are closed and click **Next**.
 
-   |image9| *Figure 9. SDP-H1 Drivers Setup — Beginning the Drivers Installation*
+   .. container:: centeralign
 
--  A license agreement appears. Read the agreement, and then click **I Agree**.
+      |image9| *Figure 9. SDP-H1 Drivers Setup — Beginning the Drivers Installation*
 
-.. container:: centeralign
+   -  A license agreement appears. Read the agreement, and then click **I Agree**.
 
-   |image10| |image11| *Figure 10. SDP-H1 Drivers Setup — License Agreement*
+   .. container:: centeralign
 
--  Make sure to select the **Pre-Requisites** checkbox, then click **Next**\
+      |image10| |image11| *Figure 10. SDP-H1 Drivers Setup — License Agreement*
 
-.. container:: centeralign
+   -  Make sure to select the **Pre-Requisites** checkbox, then click **Next**\
 
-   |image12|\ *Figure 11. SDP-H1 Drivers Setup — Pre-Requisites Checkbox*
+   .. container:: centeralign
 
--  Select a location to install the drivers and click **Install**.
+      |image12|\ *Figure 11. SDP-H1 Drivers Setup — Pre-Requisites Checkbox*
 
-.. container:: centeralign
+   -  Select a location to install the drivers and click **Install**.
 
-   |image13| *Figure 12. SDP-H1 Drivers Setup — Selecting the Location for Drivers Installation*
+   .. container:: centeralign
 
--  Installation of the SDP drivers begins.
+      |image13| *Figure 12. SDP-H1 Drivers Setup — Selecting the Location for Drivers Installation*
 
-.. container:: centeralign
+   -  Installation of the SDP drivers begins.
 
-   |image14| *Figure 13. SDP-H1 Drivers Setup — Beginning the Installation*
+   .. container:: centeralign
 
--  A dialog box appears asking to install the SDP software available with the SDP-H1. Click **Install**.
+      |image14| *Figure 13. SDP-H1 Drivers Setup — Beginning the Installation*
 
-.. container:: centeralign
+   -  A dialog box appears asking to install the SDP software available with the SDP-H1. Click **Install**.
 
-   |image15| *Figure 14. SDP-H1 Drivers Setup — Granting Permission to Install Drivers*
+   .. container:: centeralign
 
--  To complete the drivers installation, click **Finish**, which closes the installation wizard.
+      |image15| *Figure 14. SDP-H1 Drivers Setup — Granting Permission to Install Drivers*
 
-.. container:: centeralign
+   -  To complete the drivers installation, click **Finish**, which closes the installation wizard.
 
-   |image16| *Figure 15. SDP-H1 Drivers Setup — Completing the Drivers Setup Wizard*
+   .. container:: centeralign
 
--  After installing the drivers, restart the PC prior to using the ADSKPMB10-EV-FMCZ Evaluation Software. A dialog box opens, giving the following options: **Restart**, **Shut Down**, and **Restart Later**. Click **Restart**.
+      |image16| *Figure 15. SDP-H1 Drivers Setup — Completing the Drivers Setup Wizard*
 
-.. container:: centeralign
+   -  After installing the drivers, restart the PC prior to using the ADSKPMB10-EV-FMCZ Evaluation Software. A dialog box opens, giving the following options: **Restart**, **Shut Down**, and **Restart Later**. Click **Restart**.
 
-   |image17| *Figure 16. SDP-H1 Drivers Setup — Restarting the PC*
+   .. container:: centeralign
 
-++++
+      |image17| *Figure 16. SDP-H1 Drivers Setup — Restarting the PC*
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~

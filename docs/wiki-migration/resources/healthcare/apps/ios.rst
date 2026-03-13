@@ -477,7 +477,7 @@
         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
         OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 2. mp_chart Download page: https://pub.dev/packages/mp_chart Online license: https://pub.dev/packages/mp_chart/license
+   2. mp_chart Download page: https://pub.dev/packages/mp_chart Online license: https://pub.dev/packages/mp_chart/license
    
    Apache License
    
@@ -711,8 +711,6 @@
    
        END OF TERMS AND CONDITIONS
    
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   
    3. font_awesome_flutter Download page: https://pub.dev/packages/font_awesome_flutter Online license: https://pub.dev/packages/font_awesome_flutter/license
    
    MIT License
@@ -729,7 +727,7 @@
    The above copyright notice and this permission notice shall be included in
    all copies or substantial portions of the Software.
    
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 4. awesome_dialog Download page: https://pub.dev/packages/awesome_dialog/ Online license: https://pub.dev/packages/awesome_dialog/license
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 4. awesome_dialog Download page: https://pub.dev/packages/awesome_dialog/ Online license: https://pub.dev/packages/awesome_dialog/license
    
    BSD License
    
@@ -800,7 +798,6 @@
    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    SOFTWARE.
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    
    6. auto_size_text Download page: https://pub.dev/packages/auto_size_text Online license: https://pub.dev/packages/auto_size_text/license
    
@@ -825,8 +822,6 @@
    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    SOFTWARE.
-   
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    
    7. flutter_switch Download page: https://pub.dev/packages/flutter_switch/ Online license: https://pub.dev/packages/flutter_switch/license
    
@@ -869,7 +864,6 @@
    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
    POSSIBILITY OF SUCH DAMAGE.
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    
    8. toggle_switch Download page: https://pub.dev/packages/toggle_switch/ Online license: https://pub.dev/packages/toggle_switch/license
    
@@ -894,7 +888,6 @@
    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    SOFTWARE.
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    
    9. card_settings Download page: https://pub.dev/packages/card_settings/ Online license: https://pub.dev/packages/card_settings/license
    
@@ -919,7 +912,6 @@
    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    SOFTWARE.
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    
    10. responsive_builder Download page: https://pub.dev/packages/responsive_builder Online license: https://pub.dev/packages/responsive_builder/license
    
@@ -944,7 +936,6 @@
    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    SOFTWARE.
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    
    11. responsive_framework Download page: https://pub.dev/packages/responsive_framework Online license: https://pub.dev/packages/responsive_framework/license
    
@@ -963,7 +954,7 @@
    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
    PERFORMANCE OF THIS SOFTWARE.
    
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 12. shared_preferences Download page: https://pub.dev/packages/shared_preferences/ Online license: https://pub.dev/packages/shared_preferences/license
+   12. shared_preferences Download page: https://pub.dev/packages/shared_preferences/ Online license: https://pub.dev/packages/shared_preferences/license
    
    BSD License
    
@@ -997,8 +988,6 @@
    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
    POSSIBILITY OF SUCH DAMAGE.
    
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   
    13. Provider
    
    Download page: https://pub.dev/packages/provider/ Online license: https://pub.dev/packages/provider/license
@@ -1025,8 +1014,6 @@
    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    SOFTWARE.
    
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   
    14. get_it Download page: https://pub.dev/packages/get_it/ Online license: https://pub.dev/packages/get_it/license
    
    MIT License
@@ -1050,8 +1037,6 @@
    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    SOFTWARE.
-   
-   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    
    15. curved_navigation_bar
    

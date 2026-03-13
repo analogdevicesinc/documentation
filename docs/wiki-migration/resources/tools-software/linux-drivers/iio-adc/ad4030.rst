@@ -346,7 +346,7 @@ More Information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_vntewue24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4030/adaq4216_125ksps_capture.png
    :width: 600

@@ -39,160 +39,167 @@ build any HDL project from the repository.
 -  After you have installed the above mentioned tools, you will need the paths to those directories in the following steps, so have them in a note
 -  We are using `git <https://git-scm.com/>`_ for version control and `GNU Make <https://www.gnu.org/software/make/>`_ to build the projects. Depending on what OS you're using, you have these options:
 
-++++ For Windows environment with Cygwin \|
+.. collapsible:: For Windows environment with Cygwin
 
-Because GNU Make is not supported on Windows, you need to install `Cygwin <https://www.cygwin.com/>`_, which is a UNIX-like environment and command-line interface for Microsoft Windows. You do not need to install any special package, other than **git** and **make**.
+   Because GNU Make is not supported on Windows, you need to install `Cygwin <https://www.cygwin.com/>`_, which is a UNIX-like environment and command-line interface for Microsoft Windows. You do not need to install any special package, other than **git** and **make**.
 
-After you installed Cygwin, you need to add your FPGA Design Tools installation directory to your PATH environment variable. You can do that by modifying your **~/.bashrc** file, by adding the following lines **changed accordingly to your installation directories**. For example:
+   After you installed Cygwin, you need to add your FPGA Design Tools installation directory to your PATH environment variable. You can do that by modifying your **~/.bashrc** file, by adding the following lines **changed accordingly to your installation directories**. For example:
 
-::
+   ::
 
-   export PATH=$PATH:/cygdrive/path_to/Xilinx/Vivado/202x.x/bin
-   export PATH=$PATH:/cygdrive/path_to/Xilinx/Vivado_HLS/202x.x/bin
-   export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/bin
-   export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
-   export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/arm/nt/bin
-   export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_be/bin
-   export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_le/bin
-   export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/aarch32/nt/gcc-arm-none-eabi/bin
-   export PATH=$PATH:/cygdrive/path_to/intelFPGA_pro/2x.x/quartus/bin
+      export PATH=$PATH:/cygdrive/path_to/Xilinx/Vivado/202x.x/bin
+      export PATH=$PATH:/cygdrive/path_to/Xilinx/Vivado_HLS/202x.x/bin
+      export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/bin
+      export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
+      export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/arm/nt/bin
+      export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_be/bin
+      export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_le/bin
+      export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/aarch32/nt/gcc-arm-none-eabi/bin
+      export PATH=$PATH:/cygdrive/path_to/intelFPGA_pro/2x.x/quartus/bin
 
-Replace the **path_to** string with your path to the installation folder and the **tools version** with the proper one!
+   Replace the path_to string with your path to the installation folder and the
+   tools version with the proper one!
 
-++++
+.. collapsible:: For Windows environment with WSL
 
-++++ For Windows environment with WSL \| You can also install `WSL <https://learn.microsoft.com/en-us/windows/wsl/install/>`_ (Windows Subsystem for Linux) which is both a UNIX-like environment and a command-line interface for Microsoft Windows. In order to be able to access the GUI, WSL2 is recommended. This can be done if we open PowerShell or Windows Command Prompt in Administrator mode. In the link above you can find the installation guide for wsl on windows.
+   You can also install `WSL <https://learn.microsoft.com/en-us/windows/wsl/install/>`_ (Windows Subsystem for Linux) which is both a UNIX-like environment and a command-line interface for Microsoft Windows. In order to be able to access the GUI, WSL2 is recommended. This can be done if we open PowerShell or Windows Command Prompt in Administrator mode. In the link above you can find the installation guide for wsl on windows.
 
-.. note::
+   .. note::
 
-   When installing wsl, the Ubuntu distribution will be installed by default
+      When installing wsl, the Ubuntu distribution will be installed by default
 
-If not, after installing wsl, write in the terminal:
+   If not, after installing wsl, write in the terminal:
 
-::
+   ::
 
-   >wsl --update
-   >wsl --install -d ubuntu
+      >wsl --update
+      >wsl --install -d ubuntu
 
-If you want to check the version for wsl, you can use the Windows Command Prompt
-command:
+   If you want to check the version for wsl, you can use the Windows Command
+   Prompt command:
 
-::
+   ::
 
-   >wsl -l -v
-     NAME      STATE           VERSION
-   * Ubuntu    Running         2
+      >wsl -l -v
+        NAME      STATE           VERSION
+      * Ubuntu    Running         2
 
-If you want to check the version for wsl and Ubuntu, you can use the following
-commands in Ubuntu:
+   If you want to check the version for wsl and Ubuntu, you can use the
+   following commands in Ubuntu:
 
-::
+   ::
 
-   :~$ uname -r
-   5.15.90.1-microsoft-standard-WSL2
+      :~$ uname -r
+      5.15.90.1-microsoft-standard-WSL2
 
-   :~$ lsb_release -a
-   No LSB modules are available.
-   Distributor ID: Ubuntu
-   Description:    Ubuntu 22.04.2 LTS
-   Release:        22.04
-   Codename:       jammy
+      :~$ lsb_release -a
+      No LSB modules are available.
+      Distributor ID: Ubuntu
+      Description:    Ubuntu 22.04.2 LTS
+      Release:        22.04
+      Codename:       jammy
 
-If you want to become root, you can use the following command:
+   If you want to become root, you can use the following command:
 
-::
+   ::
 
-   :~$ sudo -i
-   [sudo] password for username:
-   root@HYB-0FPP35J6CsI:~# exit
-   logout
+      :~$ sudo -i
+      [sudo] password for username:
+      root@HYB-0FPP35J6CsI:~# exit
+      logout
 
-Here the paths will look like this if the tools will be installed in the Windows
-file system:
+   Here the paths will look like this if the tools will be installed in the
+   Windows file system:
 
-::
+   ::
 
-   export PATH=$PATH:/mnt/path_to/Xilinx/Vivado/202x.x/bin
-   export PATH=$PATH:/mnt/path_to/Xilinx/Vivado_HLS/202x.x/bin
-   export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/bin
-   export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
-   export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/arm/nt/bin
-   export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_be/bin
-   export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_le/bin
-   export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/aarch32/nt/gcc-arm-none-eabi/bin
-   export PATH=$PATH:/mnt/path_to/intelFPGA_pro/2x.x/quartus/bin
+      export PATH=$PATH:/mnt/path_to/Xilinx/Vivado/202x.x/bin
+      export PATH=$PATH:/mnt/path_to/Xilinx/Vivado_HLS/202x.x/bin
+      export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/bin
+      export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
+      export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/arm/nt/bin
+      export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_be/bin
+      export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_le/bin
+      export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/aarch32/nt/gcc-arm-none-eabi/bin
+      export PATH=$PATH:/mnt/path_to/intelFPGA_pro/2x.x/quartus/bin
 
-Replace the **path_to** string with your path to the installation folder and the **tools version** with the proper one!
+   Replace the path_to string with your path to the installation folder and the
+   tools version with the proper one!
 
-.. important::
+   .. important::
 
-   Before building any project, it is necessary to install the Linux version for Vivado (see :doc:`How to install Vivado on wsl section </wiki-migration/resources/fpga/docs/build>` ) and Quartus because on the Ubuntu distribution on `WSL <https://learn.microsoft.com/en-us/windows/wsl/install/>`_ you cannot run projects on the Windows version of them. When you have to choose the installation path, choose the location where wsl is installed (\\\\wsl.localhost\\Ubuntu\\opt). Also, to get the best performance, you must clone your hdl repository in the WSL file system. For example: (\\\\wsl.localhost\\Ubuntu\\home\\username\\hdl)
+      Before building any project, it is necessary to install the Linux version for Vivado (see :doc:`How to install Vivado on wsl section </wiki-migration/resources/fpga/docs/build>` ) and Quartus because on the Ubuntu distribution on `WSL <https://learn.microsoft.com/en-us/windows/wsl/install/>`_ you cannot run projects on the Windows version of them. When you have to choose the installation path, choose the location where wsl is installed (\\\\wsl.localhost\\Ubuntu\\opt). Also, to get the best performance, you must clone your hdl repository in the WSL file system. For example: (\\\\wsl.localhost\\Ubuntu\\home\\username\\hdl)
 
-For more information you can consult the following link: `WSLStorage <https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems>`_.
+   For more information you can consult the following link: `WSLStorage <https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems>`_.
 
-Then the paths will look like this:
+   Then the paths will look like this:
 
-::
+   ::
 
-   export PATH=$PATH:/opt/path_to/Xilinx/Vivado/202x.x/bin
-   export PATH=$PATH:/opt/path_to/Xilinx/Vivado_HLS/202x.x/bin
-   export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/bin
-   export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
-   export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/arm/nt/bin
-   export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_be/bin
-   export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_le/bin
-   export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/aarch32/nt/gcc-arm-none-eabi/bin
-   export PATH=$PATH:/opt/path_to/intelFPGA_pro/2x.x/quartus/bin
+      export PATH=$PATH:/opt/path_to/Xilinx/Vivado/202x.x/bin
+      export PATH=$PATH:/opt/path_to/Xilinx/Vivado_HLS/202x.x/bin
+      export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/bin
+      export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
+      export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/arm/nt/bin
+      export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_be/bin
+      export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_le/bin
+      export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/aarch32/nt/gcc-arm-none-eabi/bin
+      export PATH=$PATH:/opt/path_to/intelFPGA_pro/2x.x/quartus/bin
 
-Replace the **path_to** string with your path to the installation folder and the **tools version** with the proper one!
+   Replace the path_to string with your path to the installation folder and the
+   tools version with the proper one!
 
-++++
+.. collapsible:: For Linux environment
 
-++++ For Linux environment \| Because, in general, both **git** and **make** are native tools in Linux, you do not need to do any special setup. If you don't have these, install them.
+   Because, in general, both **git** and **make** are native tools in Linux, you do not need to do any special setup. If you don't have these, install them.
 
-Further more, you need to add your FPGA Design Tools installation directory to your PATH environment variable. For Xilinx tools, you can run the **settings64.sh** script, which is located in your installation directory. Or you can add the required paths to your **~/.bashrc** file. For example:
+   Further more, you need to add your FPGA Design Tools installation directory to your PATH environment variable. For Xilinx tools, you can run the **settings64.sh** script, which is located in your installation directory. Or you can add the required paths to your **~/.bashrc** file. For example:
 
-::
+   ::
 
-   export PATH=$PATH:"/opt/Xilinx/Vivado/202x.x/bin"
-   export PATH=$PATH:"/opt/Xilinx/Vitis/202x.x/bin"
-   export PATH=$PATH:"/opt/intelFPGA_pro/2x.x/quartus/bin"
+      export PATH=$PATH:"/opt/Xilinx/Vivado/202x.x/bin"
+      export PATH=$PATH:"/opt/Xilinx/Vitis/202x.x/bin"
+      export PATH=$PATH:"/opt/intelFPGA_pro/2x.x/quartus/bin"
 
-Replace the **path_to** string with your path to the installation folder and the **tools version** with the proper one! ++++
+   Replace the path_to string with your path to the installation folder and the
+   tools version with the proper one!
 
-++++ How to install Vivado on WSL \| Installing the linux kit for Vivado can be done from Ubuntu:
+.. collapsible:: How to install Vivado on WSL
 
--  Go to the path where the installation kit for Vivado is located.
--  Make it executable
+   Installing the linux kit for Vivado can be done from Ubuntu:
 
-::
+   -  Go to the path where the installation kit for Vivado is located.
+   -  Make it executable
 
-   :~$ chmod +x Xilinx_Vivado installation kit.bin
-   :~$ ./Xilinx_Vivado installation kit.bin
+   ::
 
-::
+      :~$ chmod +x Xilinx_Vivado installation kit.bin
+      :~$ ./Xilinx_Vivado installation kit.bin
 
-   If you unzip the installation kit in Ubuntu, go to the Xilinx_Vivado installation kit and run .xsetup file. Make sure you have the following libraries installed:
+   ::
 
-::
+      If you unzip the installation kit in Ubuntu, go to the Xilinx_Vivado installation kit and run .xsetup file. Make sure you have the following libraries installed:
 
-   :~$ sudo apt-get install locales && sudo localedef -i en_US -f UTF-8 en_US.UTF-8
-   :~$ sudo ./installLibs.sh
-   :~$ sudo apt-get install libxrender1 libxtst6 libxi6
+   ::
 
-You must create a .bashrc file with the paths corresponding to the version of
-Vivado installed. ++++
+      :~$ sudo apt-get install locales && sudo localedef -i en_US -f UTF-8 en_US.UTF-8
+      :~$ sudo ./installLibs.sh
+      :~$ sudo apt-get install libxrender1 libxtst6 libxi6
 
-++++ How to verify your environment setup \| Run any of the following commands. These commands will return a valid path if your setup is good.
+   You must create a .bashrc file with the paths corresponding to the version of
+   Vivado installed.
 
-::
+.. collapsible:: How to verify your environment setup
 
-   [~] which git
-   [~] which make
-   [~] which vivado
-   [~] which quartus
+   Run any of the following commands. These commands will return a valid path if
+   your setup is good.
 
-++++
+   ::
+
+      [~] which git
+      [~] which make
+      [~] which vivado
+      [~] which quartus
 
 Setup the HDL repository
 ------------------------
@@ -224,7 +231,10 @@ If this is your first time cloning, you have all the latest source files. If it 
    [~] git fetch origin               # this shows you what changes will be pulled on your local copy
    [~] git rebase origin/hdl_2021_r1  # this updates your local copy
 
-++++ Screenshots: \| |image1| ++++
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_4.png
+      :width: 800
 
 Building the projects
 ---------------------
@@ -246,7 +256,10 @@ the 'A10SOC' carrier.
    cd projects/adrv9371x/a10soc
    make
 
-++++ Screen shots: \| |image2| ++++
+.. collapsible:: Screen shots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_12.png
+      :width: 800
 
 This assumes that you have the tools and licenses setup correctly. If you don't
 get to the last line, the make failed to build the project. There is nothing you
@@ -282,7 +295,17 @@ line text).
    ls -ltr projects/adrv9371x/a10soc
    tail projects/adrv9371x/a10soc/adrv9371x_a10soc_quartus.log
 
-++++ Screenshots: \| |image3| ++++ ++++ Screenshots: \| |image4| ++++
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_13.png
+      :width: 800
+
+ 
+
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_15.png
+      :width: 800
 
 And finally, if the project build is successful, the **.sopcinfo** and **.sof** files should be in the same folder.
 
@@ -291,42 +314,46 @@ And finally, if the project build is successful, the **.sopcinfo** and **.sof** 
    ls -ltr projects/adrv9371x/a10soc/*.sopcinfo
    ls -ltr projects/adrv9371x/a10soc/*.sof
 
-++++ Screenshots: \| |image5| ++++
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_14.png
+      :width: 800
 
 You may now use this 'sopcinfo' file as the input to your no-OS and/or Linux
 build. The 'sof' file is used to program the device.
 
-++++ Building an Intel project in WSL - known issues \| For a10Soc and s10Soc projects it is very possible to face the following error when you make a build:
+.. collapsible:: Building an Intel project in WSL - known issues
 
-.. important::
+   For a10Soc and s10Soc projects it is very possible to face the following
+   error when you make a build:
 
-   Current module quartus_fit was unexpectedly terminated by signal 9. This may
-   be because some system resource has been exhausted, or quartus_fit performed
-   an illegal operation.
+   .. important::
 
-It can also happen that "**make**" get stuck when synthesizing some ips. This errors may appear because your device does not have enough RAM memory to build your FPGA design. This problem can be solved if it is created a linux Swap file. You can find more information about what a swap file is in the next link:`SwapFile <https://linuxize.com/post/create-a-linux-swap-file/>`_. Depending on the size of the project, more or less virtual memory must be allocated. If you type in the search bar **System Information**, you can see Total Physical Memory and Total Virtual Memory of your system. For example for the AD9213 with s10Soc project, it was necessary to allocate 15 GB of virtual memory, to be able to make a build for the project. To create a swap file you can use the following commands:
+      Current module quartus_fit was unexpectedly terminated by signal 9. This
+      may be because some system resource has been exhausted, or quartus_fit
+      performed an illegal operation.
 
-::
+   It can also happen that "make" get stuck when synthesizing some ips. This errors may appear because your device does not have enough RAM memory to build your FPGA design. This problem can be solved if it is created a linux Swap file. You can find more information about what a swap file is in the next link:`SwapFile <https://linuxize.com/post/create-a-linux-swap-file/>`_. Depending on the size of the project, more or less virtual memory must be allocated. If you type in the search bar System Information, you can see Total Physical Memory and Total Virtual Memory of your system. For example for the AD9213 with s10Soc project, it was necessary to allocate 15 GB of virtual memory, to be able to make a build for the project. To create a swap file you can use the following commands:
 
-   :~$ sudo fallocate -l "memory size (e.g 1G, 2G, 8G, etc.)" /swapfile
-   :~$ sudo chmod 600 /swapfile
-   :~$ sudo mkswap /swapfile
-   :~$ sudo swapon /swapfile
+   ::
 
-If you want to make the change permanent:
+      :~$ sudo fallocate -l "memory size (e.g 1G, 2G, 8G, etc.)" /swapfile
+      :~$ sudo chmod 600 /swapfile
+      :~$ sudo mkswap /swapfile
+      :~$ sudo swapon /swapfile
 
-::
+   If you want to make the change permanent:
 
-    in /etc/fstab file type the command:
-   /swapfile swap swap defaults 0 0
+   ::
 
-If you want to deactivate the swap memory:
+       in /etc/fstab file type the command:
+      /swapfile swap swap defaults 0 0
 
-::
+   If you want to deactivate the swap memory:
 
-   :~$ sudo swapoff -v /swapfile
+   ::
 
-++++
+      :~$ sudo swapoff -v /swapfile
 
 Building a Xilinx project
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -341,7 +368,17 @@ this example, it is building the 'DAQ2' project on the 'ZC706' carrier.
    cd projects/daq2/zc706
    make
 
-++++ Screenshots: \| |image6| ++++ ++++ Screenshots: \| |image7| ++++
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_5.png
+      :width: 800
+
+ 
+
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_6.png
+      :width: 800
 
 The **make** builds all the libraries first and then builds the project. This assumes that you have the tools and licenses setup correctly. If you don't get to the last line, the make failed to build one or more targets: it could be a library component or the project itself. There is nothing you can gather from the 'make' output (other than which one failed). The actual failure is in a log file, so let's see how to analyze the build log files and results.
 
@@ -394,7 +431,17 @@ If you see 'make' returns an error (and stops), **you must first check the conte
    ls -ltr library/axi_ad9144
    tail library/axi_ad9144/axi_ad9144_ip.log
 
-++++ Screenshots: \| |image8| ++++ ++++ Screenshots: \| |image9| ++++
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_7.png
+      :width: 800
+
+ 
+
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_8.png
+      :width: 800
 
 Xilinx: checking the build and analyzing results of projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -417,7 +464,17 @@ Quick (or detailed) check on files.
    ls -ltr projects/daq2/zc706
    tail projects/daq2/zc706/daq2_zc706_vivado.log
 
-++++ Screenshots: \| |image10| ++++ ++++ Screenshots: \| |image11| ++++
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_9.png
+      :width: 800
+
+ 
+
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_10.png
+      :width: 800
 
 And finally, if the project build is successful, the hdf file should be in the
 'sdk' folder.
@@ -426,40 +483,44 @@ And finally, if the project build is successful, the hdf file should be in the
 
    ls -ltr projects/daq2/zc706/daq2_zc706.sdk
 
-++++ Screenshots: \| |image12| ++++
+.. collapsible:: Screenshots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_11.png
+      :width: 800
 
 You may now use this 'hdf' file as the input to your no-OS and/or Linux build.
 Starting with Vivado 2019.3, output file extension got change from .hdf to .xsa.
 
-++++ Building a Xilinx project in WSL - known issues \| For some projects it is very possible to face the following error when you make a build:
+.. collapsible:: Building a Xilinx project in WSL - known issues
 
-.. important::
+   For some projects it is very possible to face the following error when you
+   make a build:
 
-   :math:`RDI_PROG" "`\ @" crash" "Killed ":math:`RDI_PROG" "`\ @"
+   .. important::
 
-This error may appear because your device does not have enough RAM memory to build your FPGA design. For example, the project AD-FMCDAQ3-EBZ with Virtex UltraScale+ VCU118 (XCVU9P device) requires 20 GB (typical memory) and a peak of 32 GB memory RAM. The next link shows the typical and peak Vivado memory usage per target device:`MemoryUsage <https://www.xilinx.com/products/design-tools/vivado/vivado-ml.html#memory>`_. This problem can be solved if it is created a linux Swap file. You can find more information about what a swap file is in the next link:`SwapFile <https://linuxize.com/post/create-a-linux-swap-file/>`_ To create a swap file you can use the following commands:
+      :math:`RDI_PROG" "`\ @" crash" "Killed ":math:`RDI_PROG" "`\ @"
 
-::
+   This error may appear because your device does not have enough RAM memory to build your FPGA design. For example, the project AD-FMCDAQ3-EBZ with Virtex UltraScale+ VCU118 (XCVU9P device) requires 20 GB (typical memory) and a peak of 32 GB memory RAM. The next link shows the typical and peak Vivado memory usage per target device:`MemoryUsage <https://www.xilinx.com/products/design-tools/vivado/vivado-ml.html#memory>`_. This problem can be solved if it is created a linux Swap file. You can find more information about what a swap file is in the next link:`SwapFile <https://linuxize.com/post/create-a-linux-swap-file/>`_ To create a swap file you can use the following commands:
 
-   :~$ sudo fallocate -l "memory size (e.g 1G, 2G, 8G, etc.)" /swapfile
-   :~$ sudo chmod 600 /swapfile
-   :~$ sudo mkswap /swapfile
-   :~$ sudo swapon /swapfile
+   ::
 
-If you want to make the change permanent:
+      :~$ sudo fallocate -l "memory size (e.g 1G, 2G, 8G, etc.)" /swapfile
+      :~$ sudo chmod 600 /swapfile
+      :~$ sudo mkswap /swapfile
+      :~$ sudo swapon /swapfile
 
-::
+   If you want to make the change permanent:
 
-    in /etc/fstab file type the command:
-   /swapfile swap swap defaults 0 0
+   ::
 
-If you want to deactivate the swap memory:
+       in /etc/fstab file type the command:
+      /swapfile swap swap defaults 0 0
 
-::
+   If you want to deactivate the swap memory:
 
-   :~$ sudo swapoff -v /swapfile
+   ::
 
-++++
+      :~$ sudo swapoff -v /swapfile
 
 Tools and Tool versions
 =======================
@@ -659,16 +720,18 @@ Next, what your project needs, is the **uImage**\ (for zynq based carriers), **I
 
 More info on how to generate this files you will find in the :doc:`References </wiki-migration/resources/fpga/docs/build>` section or on ReadMe.txt file from boot partition.
 
-++++ How to build the boot image BOOT.BIN in WSL \| After obtaining .xsa file, you must be sure that you have done source for Vivado and Vitis. To create boot.bin is recommended to run build_boot_bin.sh in terminal.To do this, the file can be called in the following form:
+.. collapsible:: How to build the boot image BOOT.BIN in WSL
 
-::
+   After obtaining .xsa file, you must be sure that you have done source for
+   Vivado and Vitis. To create boot.bin is recommended to run build_boot_bin.sh
+   in terminal.To do this, the file can be called in the following form:
 
-     chmod +x build_boot_bin.sh
-     usage: build_boot_bin.sh system_top.xsa u-boot.elf [output-archive]
+   ::
 
-You can download the script by accessing the following link: :doc:`build_boot_bin.sh </wiki-migration/resources/tools-software/linux-software/build-the-zynq-boot-image>`.
+        chmod +x build_boot_bin.sh
+        usage: build_boot_bin.sh system_top.xsa u-boot.elf [output-archive]
 
-++++
+   You can download the script by accessing the following link: :doc:`build_boot_bin.sh </wiki-migration/resources/tools-software/linux-software/build-the-zynq-boot-image>`.
 
 Make the BOOT.BIN (adi_make::boot_bin)
 --------------------------------------
@@ -697,7 +760,10 @@ Intel: Building manually on Quartus
 
 There is no need to build any library for Quartus. However, you do need to specify the IP search path for QSYS. This is a global property, so only need to do it once. If you have multiple paths simply add to it. You get to this menu from the **Tools->Options**. The tool then parses these directories and picks up a **\_hw.tcl** file (e.g. axi_ad9250_hw.tcl). The peripherals should show up on QSYS library.
 
-++++ Screen shots: \| |image13| ++++
+.. collapsible:: Screen shots:
+
+   .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_qsys_1.jpg
+      :width: 800
 
 You may now run the project (generate the sof and software hand-off files) on Quartus. Open the GUI and select TCL console. At the prompt change the directory to where the project is, and source the **system_project.tcl** file.
 
@@ -709,7 +775,9 @@ You may now run the project (generate the sof and software hand-off files) on Qu
 You will see commands being executed, the script uses a board design in QSYS,
 generate all the IP targets, synthesize the netlist and implementation.
 
-++++ Screen shots: \| |image14| |image15| ++++
+.. collapsible:: Screen shots:
+
+   |image1| |image2|
 
 Xilinx: Building manually on Vivado
 -----------------------------------
@@ -728,7 +796,9 @@ window. There is nothing to do here, you could browse the source if you prefer
 to do synthesis as stand-alone and such things. After you're done, quit and
 change the directory to the next library and continue the process.
 
-++++ Screen shots: \| |image16| |image17| ++++
+.. collapsible:: Screen shots:
+
+   |image3| |image4|
 
 After you built all the required libraries for your project, you can run the
 project (generate bitstream and export the design to SDK). This is the same
@@ -743,7 +813,9 @@ Same behavior as above, the GUI will change into a project window. The script
 will create a board design in IPI, generate all the IP targets, synthesize the
 netlist and implementation.
 
-++++ Screen shots: \| |image18| |image19| ++++
+.. collapsible:: Screen shots:
+
+   |image5| |image6|
 
 References
 ==========
@@ -785,41 +857,15 @@ CRITICAL WARNING: [IP_Flow 19-459] IP file
 
 These warnings appear because the libraries are using common modules which are located under the **./library/common/**. These warnings can be ignored, they won't affect the functionality of the IP or the project. However, you may not be able to 'archive' these projects. The irony is that it does copy these files to the project area, but ignores them.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_4.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_quartus_1.jpg
    :width: 800
-.. |image2| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_12.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_quartus_2.jpg
    :width: 800
-.. |image3| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_13.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_library_1.jpg
    :width: 800
-.. |image4| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_15.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_library_2.jpg
    :width: 800
-.. |image5| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_14.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_projects_1.jpg
    :width: 800
-.. |image6| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_5.png
-   :width: 800
-.. |image7| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_6.png
-   :width: 800
-.. |image8| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_7.png
-   :width: 800
-.. |image9| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_8.png
-   :width: 800
-.. |image10| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_9.png
-   :width: 800
-.. |image11| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_10.png
-   :width: 800
-.. |image12| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_11.png
-   :width: 800
-.. |image13| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_qsys_1.jpg
-   :width: 800
-.. |image14| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_quartus_1.jpg
-   :width: 800
-.. |image15| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_quartus_2.jpg
-   :width: 800
-.. |image16| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_library_1.jpg
-   :width: 800
-.. |image17| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_library_2.jpg
-   :width: 800
-.. |image18| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_projects_1.jpg
-   :width: 800
-.. |image19| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_projects_2.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_projects_2.jpg
    :width: 800

@@ -75,27 +75,27 @@ Enable the I2C
                      <*> ADI TWI I2C support
                      (50)  ADI TWI I2C clock (kHz)
 
-XHIDDENSTART Click to expand XHIDDENSTARTSTOP Virtual terminal & frame buffer
-support (ARM core may not need this configurations)
+.. collapsible:: Click to expand
 
-.. code:: shell
+   Virtual terminal & frame buffer support (ARM core may not need this
+   configurations)
 
-   Device Drivers  --->
-           Character devices  --->
-            [*] Enable TTY
-            [*]   Virtual terminal
-            [*]     Enable character translations in console
-            [*]     Support for console on virtual terminal
-            - *-     Support for binding and unbinding console drivers
-           Graphics support  --->
-                 Console display driver support  --->
-                 [*] Framebuffer Console support
+   .. code:: shell
 
-   Library routines  --->
-         [*] Select compiled-in fonts
-         [*]   Mac console 6x11 font (not supported by all drivers)
+      Device Drivers  --->
+              Character devices  --->
+               [*] Enable TTY
+               [*]   Virtual terminal
+               [*]     Enable character translations in console
+               [*]     Support for console on virtual terminal
+               - *-     Support for binding and unbinding console drivers
+              Graphics support  --->
+                    Console display driver support  --->
+                    [*] Framebuffer Console support
 
-XHIDDENEND
+      Library routines  --->
+            [*] Select compiled-in fonts
+            [*]   Mac console 6x11 font (not supported by all drivers)
 
 Include the USB gadget zero module
 

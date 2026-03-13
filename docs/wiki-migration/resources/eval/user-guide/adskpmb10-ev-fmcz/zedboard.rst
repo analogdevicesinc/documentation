@@ -60,102 +60,102 @@ Warning
 Installing the PowerhouseApp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-++++ Click here to see the complete installation instructions. \| To install the **PowerhouseApp**, follow these steps:
+.. collapsible:: Click here to see the complete installation instructions.
 
--  Make sure you have Python installed in your PC.
--  Download and extract the wheel (.whl) file. Open Command Prompt and type in ``cd <directory of the wheel file>`` to go into the directory where the wheel (.whl) file is located.
+   To install the **PowerhouseApp**, follow these steps:
 
-.. container:: centeralign
+   -  Make sure you have Python installed in your PC.
+   -  Download and extract the wheel (.whl) file. Open Command Prompt and type in ``cd <directory of the wheel file>`` to go into the directory where the wheel (.whl) file is located.
 
-   \ |image2|\ *Figure 3. Command Prompt: Go into the directory of the installer (.whl file)*
+   .. container:: centeralign
 
--  Install **PowerhouseApp** by typing in ``pip install powerhouse-1.15.0-py3-none-any.whl``.
-   *Note: The wheel (.whl) file will find the installation path of the Python directory defined in the Windows environment variable path.*
+      \ |image2|\ *Figure 3. Command Prompt: Go into the directory of the installer (.whl file)*
 
-.. container:: centeralign
+   -  Install **PowerhouseApp** by typing in ``pip install powerhouse-1.15.0-py3-none-any.whl``.
+      *Note: The wheel (.whl) file will find the installation path of the Python directory defined in the Windows environment variable path.*
 
-   |image3| *Figure 4. Command Prompt: Installing the .whl file*
+   .. container:: centeralign
 
--  If the installation is successful, the user may now close the Command Prompt.
+      |image3| *Figure 4. Command Prompt: Installing the .whl file*
 
-++++
+   -  If the installation is successful, the user may now close the Command
+      Prompt.
 
 Setting up the SD Card of the ZedBoard™
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-++++ Click here to see the complete setup instructions. \|
+.. collapsible:: Click here to see the complete setup instructions.
 
--  Mount the SD card into your PC or laptop.
--  Download, extract, and copy the following `files <https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/adskpmb10-ev-fmcz_firmware.zip>`_ to the SD card.
+   -  Mount the SD card into your PC or laptop.
+   -  Download, extract, and copy the following `files <https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/adskpmb10-ev-fmcz_firmware.zip>`_ to the SD card.
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   |image4| *Figure 5. Boot Files*
+      |image4| *Figure 5. Boot Files*
 
--  Eject the SD card and connect it to the Zedboard™.
-
-++++
+   -  Eject the SD card and connect it to the Zedboard™.
 
 Configuring the IP Address of the Zedboard™
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-++++ Click here to see the complete configuration instructions. \| Connect the Zedboard™ to the PC through the Ethernet cable and Micro USB before performing the following steps:
+.. collapsible:: Click here to see the complete configuration instructions.
 
--  Setup a UART serial communication between your PC and the Zedboard™ using the micro-USB cable to USB type A.
--  Using your **Device Manager**, locate the COM port assigned to the Zedboard™.
+   Connect the Zedboard™ to the PC through the Ethernet cable and Micro USB
+   before performing the following steps:
 
-.. container:: centeralign
+   -  Setup a UART serial communication between your PC and the Zedboard™ using the micro-USB cable to USB type A.
+   -  Using your **Device Manager**, locate the COM port assigned to the Zedboard™.
 
-   |image5| *Figure 6. Determining the COM Port*
+   .. container:: centeralign
 
--  Open Putty, Tera Term, or other serial terminal program.
--  Setup the terminal between the COM port the Zedboard™ by typing in the **Speed** or **Baud rate** to **115200**. The serial terminal connection will default to auto login and will automatically go the root directory of the SD card.
+      |image5| *Figure 6. Determining the COM Port*
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fz_02_putty.png
-   :align: center
+   -  Open Putty, Tera Term, or other serial terminal program.
+   -  Setup the terminal between the COM port the Zedboard™ by typing in the **Speed** or **Baud rate** to **115200**. The serial terminal connection will default to auto login and will automatically go the root directory of the SD card.
 
-.. container:: centeralign
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fz_02_putty.png
+      :align: center
 
-   *Figure 7. Setting up the serial terminal connection*
+   .. container:: centeralign
 
--  From here, it is a good idea to check if the connected device can be found using the command ``iio_info`` into the terminal, and hitting **Enter**. This should provide a list of devices along with their channels and attributes.
--  Type ``ifconfig`` into the terminal, then hit **Enter**. That should echo back some information where user can pull out the IP address of the Zedboard™. Take note of this information.
+      *Figure 7. Setting up the serial terminal connection*
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fz_03a_ip.png
-   :align: center
+   -  From here, it is a good idea to check if the connected device can be found using the command ``iio_info`` into the terminal, and hitting **Enter**. This should provide a list of devices along with their channels and attributes.
+   -  Type ``ifconfig`` into the terminal, then hit **Enter**. That should echo back some information where user can pull out the IP address of the Zedboard™. Take note of this information.
 
-.. container:: centeralign
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fz_03a_ip.png
+      :align: center
 
-   *Figure 8. Zedboard™ IP Address*
+   .. container:: centeralign
 
--  In the **Control Panel**, open **Network Connections**. Right Click on the Ethernet connected and select **Properties**.
+      *Figure 8. Zedboard™ IP Address*
 
-.. container:: centeralign
+   -  In the **Control Panel**, open **Network Connections**. Right Click on the Ethernet connected and select **Properties**.
 
-   |image6| *Figure 9. Network Connections*
+   .. container:: centeralign
 
--  Select the first driver and click **Configure**.
+      |image6| *Figure 9. Network Connections*
 
-.. container:: centeralign
+   -  Select the first driver and click **Configure**.
 
-   |image7| *Figure 10. Ethernet Properties*
+   .. container:: centeralign
 
--  Click **Use the following IP Address** and type in the following details:
-   **IP Address:** change from ``192.168.1.101`` to ``192.168.1.254`` (except ``192.168.1.109``)
-   **Subnet Mask:** ``255.255.255.0``
-   **Default Gateway:** ``192.168.1.100``
+      |image7| *Figure 10. Ethernet Properties*
 
-.. container:: centeralign
+   -  Click **Use the following IP Address** and type in the following details:
+      **IP Address:** change from ``192.168.1.101`` to ``192.168.1.254`` (except ``192.168.1.109``)
+      **Subnet Mask:** ``255.255.255.0``
+      **Default Gateway:** ``192.168.1.100``
 
-   |image8| *Figure 11. Configuring the Static IP Address*
+   .. container:: centeralign
 
--  See if the configuration is successful by entering ``ipconfig`` in the **Command Prompt**. Verify also the connection by doing a ping test. You may enter ``ping <IP Address of the Zedboard™>`` or in this case, ``ping 192.168.1.109``.
+      |image8| *Figure 11. Configuring the Static IP Address*
 
-.. container:: centeralign
+   -  See if the configuration is successful by entering ``ipconfig`` in the **Command Prompt**. Verify also the connection by doing a ping test. You may enter ``ping <IP Address of the Zedboard™>`` or in this case, ``ping 192.168.1.109``.
 
-   |image9| *Figure 12. Ping Test with Zedboard™*
+   .. container:: centeralign
 
-++++
+      |image9| *Figure 12. Ping Test with Zedboard™*
 
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~

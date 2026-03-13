@@ -86,30 +86,28 @@ Interrupts
 
 Below are the Programmable Logic interrupts used in this project.
 
-++++ Click here to see the interrupts table \|
+.. collapsible:: Click here to see the interrupts table
 
-============= === =============== ================
-Instance name HDL Linux Cyclone V Actual Cyclone V
-============= === =============== ================
----           15  55              87
----           14  54              86
----           13  53              85
----           12  52              84
----           11  51              83
----           10  50              82
----           9   49              81
----           8   48              80
----           7   47              79
----           6   46              78
----           5   45              77
-video_dmac    4   44              76
----           3   43              75
-axi_adc_dma   2   42              74
-sys_spi       1   41              73
-sys_gpio_bd   0   40              72
-============= === =============== ================
-
-++++
+   ============= === =============== ================
+   Instance name HDL Linux Cyclone V Actual Cyclone V
+   ============= === =============== ================
+   ---           15  55              87
+   ---           14  54              86
+   ---           13  53              85
+   ---           12  52              84
+   ---           11  51              83
+   ---           10  50              82
+   ---           9   49              81
+   ---           8   48              80
+   ---           7   47              79
+   ---           6   46              78
+   ---           5   45              77
+   video_dmac    4   44              76
+   ---           3   43              75
+   axi_adc_dma   2   42              74
+   sys_spi       1   41              73
+   sys_gpio_bd   0   40              72
+   ============= === =============== ================
 
 Building the HDL project
 ------------------------

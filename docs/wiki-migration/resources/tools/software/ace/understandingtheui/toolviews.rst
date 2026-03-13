@@ -75,41 +75,44 @@ The **Macro Toolbar**, as seen in Figure 3, can be used to open, record, save, c
 
 **Click** the subsections below to expand/collapse the details: 
 
-.. collapsible:: Record, Save Macro File and Generate Scripts XHIDDENSTARTSTOP Record device configuration and transactions by putting them into a macro file. Once a macro is generated using the Macro Tool, it can then be called again thereby repeating the steps performed in one go. The following steps explain how to generate a macro:
+.. collapsible:: Record, Save Macro File and Generate Scripts
 
--  Click the **Record** button (Record macro commands) located in the left side icon on the image below, refer to Figure 4.
+   Record device configuration and transactions by putting them into a macro
+   file. Once a macro is generated using the Macro Tool, it can then be called
+   again thereby repeating the steps performed in one go. The following steps
+   explain how to generate a macro:
 
-.. container:: centeralign
+   -  Click the **Record** button (Record macro commands) located in the left side icon on the image below, refer to Figure 4.
 
-   \ |image4|\ *Figure 4. Record Macro button*\
+   .. container:: centeralign
 
--  Start performing device interaction such as changing parameters, inputting values to registers on the memory map, capturing data, etc. The Commands List window will fill up as the GUI is navigated and interacted with.
--  Once all parameters to be entered are recorded, click the **Stop** button (Stop recording macro Commands).
--  Once a macro file has been recorded, it can then be saved and stored into a macro file **(.acemacro)** using the **Save** button, or be played again to repeat the previously performed steps using **Play** button.
--  Additionally, ACE has a built-in feature to generate scripts that perform the recorded actions in the supported language of choice. Click the **Generate Code** button at the right of the Macro Toolbar to open the script generator window, as seen in Figure 5.
+      \ |image4|\ *Figure 4. Record Macro button*\
 
-.. container:: centeralign
+   -  Start performing device interaction such as changing parameters, inputting values to registers on the memory map, capturing data, etc. The Commands List window will fill up as the GUI is navigated and interacted with.
+   -  Once all parameters to be entered are recorded, click the **Stop** button (Stop recording macro Commands).
+   -  Once a macro file has been recorded, it can then be saved and stored into a macro file **(.acemacro)** using the **Save** button, or be played again to repeat the previously performed steps using **Play** button.
+   -  Additionally, ACE has a built-in feature to generate scripts that perform the recorded actions in the supported language of choice. Click the **Generate Code** button at the right of the Macro Toolbar to open the script generator window, as seen in Figure 5.
 
-   \ |image5|\ *Figure 5. Generate Code Button*\
+   .. container:: centeralign
 
--  Select the desired language among C#, MATLAB or Python
+      \ |image5|\ *Figure 5. Generate Code Button*\
 
-.. container:: centeralign
+   -  Select the desired language among C#, MATLAB or Python
 
-   \ |image6|\ *Figure 6. Generated Matlab Code*\
+   .. container:: centeralign
 
-This code can then be imported into an IDE for execution, as seen in Figure 6.
-Using this code as the base, additional features such as instrument control can
-be added in order to have an automated set of measurements. Apart from supported
-languages, the remote API can also be used by IDEs that support DLLs like
-LabVIEW. The DLL is located in the ACE installation directory within the
-subfolder "Clients".
+      \ |image6|\ *Figure 6. Generated Matlab Code*\
 
-*Reference:* :doc:`Recording a macro and generating scripts by Luis Beltran </wiki-migration/software-tools/ace/recording-macros>`
+   This code can then be imported into an IDE for execution, as seen in Figure
+   6. Using this code as the base, additional features such as instrument
+   control can be added in order to have an automated set of measurements. Apart
+   from supported languages, the remote API can also be used by IDEs that
+   support DLLs like LabVIEW. The DLL is located in the ACE installation
+   directory within the subfolder "Clients".
 
-XHIDDENEND
+   *Reference:* :doc:`Recording a macro and generating scripts by Luis Beltran </wiki-migration/software-tools/ace/recording-macros>`
 
-XHIDDENSTART See More Details...
+.. collapsible:: See More Details...
 
    If there is a macro currently open and the **Record** button is selected, a window will pop up giving the options to either record a new macro or to append the recording onto the currently open macro. If a new macro will be created and added to the Macros List, select **Record new macro**. This macro will automatically become the current macro and the transactions will be recorded as components of this new macro. This will have no effect on any other open macros which will still be available in the Macros List. If the next transaction recorded will be added to the Commands List of the currently open macro, select the **Append** option.
 

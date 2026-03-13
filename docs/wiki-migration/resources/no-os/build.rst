@@ -442,152 +442,152 @@ order to be able to debug graphically by clicking the debug button:
 
 Fore more details about the available make rules, :doc:`check out this page </wiki-migration/resources/no-os/make>`.
 
-++++ Running/Debugging in WSL \|
+.. collapsible:: Running/Debugging in WSL
 
-If you use WSL you can not test the boards on Linux because it does not support USB. If you will try to load the binary into the target with the command **make run**, you will encounter the following error:
+   If you use WSL you can not test the boards on Linux because it does not support USB. If you will try to load the binary into the target with the command **make run**, you will encounter the following error:
 
-.. important::
+   .. important::
 
-   no targets found with "name =~ "APU\*" && jtag_cable_name =~ "\*\ :math:`::jtagtarget*"". available targets: none while executing "error "no targets found with \"`\ params(filter)\\". available targets:$target_list""...
+      no targets found with "name =~ "APU\*" && jtag_cable_name =~ "\*\ :math:`::jtagtarget*"". available targets: none while executing "error "no targets found with \"`\ params(filter)\\". available targets:$target_list""...
 
-If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to
-switch the USB device from Windows to WSL. To do this, the following steps must
-be followed:
+   If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to
+   switch the USB device from Windows to WSL. To do this, the following steps
+   must be followed:
 
--  It is recommended to have a version of Windows 10 or 11.
--  You must have all updates installed in WSL.
+   -  It is recommended to have a version of Windows 10 or 11.
+   -  You must have all updates installed in WSL.
 
-::
+   ::
 
-        To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
+           To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
-::
+   ::
 
-   :~$ uname -a
-   Linux 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+      :~$ uname -a
+      Linux 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 
-WSL should have a kernel version of 5.10.60.1 or later. You also need to run
-WSL2.Testing was done on version 22.4 of Ubuntu.
+   WSL should have a kernel version of 5.10.60.1 or later. You also need to run
+   WSL2.Testing was done on version 22.4 of Ubuntu.
 
--  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
--  You need to install from WSL, the user space tools for USB/IP and a database
-   of USB hardware identifiers:
+   -  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+   -  You need to install from WSL, the user space tools for USB/IP and a
+      database of USB hardware identifiers:
 
-::
+   ::
 
-   :~$ sudo apt upgrade
-   :~$ sudo apt update
-   :~$ sudo apt install linux-tools-virtual hwdata
-   :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip $(command -v ls /usr/lib/linux-tools/*/usbip | tail -n1) 20
+      :~$ sudo apt upgrade
+      :~$ sudo apt update
+      :~$ sudo apt install linux-tools-virtual hwdata
+      :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip $(command -v ls /usr/lib/linux-tools/*/usbip | tail -n1) 20
 
-If the last command does not work, try:
+   If the last command does not work, try:
 
-::
+   ::
 
-   :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip
+      :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip | tail -n1` 20
 
-   | tail -n1` 20
+   If there is a device connected to the USB port, it can be checked from the
+   Device Manager. When connecting via JTAG, in Device Manager, the device will
+   appear in the Universal serial Bus controllers section as USB Serial
+   Converter.
 
-If there is a device connected to the USB port, it can be checked from the
-Device Manager. When connecting via JTAG, in Device Manager, the device will
-appear in the Universal serial Bus controllers section as USB Serial Converter.
+   To attach the JTAG (or any USB device) from Windows to WSL we must do the
+   following:
 
-To attach the JTAG (or any USB device) from Windows to WSL we must do the
-following:
+   -  Open Command Prompt in Administrator mode and enter the command:
 
--  Open Command Prompt in Administrator mode and enter the command:
+   ::
 
-::
+      C:\Windows\system32> usbipd wsl list
+      BUSID  VID:PID    DEVICE                                                        STATE
+      2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
+      2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
+      2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
+      5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
+      7-1    413c:4503  USB Input Device                                              Not attached
+      7-2    413c:b080  Dell DA20 Adapter                                             Not attached
+      9-5    413c:b06e  USB Input Device                                              Not attached
+      10-1   0403:6014  USB Serial Converter                                          Not attached
+      10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
+      10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
+      10-5   413c:b06f  USB Input Device                                              Not attached
 
-   C:\Windows\system32> usbipd wsl list
-   BUSID  VID:PID    DEVICE                                                        STATE
-   2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
-   2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
-   2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
-   5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
-   7-1    413c:4503  USB Input Device                                              Not attached
-   7-2    413c:b080  Dell DA20 Adapter                                             Not attached
-   9-5    413c:b06e  USB Input Device                                              Not attached
-   10-1   0403:6014  USB Serial Converter                                          Not attached
-   10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
-   10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
-   10-5   413c:b06f  USB Input Device                                              Not attached
+   For this command, a list of all connected USB devices will be displayed in
+   Windows, a brief description of them and their status: If they are/are not
+   attached to the WSL instance. The JTAG appears in the cmd list but is not
+   attached to a WSL instance.
 
-For this command, a list of all connected USB devices will be displayed in
-Windows, a brief description of them and their status: If they are/are not
-attached to the WSL instance. The JTAG appears in the cmd list but is not
-attached to a WSL instance.
+   In WSL enter the following command:
 
-In WSL enter the following command:
+   ::
 
-::
+      :~$ lsusb
+      Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+      Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   :~$ lsusb
-   Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-   Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+   A list of all attached USB devices will be displayed here. At this moment we
+   will only see roots hubs.
 
-A list of all attached USB devices will be displayed here. At this moment we
-will only see roots hubs.
+   -  To attach a USB device to WSL enter the following command in Command
+      Prompt:
 
--  To attach a USB device to WSL enter the following command in Command Prompt:
+   ::
 
-::
+      > usbipd wsl attach -b <BUSID>
 
-   > usbipd wsl attach -b <BUSID>
+   BUSID represents the ID for the USB device for which we want to attach it in
+   WSL.
 
-BUSID represents the ID for the USB device for which we want to attach it in
-WSL.
+   ::
 
-::
+      > usbipd wsl attach -b 10-1
 
-   > usbipd wsl attach -b 10-1
+      C:\Windows\system32> usbipd wsl list
+      BUSID  VID:PID    DEVICE                                                        STATE
+      2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
+      2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
+      2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
+      5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
+      7-1    413c:4503  USB Input Device                                              Not attached
+      7-2    413c:b080  Dell DA20 Adapter                                             Not attached
+      9-5    413c:b06e  USB Input Device                                              Not attached
+      10-1   0403:6014  USB Serial Converter                                          Attached - Ubuntu
+      10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
+      10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
+      10-5   413c:b06f  USB Input Device                                              Not attached
 
-   C:\Windows\system32> usbipd wsl list
-   BUSID  VID:PID    DEVICE                                                        STATE
-   2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
-   2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
-   2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
-   5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
-   7-1    413c:4503  USB Input Device                                              Not attached
-   7-2    413c:b080  Dell DA20 Adapter                                             Not attached
-   9-5    413c:b06e  USB Input Device                                              Not attached
-   10-1   0403:6014  USB Serial Converter                                          Attached - Ubuntu
-   10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
-   10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
-   10-5   413c:b06f  USB Input Device                                              Not attached
+   After running usbipd wsl list, it can be seen that the JTAG is now attached
+   in WSL.
 
-After running usbipd wsl list, it can be seen that the JTAG is now attached in
-WSL.
+   In WSL if you run: lsusb we have:
 
-In WSL if you run: **lsusb** we have:
+   ::
 
-::
+      Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+      Bus 001 Device 005: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
+      Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub\
 
-   Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-   Bus 001 Device 005: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
-   Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub\
+   If Device Manager checks the USB device attached in WSL, it will no longer
+   appear in the list of devices.
 
-If Device Manager checks the USB device attached in WSL, it will no longer
-appear in the list of devices.
+   -  If you want to return to the initial settings (the USB device must be
+      attached to Windows): The USB device must be disconnected and connected to
+      the computer or in Command Prompt, run the following command:
 
--  If you want to return to the initial settings (the USB device must be
-   attached to Windows): The USB device must be disconnected and connected to
-   the computer or in Command Prompt, run the following command:
+   ::
 
-::
+      > usbipd wsl detach -b <BUSID>
 
-   > usbipd wsl detach -b <BUSID>
+   For more information you can access the links: `USB_devices_to_WSL <https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/>`_ , `USB/IP_client_tools <https://github.com/dorssel/usbipd-win/wiki/WSL-support#usbip-client-tools>`_
 
-For more information you can access the links: `USB_devices_to_WSL <https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/>`_ , `USB/IP_client_tools <https://github.com/dorssel/usbipd-win/wiki/WSL-support#usbip-client-tools>`_ ++++
+.. collapsible:: Running in Windows with PowerShell
 
-++++ Running in Windows with PowerShell \|
+   .. important::
 
-.. important::
+      This guide is to run built no-OS projects "as native as possible" under
+      Windows.
 
-   This guide is to run built no-OS projects "as native as possible" under
-   Windows.
-
-.. collapsible:: STM32 (Click to expand)
+   XHIDDENSTART STM32 (Click to expand) XHIDDENSTARTSTOP
 
    -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
    -  In PowerShell, set the variables below, correcting with the absolute paths
@@ -623,7 +623,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
 
-++++
+XHIDDENEND
 
 No-OS Build Guide
 =================
@@ -1069,152 +1069,152 @@ order to be able to debug graphically by clicking the debug button:
 
 Fore more details about the available make rules, :doc:`check out this page </wiki-migration/resources/no-os/make>`.
 
-++++ Running/Debugging in WSL \|
+.. collapsible:: Running/Debugging in WSL
 
-If you use WSL you can not test the boards on Linux because it does not support USB. If you will try to load the binary into the target with the command **make run**, you will encounter the following error:
+   If you use WSL you can not test the boards on Linux because it does not support USB. If you will try to load the binary into the target with the command **make run**, you will encounter the following error:
 
-.. important::
+   .. important::
 
-   no targets found with "name =~ "APU\*" && jtag_cable_name =~ "\*\ :math:`::jtagtarget*"". available targets: none while executing "error "no targets found with \"`\ params(filter)\\". available targets:$target_list""...
+      no targets found with "name =~ "APU\*" && jtag_cable_name =~ "\*\ :math:`::jtagtarget*"". available targets: none while executing "error "no targets found with \"`\ params(filter)\\". available targets:$target_list""...
 
-If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to
-switch the USB device from Windows to WSL. To do this, the following steps must
-be followed:
+   If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to
+   switch the USB device from Windows to WSL. To do this, the following steps
+   must be followed:
 
--  It is recommended to have a version of Windows 10 or 11.
--  You must have all updates installed in WSL.
+   -  It is recommended to have a version of Windows 10 or 11.
+   -  You must have all updates installed in WSL.
 
-::
+   ::
 
-        To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
+           To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
-::
+   ::
 
-   :~$ uname -a
-   Linux 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+      :~$ uname -a
+      Linux 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 
-WSL should have a kernel version of 5.10.60.1 or later. You also need to run
-WSL2.Testing was done on version 22.4 of Ubuntu.
+   WSL should have a kernel version of 5.10.60.1 or later. You also need to run
+   WSL2.Testing was done on version 22.4 of Ubuntu.
 
--  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
--  You need to install from WSL, the user space tools for USB/IP and a database
-   of USB hardware identifiers:
+   -  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+   -  You need to install from WSL, the user space tools for USB/IP and a
+      database of USB hardware identifiers:
 
-::
+   ::
 
-   :~$ sudo apt upgrade
-   :~$ sudo apt update
-   :~$ sudo apt install linux-tools-virtual hwdata
-   :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip $(command -v ls /usr/lib/linux-tools/*/usbip | tail -n1) 20
+      :~$ sudo apt upgrade
+      :~$ sudo apt update
+      :~$ sudo apt install linux-tools-virtual hwdata
+      :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip $(command -v ls /usr/lib/linux-tools/*/usbip | tail -n1) 20
 
-If the last command does not work, try:
+   If the last command does not work, try:
 
-::
+   ::
 
-   :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip
+      :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip | tail -n1` 20
 
-   | tail -n1` 20
+   If there is a device connected to the USB port, it can be checked from the
+   Device Manager. When connecting via JTAG, in Device Manager, the device will
+   appear in the Universal serial Bus controllers section as USB Serial
+   Converter.
 
-If there is a device connected to the USB port, it can be checked from the
-Device Manager. When connecting via JTAG, in Device Manager, the device will
-appear in the Universal serial Bus controllers section as USB Serial Converter.
+   To attach the JTAG (or any USB device) from Windows to WSL we must do the
+   following:
 
-To attach the JTAG (or any USB device) from Windows to WSL we must do the
-following:
+   -  Open Command Prompt in Administrator mode and enter the command:
 
--  Open Command Prompt in Administrator mode and enter the command:
+   ::
 
-::
+      C:\Windows\system32> usbipd wsl list
+      BUSID  VID:PID    DEVICE                                                        STATE
+      2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
+      2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
+      2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
+      5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
+      7-1    413c:4503  USB Input Device                                              Not attached
+      7-2    413c:b080  Dell DA20 Adapter                                             Not attached
+      9-5    413c:b06e  USB Input Device                                              Not attached
+      10-1   0403:6014  USB Serial Converter                                          Not attached
+      10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
+      10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
+      10-5   413c:b06f  USB Input Device                                              Not attached
 
-   C:\Windows\system32> usbipd wsl list
-   BUSID  VID:PID    DEVICE                                                        STATE
-   2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
-   2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
-   2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
-   5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
-   7-1    413c:4503  USB Input Device                                              Not attached
-   7-2    413c:b080  Dell DA20 Adapter                                             Not attached
-   9-5    413c:b06e  USB Input Device                                              Not attached
-   10-1   0403:6014  USB Serial Converter                                          Not attached
-   10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
-   10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
-   10-5   413c:b06f  USB Input Device                                              Not attached
+   For this command, a list of all connected USB devices will be displayed in
+   Windows, a brief description of them and their status: If they are/are not
+   attached to the WSL instance. The JTAG appears in the cmd list but is not
+   attached to a WSL instance.
 
-For this command, a list of all connected USB devices will be displayed in
-Windows, a brief description of them and their status: If they are/are not
-attached to the WSL instance. The JTAG appears in the cmd list but is not
-attached to a WSL instance.
+   In WSL enter the following command:
 
-In WSL enter the following command:
+   ::
 
-::
+      :~$ lsusb
+      Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+      Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   :~$ lsusb
-   Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-   Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+   A list of all attached USB devices will be displayed here. At this moment we
+   will only see roots hubs.
 
-A list of all attached USB devices will be displayed here. At this moment we
-will only see roots hubs.
+   -  To attach a USB device to WSL enter the following command in Command
+      Prompt:
 
--  To attach a USB device to WSL enter the following command in Command Prompt:
+   ::
 
-::
+      > usbipd wsl attach -b <BUSID>
 
-   > usbipd wsl attach -b <BUSID>
+   BUSID represents the ID for the USB device for which we want to attach it in
+   WSL.
 
-BUSID represents the ID for the USB device for which we want to attach it in
-WSL.
+   ::
 
-::
+      > usbipd wsl attach -b 10-1
 
-   > usbipd wsl attach -b 10-1
+      C:\Windows\system32> usbipd wsl list
+      BUSID  VID:PID    DEVICE                                                        STATE
+      2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
+      2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
+      2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
+      5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
+      7-1    413c:4503  USB Input Device                                              Not attached
+      7-2    413c:b080  Dell DA20 Adapter                                             Not attached
+      9-5    413c:b06e  USB Input Device                                              Not attached
+      10-1   0403:6014  USB Serial Converter                                          Attached - Ubuntu
+      10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
+      10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
+      10-5   413c:b06f  USB Input Device                                              Not attached
 
-   C:\Windows\system32> usbipd wsl list
-   BUSID  VID:PID    DEVICE                                                        STATE
-   2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
-   2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
-   2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
-   5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
-   7-1    413c:4503  USB Input Device                                              Not attached
-   7-2    413c:b080  Dell DA20 Adapter                                             Not attached
-   9-5    413c:b06e  USB Input Device                                              Not attached
-   10-1   0403:6014  USB Serial Converter                                          Attached - Ubuntu
-   10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
-   10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
-   10-5   413c:b06f  USB Input Device                                              Not attached
+   After running usbipd wsl list, it can be seen that the JTAG is now attached
+   in WSL.
 
-After running usbipd wsl list, it can be seen that the JTAG is now attached in
-WSL.
+   In WSL if you run: lsusb we have:
 
-In WSL if you run: **lsusb** we have:
+   ::
 
-::
+      Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+      Bus 001 Device 005: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
+      Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub\
 
-   Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-   Bus 001 Device 005: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
-   Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub\
+   If Device Manager checks the USB device attached in WSL, it will no longer
+   appear in the list of devices.
 
-If Device Manager checks the USB device attached in WSL, it will no longer
-appear in the list of devices.
+   -  If you want to return to the initial settings (the USB device must be
+      attached to Windows): The USB device must be disconnected and connected to
+      the computer or in Command Prompt, run the following command:
 
--  If you want to return to the initial settings (the USB device must be
-   attached to Windows): The USB device must be disconnected and connected to
-   the computer or in Command Prompt, run the following command:
+   ::
 
-::
+      > usbipd wsl detach -b <BUSID>
 
-   > usbipd wsl detach -b <BUSID>
+   For more information you can access the links: `USB_devices_to_WSL <https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/>`_ , `USB/IP_client_tools <https://github.com/dorssel/usbipd-win/wiki/WSL-support#usbip-client-tools>`_
 
-For more information you can access the links: `USB_devices_to_WSL <https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/>`_ , `USB/IP_client_tools <https://github.com/dorssel/usbipd-win/wiki/WSL-support#usbip-client-tools>`_ ++++
+.. collapsible:: Running in Windows with PowerShell
 
-++++ Running in Windows with PowerShell \|
+   .. important::
 
-.. important::
+      This guide is to run built no-OS projects "as native as possible" under
+      Windows.
 
-   This guide is to run built no-OS projects "as native as possible" under
-   Windows.
-
-.. collapsible:: STM32 (Click to expand)
+   XHIDDENSTART STM32 (Click to expand) XHIDDENSTARTSTOP
 
    -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
    -  In PowerShell, set the variables below, correcting with the absolute paths
@@ -1250,7 +1250,7 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
 
-++++
+XHIDDENEND
 
 No-OS Build Guide
 =================
@@ -1696,152 +1696,152 @@ order to be able to debug graphically by clicking the debug button:
 
 Fore more details about the available make rules, :doc:`check out this page </wiki-migration/resources/no-os/make>`.
 
-++++ Running/Debugging in WSL \|
+.. collapsible:: Running/Debugging in WSL
 
-If you use WSL you can not test the boards on Linux because it does not support USB. If you will try to load the binary into the target with the command **make run**, you will encounter the following error:
+   If you use WSL you can not test the boards on Linux because it does not support USB. If you will try to load the binary into the target with the command **make run**, you will encounter the following error:
 
-.. important::
+   .. important::
 
-   no targets found with "name =~ "APU\*" && jtag_cable_name =~ "\*\ :math:`::jtagtarget*"". available targets: none while executing "error "no targets found with \"`\ params(filter)\\". available targets:$target_list""...
+      no targets found with "name =~ "APU\*" && jtag_cable_name =~ "\*\ :math:`::jtagtarget*"". available targets: none while executing "error "no targets found with \"`\ params(filter)\\". available targets:$target_list""...
 
-If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to
-switch the USB device from Windows to WSL. To do this, the following steps must
-be followed:
+   If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to
+   switch the USB device from Windows to WSL. To do this, the following steps
+   must be followed:
 
--  It is recommended to have a version of Windows 10 or 11.
--  You must have all updates installed in WSL.
+   -  It is recommended to have a version of Windows 10 or 11.
+   -  You must have all updates installed in WSL.
 
-::
+   ::
 
-        To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
+           To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
-::
+   ::
 
-   :~$ uname -a
-   Linux 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+      :~$ uname -a
+      Linux 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 
-WSL should have a kernel version of 5.10.60.1 or later. You also need to run
-WSL2.Testing was done on version 22.4 of Ubuntu.
+   WSL should have a kernel version of 5.10.60.1 or later. You also need to run
+   WSL2.Testing was done on version 22.4 of Ubuntu.
 
--  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
--  You need to install from WSL, the user space tools for USB/IP and a database
-   of USB hardware identifiers:
+   -  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+   -  You need to install from WSL, the user space tools for USB/IP and a
+      database of USB hardware identifiers:
 
-::
+   ::
 
-   :~$ sudo apt upgrade
-   :~$ sudo apt update
-   :~$ sudo apt install linux-tools-virtual hwdata
-   :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip $(command -v ls /usr/lib/linux-tools/*/usbip | tail -n1) 20
+      :~$ sudo apt upgrade
+      :~$ sudo apt update
+      :~$ sudo apt install linux-tools-virtual hwdata
+      :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip $(command -v ls /usr/lib/linux-tools/*/usbip | tail -n1) 20
 
-If the last command does not work, try:
+   If the last command does not work, try:
 
-::
+   ::
 
-   :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip
+      :~$ sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip | tail -n1` 20
 
-   | tail -n1` 20
+   If there is a device connected to the USB port, it can be checked from the
+   Device Manager. When connecting via JTAG, in Device Manager, the device will
+   appear in the Universal serial Bus controllers section as USB Serial
+   Converter.
 
-If there is a device connected to the USB port, it can be checked from the
-Device Manager. When connecting via JTAG, in Device Manager, the device will
-appear in the Universal serial Bus controllers section as USB Serial Converter.
+   To attach the JTAG (or any USB device) from Windows to WSL we must do the
+   following:
 
-To attach the JTAG (or any USB device) from Windows to WSL we must do the
-following:
+   -  Open Command Prompt in Administrator mode and enter the command:
 
--  Open Command Prompt in Administrator mode and enter the command:
+   ::
 
-::
+      C:\Windows\system32> usbipd wsl list
+      BUSID  VID:PID    DEVICE                                                        STATE
+      2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
+      2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
+      2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
+      5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
+      7-1    413c:4503  USB Input Device                                              Not attached
+      7-2    413c:b080  Dell DA20 Adapter                                             Not attached
+      9-5    413c:b06e  USB Input Device                                              Not attached
+      10-1   0403:6014  USB Serial Converter                                          Not attached
+      10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
+      10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
+      10-5   413c:b06f  USB Input Device                                              Not attached
 
-   C:\Windows\system32> usbipd wsl list
-   BUSID  VID:PID    DEVICE                                                        STATE
-   2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
-   2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
-   2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
-   5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
-   7-1    413c:4503  USB Input Device                                              Not attached
-   7-2    413c:b080  Dell DA20 Adapter                                             Not attached
-   9-5    413c:b06e  USB Input Device                                              Not attached
-   10-1   0403:6014  USB Serial Converter                                          Not attached
-   10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
-   10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
-   10-5   413c:b06f  USB Input Device                                              Not attached
+   For this command, a list of all connected USB devices will be displayed in
+   Windows, a brief description of them and their status: If they are/are not
+   attached to the WSL instance. The JTAG appears in the cmd list but is not
+   attached to a WSL instance.
 
-For this command, a list of all connected USB devices will be displayed in
-Windows, a brief description of them and their status: If they are/are not
-attached to the WSL instance. The JTAG appears in the cmd list but is not
-attached to a WSL instance.
+   In WSL enter the following command:
 
-In WSL enter the following command:
+   ::
 
-::
+      :~$ lsusb
+      Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+      Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   :~$ lsusb
-   Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-   Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+   A list of all attached USB devices will be displayed here. At this moment we
+   will only see roots hubs.
 
-A list of all attached USB devices will be displayed here. At this moment we
-will only see roots hubs.
+   -  To attach a USB device to WSL enter the following command in Command
+      Prompt:
 
--  To attach a USB device to WSL enter the following command in Command Prompt:
+   ::
 
-::
+      > usbipd wsl attach -b <BUSID>
 
-   > usbipd wsl attach -b <BUSID>
+   BUSID represents the ID for the USB device for which we want to attach it in
+   WSL.
 
-BUSID represents the ID for the USB device for which we want to attach it in
-WSL.
+   ::
 
-::
+      > usbipd wsl attach -b 10-1
 
-   > usbipd wsl attach -b 10-1
+      C:\Windows\system32> usbipd wsl list
+      BUSID  VID:PID    DEVICE                                                        STATE
+      2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
+      2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
+      2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
+      5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
+      7-1    413c:4503  USB Input Device                                              Not attached
+      7-2    413c:b080  Dell DA20 Adapter                                             Not attached
+      9-5    413c:b06e  USB Input Device                                              Not attached
+      10-1   0403:6014  USB Serial Converter                                          Attached - Ubuntu
+      10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
+      10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
+      10-5   413c:b06f  USB Input Device                                              Not attached
 
-   C:\Windows\system32> usbipd wsl list
-   BUSID  VID:PID    DEVICE                                                        STATE
-   2-6    0c45:6732  Integrated Webcam, Integrated IR Webcam                       Not attached
-   2-9    27c6:63ac  Goodix MOC Fingerprint                                        Not attached
-   2-10   8087:0033  Intel(R) Wireless Bluetooth(R)                                Not attached
-   5-4    0bda:8153  Realtek USB GbE Family Controller #2                          Not attached
-   7-1    413c:4503  USB Input Device                                              Not attached
-   7-2    413c:b080  Dell DA20 Adapter                                             Not attached
-   9-5    413c:b06e  USB Input Device                                              Not attached
-   10-1   0403:6014  USB Serial Converter                                          Attached - Ubuntu
-   10-2   045e:0837  Microsoft Modern USB Headset, USB Input Device                Not attached
-   10-3   04b4:0008  USB Serial Device (COM17)                                     Not attached
-   10-5   413c:b06f  USB Input Device                                              Not attached
+   After running usbipd wsl list, it can be seen that the JTAG is now attached
+   in WSL.
 
-After running usbipd wsl list, it can be seen that the JTAG is now attached in
-WSL.
+   In WSL if you run: lsusb we have:
 
-In WSL if you run: **lsusb** we have:
+   ::
 
-::
+      Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+      Bus 001 Device 005: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
+      Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub\
 
-   Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-   Bus 001 Device 005: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
-   Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub\
+   If Device Manager checks the USB device attached in WSL, it will no longer
+   appear in the list of devices.
 
-If Device Manager checks the USB device attached in WSL, it will no longer
-appear in the list of devices.
+   -  If you want to return to the initial settings (the USB device must be
+      attached to Windows): The USB device must be disconnected and connected to
+      the computer or in Command Prompt, run the following command:
 
--  If you want to return to the initial settings (the USB device must be
-   attached to Windows): The USB device must be disconnected and connected to
-   the computer or in Command Prompt, run the following command:
+   ::
 
-::
+      > usbipd wsl detach -b <BUSID>
 
-   > usbipd wsl detach -b <BUSID>
+   For more information you can access the links: `USB_devices_to_WSL <https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/>`_ , `USB/IP_client_tools <https://github.com/dorssel/usbipd-win/wiki/WSL-support#usbip-client-tools>`_
 
-For more information you can access the links: `USB_devices_to_WSL <https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/>`_ , `USB/IP_client_tools <https://github.com/dorssel/usbipd-win/wiki/WSL-support#usbip-client-tools>`_ ++++
+.. collapsible:: Running in Windows with PowerShell
 
-++++ Running in Windows with PowerShell \|
+   .. important::
 
-.. important::
+      This guide is to run built no-OS projects "as native as possible" under
+      Windows.
 
-   This guide is to run built no-OS projects "as native as possible" under
-   Windows.
-
-.. collapsible:: STM32 (Click to expand)
+   XHIDDENSTART STM32 (Click to expand) XHIDDENSTARTSTOP
 
    -  Install `stm32cubeide <https://www.st.com/en/development-tools/stm32cubeide.html>`_.
    -  In PowerShell, set the variables below, correcting with the absolute paths
@@ -1877,572 +1877,544 @@ For more information you can access the links: `USB_devices_to_WSL <https://devb
 
         &"$openocd_bin" -s "$openocd_scripts" -f $openocd_cmd -c "program $openocd_elf verify reset exit"
 
-++++
+XHIDDENEND
 
-++++ Debugging with Vitis 2025.1 (Unified IDE) \|
+.. collapsible:: Debugging with Vitis 2025.1 (Unified IDE)
 
-.. important::
+   .. important::
 
-   Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified IDE
-   architecture. Vitis 2025.1 now features automatic debug configuration - no
-   manual setup required!
+      Starting with Vitis 2023.2, Xilinx transitioned from Eclipse to a Unified
+      IDE architecture. Vitis 2025.1 now features automatic debug configuration
+      - no manual setup required!
 
-**Key Changes in Vitis 2025.1:**
+   Key Changes in Vitis 2025.1:
 
--  Debug configuration **automatically generated** by build system
--  Bitstream and initialization files **auto-extracted** from XSA
--  Architecture-specific settings **auto-configured** (ZynqMP, Zynq, MicroBlaze, Versal)
--  Just click **FLOW → Debug** to start debugging!
+   -  Debug configuration automatically generated by build system
+   -  Bitstream and initialization files auto-extracted from XSA
+   -  Architecture-specific settings auto-configured (ZynqMP, Zynq, MicroBlaze, Versal)
+   -  Just click FLOW → Debug to start debugging!
 
-Prerequisites
--------------
+   Prerequisites
 
--  Vitis 2025.1 installed
--  Hardware design file (.xsa) in project directory
--  JTAG and UART cables connected to target board
+   -  Vitis 2025.1 installed
+   -  Hardware design file (.xsa) in project directory
+   -  JTAG and UART cables connected to target board
 
-WSL2 Users: One-Time xsdb Fix
------------------------------
+   WSL2 Users: One-Time xsdb Fix
 
-.. important::
+   .. important::
 
-   On WSL2, xsdb crashes with "Segmentation fault" due to rlwrap
-   incompatibility. Apply this fix once per machine.
+      On WSL2, xsdb crashes with "Segmentation fault" due to rlwrap
+      incompatibility. Apply this fix once per machine.
 
-**If you've already applied this fix previously, skip this step.**
+   If you've already applied this fix previously, skip this step.
 
-**Automated Installation (Recommended):**
+   Automated Installation (Recommended):
 
-::
+   ::
 
-   cd /path/to/no-OS
-   sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh
+      cd /path/to/no-OS
+      sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh
 
-**Manual Installation:**
+   Manual Installation:
 
-::
+   ::
 
-   cd /path/to/no-OS
+      cd /path/to/no-OS
 
-   # Backup original
-   sudo cp /xilinx/2025.1/Vitis/bin/xsdb /xilinx/2025.1/Vitis/bin/xsdb.original
+      # Backup original
+      sudo cp /xilinx/2025.1/Vitis/bin/xsdb /xilinx/2025.1/Vitis/bin/xsdb.original
 
-   # Install fixed version
-   sudo cp tools/scripts/platform/xilinx/xsdb-nowrap /xilinx/2025.1/Vitis/bin/xsdb
-   sudo chmod +x /xilinx/2025.1/Vitis/bin/xsdb
+      # Install fixed version
+      sudo cp tools/scripts/platform/xilinx/xsdb-nowrap /xilinx/2025.1/Vitis/bin/xsdb
+      sudo chmod +x /xilinx/2025.1/Vitis/bin/xsdb
 
-**Note:** This is a system-wide fix, only needs to be done once per machine.
+   Note: This is a system-wide fix, only needs to be done once per machine.
 
-Per-Project Setup (First Time Only)
------------------------------------
+   Per-Project Setup (First Time Only)
 
-Step 1: Build Project
-~~~~~~~~~~~~~~~~~~~~~
+   **Step 1: Build Project**
 
-.. important::
+   .. important::
 
-   For optimal debugging, always build with ``DEBUG=1``. This enables proper debug symbols and correct source path mapping.
+      For optimal debugging, always build with ``DEBUG=1``. This enables proper debug symbols and correct source path mapping.
 
-::
+   ::
 
-   source /xilinx/2025.1/Vitis/settings64.sh
-   cd /path/to/no-OS/projects/your_project
-   make clean
-   make DEBUG=1
+      source /xilinx/2025.1/Vitis/settings64.sh
+      cd /path/to/no-OS/projects/your_project
+      make clean
+      make DEBUG=1
 
-**What happens:**
+   What happens:
 
--  Build runs with debug optimization (``‑O0``, no optimization)
--  Full debug symbols added (``‑g3``)
--  Source path mapping configured (``‑fdebug‑prefix‑map``)
--  First build automatically runs ``make project`` (generates BSP and FSBL)
--  Creates ``build/your_project.elf`` with debug symbols
+   -  Build runs with debug optimization (``‑O0``, no optimization)
+   -  Full debug symbols added (``‑g3``)
+   -  Source path mapping configured (``‑fdebug‑prefix‑map``)
+   -  First build automatically runs ``make project`` (generates BSP and FSBL)
+   -  Creates ``build/your_project.elf`` with debug symbols
 
-.. tip::
+   .. tip::
 
-   Without DEBUG=1, you'll experience:
+      Without DEBUG=1, you'll experience:
 
-   
-   -  Code stepping doesn't work properly (optimized code)
-   -  Variables optimized out and not visible
-   -  Breakpoints may not hit expected lines
-   
+      -  Code stepping doesn't work properly (optimized code)
+      -  Variables optimized out and not visible
+      -  Breakpoints may not hit expected lines
 
-Step 2: Open Vitis IDE
-~~~~~~~~~~~~~~~~~~~~~~
+   **Step 2: Open Vitis IDE**
 
-::
+   ::
 
-   make sdkopen
+      make sdkopen
 
-**First time only:** When Vitis opens, you'll see "Update Workspace" dialog:
+   First time only: When Vitis opens, you'll see "Update Workspace" dialog:
 
--  Message: "Vitis IDE cannot recognize the workspace version. Click 'Update' to initialize the workspace metadata."
--  Click **"Update"** button
--  This initializes the workspace (one-time setup)
+   -  Message: "Vitis IDE cannot recognize the workspace version. Click 'Update' to initialize the workspace metadata."
+   -  Click "Update" button
+   -  This initializes the workspace (one-time setup)
 
-**What happens automatically:**
+   What happens automatically:
 
--  Vitis opens at project root
--  Workspace metadata initialized
--  ``_ide/`` directory created
--  **Bitstream extracted** from XSA to ``_ide/system_top/system_top.bit``
--  **Initialization script extracted** (``psu_init.tcl`` or ``ps_init.tcl``)
--  **Debug configuration generated** (``_ide/launch.json``) with:
+   -  Vitis opens at project root
+   -  Workspace metadata initialized
+   -  ``_ide/`` directory created
+   -  Bitstream extracted from XSA to ``_ide/system_top/system_top.bit``
+   -  Initialization script extracted (``psu_init.tcl`` or ``ps_init.tcl``)
+   -  Debug configuration generated (``_ide/launch.json``) with:
 
-   -  Correct architecture settings (ZynqMP/Zynq/MicroBlaze/Versal)
-   -  Hardware platform path (XSA file)
-   -  FSBL configuration (if applicable)
-   -  Application ELF path
-   -  Target processor
+      -  Correct architecture settings (ZynqMP/Zynq/MicroBlaze/Versal)
+      -  Hardware platform path (XSA file)
+      -  FSBL configuration (if applicable)
+      -  Application ELF path
+      -  Target processor
 
-.. note::
+   .. note::
 
-   No manual configuration needed! The debug configuration is ready to use
-   immediately.
+      No manual configuration needed! The debug configuration is ready to use
+      immediately.
 
-Step 3: Verify Configuration (Optional)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   **Step 3: Verify Configuration (Optional)**
 
-If you want to verify or customize the auto-generated configuration:
+   If you want to verify or customize the auto-generated configuration:
 
--  In Vitis Explorer, expand ``_ide`` folder
--  Open ``launch.json`` to view the configuration
--  Configuration named ``<project_name>_app_hw_1`` is ready to use
+   -  In Vitis Explorer, expand ``_ide`` folder
+   -  Open ``launch.json`` to view the configuration
+   -  Configuration named ``<project_name>_app_hw_1`` is ready to use
 
-The configuration is automatically regenerated each time you run ``make sdkopen``.
+   The configuration is automatically regenerated each time you run ``make sdkopen``.
 
-Debugging Your Project
-----------------------
+   Debugging Your Project
 
-Hardware Setup
-~~~~~~~~~~~~~~
+   **Hardware Setup**
 
--  Connect JTAG cable to your board
--  Connect UART cable (for console output)
--  Power on the board
+   -  Connect JTAG cable to your board
+   -  Connect UART cable (for console output)
+   -  Power on the board
 
-Start Debugging
-~~~~~~~~~~~~~~~
+   **Start Debugging**
 
-**In Vitis IDE:**
+   In Vitis IDE:
 
--  Make sure you've built with ``make DEBUG=1``
--  Click **FLOW** panel (left side) → Click **"Debug"**
--  Debug session starts immediately!
+   -  Make sure you've built with ``make DEBUG=1``
+   -  Click FLOW panel (left side) → Click "Debug"
+   -  Debug session starts immediately!
 
-.. warning::
+   .. warning::
 
-   The Start Debugging (F5) button in the Debug panel does not currently work
-   for Vitis 2025.1. Always use FLOW → Debug button.
+      The Start Debugging (F5) button in the Debug panel does not currently work
+      for Vitis 2025.1. Always use FLOW → Debug button.
 
-**What happens:**
+   What happens:
 
--  Vitis connects to board via JTAG
--  Programs FPGA with bitstream
--  Runs FSBL to initialize processor (ZynqMP/Zynq only)
--  Loads your application ELF
--  Stops at entry point - ready to debug!
+   -  Vitis connects to board via JTAG
+   -  Programs FPGA with bitstream
+   -  Runs FSBL to initialize processor (ZynqMP/Zynq only)
+   -  Loads your application ELF
+   -  Stops at entry point - ready to debug!
 
-**Debug Features:**
+   Debug Features:
 
--  Set breakpoints (click left margin in code)
--  Step through code (F5=Step Into, F6=Step Over, F7=Step Return, F8=Resume)
--  Inspect variables, registers, call stack
--  Watch expressions
--  View memory and disassembly
+   -  Set breakpoints (click left margin in code)
+   -  Step through code (F5=Step Into, F6=Step Over, F7=Step Return, F8=Resume)
+   -  Inspect variables, registers, call stack
+   -  Watch expressions
+   -  View memory and disassembly
 
-Daily Development Workflow
---------------------------
+   Daily Development Workflow
 
-After initial setup:
+   After initial setup:
 
-::
+   ::
 
-   # 1. Edit code
+      # 1. Edit code
 
-   # 2. Build with debug symbols
-   make clean
-   make DEBUG=1
+      # 2. Build with debug symbols
+      make clean
+      make DEBUG=1
 
-   # 3. Open Vitis and debug
-   make sdkopen
-   # Click FLOW → Debug → Debugging starts immediately!
+      # 3. Open Vitis and debug
+      make sdkopen
+      # Click FLOW → Debug → Debugging starts immediately!
 
-.. tip::
+   .. tip::
 
-   For production builds (no debugging), use ``make`` without ``DEBUG=1`` to get optimized code.
+      For production builds (no debugging), use ``make`` without ``DEBUG=1`` to get optimized code.
 
-Architecture-Specific Notes
----------------------------
+   Architecture-Specific Notes
 
-The build system automatically detects your hardware architecture and configures
-debug settings appropriately.
+   The build system automatically detects your hardware architecture and
+   configures debug settings appropriately.
 
-**ZynqMP (Cortex-A53/R5):**
+   ZynqMP (Cortex-A53/R5):
 
--  Processor: ``psu_cortexa53_0`` or ``psu_cortexr5_0``
--  Debug Type: ``baremetal-zu``
--  FSBL Required: Yes (auto-configured)
--  Init Script: ``psu_init.tcl``
+   -  Processor: ``psu_cortexa53_0`` or ``psu_cortexr5_0``
+   -  Debug Type: ``baremetal-zu``
+   -  FSBL Required: Yes (auto-configured)
+   -  Init Script: ``psu_init.tcl``
 
-**Zynq-7000 (Cortex-A9):**
+   Zynq-7000 (Cortex-A9):
 
--  Processor: ``ps7_cortexa9_0``
--  Debug Type: ``baremetal-zynq``
--  FSBL Required: Yes (auto-configured)
--  Init Script: ``ps_init.tcl``
+   -  Processor: ``ps7_cortexa9_0``
+   -  Debug Type: ``baremetal-zynq``
+   -  FSBL Required: Yes (auto-configured)
+   -  Init Script: ``ps_init.tcl``
 
-**MicroBlaze:**
+   MicroBlaze:
 
--  Processor: ``microblaze_0``
--  Debug Type: ``baremetal-mb``
--  FSBL Required: No (auto-configured)
+   -  Processor: ``microblaze_0``
+   -  Debug Type: ``baremetal-mb``
+   -  FSBL Required: No (auto-configured)
 
-**Versal (Cortex-A72):**
+   Versal (Cortex-A72):
 
--  Processor: ``psv_cortexa72_0``
--  Debug Type: ``baremetal-versal``
--  Uses PLM (Platform Loader Manager) instead of FSBL (auto-configured)
+   -  Processor: ``psv_cortexa72_0``
+   -  Debug Type: ``baremetal-versal``
+   -  Uses PLM (Platform Loader Manager) instead of FSBL (auto-configured)
 
-Troubleshooting
----------------
+   Troubleshooting
 
-**"Segmentation fault" when debugging:**
+   "Segmentation fault" when debugging:
 
--  Solution: Install xsdb WSL2 fix (see above)
+   -  Solution: Install xsdb WSL2 fix (see above)
 
-**Debug doesn't start / "undefined" connection errors:**
+   Debug doesn't start / "undefined" connection errors:
 
--  Make sure you clicked "Update" on first workspace open
--  Verify ``_ide/launch.json`` exists
--  Try ``make sdkopen`` again to regenerate configuration
+   -  Make sure you clicked "Update" on first workspace open
+   -  Verify ``_ide/launch.json`` exists
+   -  Try ``make sdkopen`` again to regenerate configuration
 
-**Stepping doesn't work / variables optimized out:**
+   Stepping doesn't work / variables optimized out:
 
--  Solution: Rebuild with ``make clean && make DEBUG=1``
+   -  Solution: Rebuild with ``make clean && make DEBUG=1``
 
-**For complete documentation, see:** :git-no-OS:`Xilinx Vitis Debugging Guide <doc/sphinx/source/build_guides/build_xilinx_vitis2025.rst>`
+   For complete documentation, see: :git-no-OS:`Xilinx Vitis Debugging Guide <doc/sphinx/source/build_guides/build_xilinx_vitis2025.rst>`
 
-++++
+.. collapsible:: Debugging with Vitis 2023.2-2024.x (Classic Eclipse IDE)
 
-++++ Debugging with Vitis 2023.2-2024.x (Classic Eclipse IDE) \|
+   .. important::
 
-.. important::
+      The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the Classic Eclipse IDE (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
 
-   The ``make sdkopen`` command automatically detects Vitis 2023.2-2024.x and launches the Classic Eclipse IDE (using the ``-classic`` flag) instead of the Unified IDE. This provides better stability and complete debug configuration support for makefile-based projects.
+   .. warning::
 
-.. warning::
+      Manual debug configuration required for Classic Eclipse mode. For
+      automatic configuration, upgrade to Vitis 2025.1+.
 
-   Manual debug configuration required for Classic Eclipse mode. For automatic
-   configuration, upgrade to Vitis 2025.1+.
+   Why Classic Mode for Vitis 2023.2-2024.x?
 
-**Why Classic Mode for Vitis 2023.2-2024.x?**
+   -  Vitis 2023.2 introduced the Unified IDE, but the User Managed Mode (required for makefile-based projects) has incomplete debug configuration support
+   -  The classic Eclipse mode provides a mature, fully-functional debugging
+      experience
 
--  Vitis 2023.2 introduced the Unified IDE, but the User Managed Mode (required for makefile-based projects) has incomplete debug configuration support
--  The classic Eclipse mode provides a mature, fully-functional debugging
-   experience
+   Prerequisites
 
-Prerequisites
--------------
+   -  Vitis 2023.2, 2023.2, 2024.1, or 2024.2 installed
+   -  Hardware design file (.xsa) in project directory
+   -  JTAG and UART cables connected to target board
 
--  Vitis 2023.2, 2023.2, 2024.1, or 2024.2 installed
--  Hardware design file (.xsa) in project directory
--  JTAG and UART cables connected to target board
+   WSL2 Users: One-Time xsdb Fix
 
-WSL2 Users: One-Time xsdb Fix
------------------------------
+   .. important::
 
-.. important::
+      On WSL2, xsdb crashes with "Segmentation fault" due to rlwrap
+      incompatibility. Apply this fix once per machine.
 
-   On WSL2, xsdb crashes with "Segmentation fault" due to rlwrap
-   incompatibility. Apply this fix once per machine.
+   If you've already applied this fix previously, skip this step.
 
-**If you've already applied this fix previously, skip this step.**
+   Automated Installation (Recommended):
 
-**Automated Installation (Recommended):**
+   For default Vitis installation (``/xilinx/<version>/Vitis``):
 
-For default Vitis installation (``/xilinx/<version>/Vitis``):
+   ::
 
-::
+      cd /path/to/no-OS
+      sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh
 
-   cd /path/to/no-OS
-   sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh
+   For custom Vitis installation location:
 
-For custom Vitis installation location:
+   ::
 
-::
+      cd /path/to/no-OS
+      sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh /custom/path/to/Vitis/bin
 
-   cd /path/to/no-OS
-   sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh /custom/path/to/Vitis/bin
+   Examples:
 
-**Examples:**
+   ::
 
-::
+      # Vitis 2024.2 at default location
+      sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh /xilinx/2024.2/Vitis/bin
 
-   # Vitis 2024.2 at default location
-   sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh /xilinx/2024.2/Vitis/bin
+      # Vitis 2023.2 at custom location
+      sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh /opt/Xilinx/Vitis/2023.2/bin
 
-   # Vitis 2023.2 at custom location
-   sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh /opt/Xilinx/Vitis/2023.2/bin
+      # Vitis on Windows drive (WSL)
+      sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh /mnt/c/Xilinx/Vitis/2024.1/bin
 
-   # Vitis on Windows drive (WSL)
-   sudo tools/scripts/platform/xilinx/install_xsdb_wsl2_fix.sh /mnt/c/Xilinx/Vitis/2024.1/bin
+   Note: This is a system-wide fix, only needs to be done once per machine.
 
-**Note:** This is a system-wide fix, only needs to be done once per machine.
+   Per-Project Setup (First Time Only)
 
-Per-Project Setup (First Time Only)
------------------------------------
+   **Step 1: Build Project**
 
-Step 1: Build Project
-~~~~~~~~~~~~~~~~~~~~~
+   .. important::
 
-.. important::
+      For optimal debugging, always build with ``DEBUG=1``. This enables proper debug symbols and correct source path mapping.
 
-   For optimal debugging, always build with ``DEBUG=1``. This enables proper debug symbols and correct source path mapping.
+   ::
 
-::
+      source /path/to/xilinx/Vitis/2023.2/settings64.sh
+      cd /path/to/no-OS/projects/your_project
+      make clean
+      make DEBUG=1
 
-   source /path/to/xilinx/Vitis/2023.2/settings64.sh
-   cd /path/to/no-OS/projects/your_project
-   make clean
-   make DEBUG=1
+   What happens:
 
-**What happens:**
+   -  Build runs with debug optimization (``‑O0``, no optimization)
+   -  Full debug symbols added (``‑g3``)
+   -  Source path mapping configured
+   -  First build automatically runs ``make project`` (generates BSP and FSBL)
+   -  Creates ``build/your_project.elf`` with debug symbols
 
--  Build runs with debug optimization (``‑O0``, no optimization)
--  Full debug symbols added (``‑g3``)
--  Source path mapping configured
--  First build automatically runs ``make project`` (generates BSP and FSBL)
--  Creates ``build/your_project.elf`` with debug symbols
+   **Step 2: Open Vitis Classic Eclipse IDE**
 
-Step 2: Open Vitis Classic Eclipse IDE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   ::
 
-::
+      make sdkopen
 
-   make sdkopen
+   What happens:
 
-**What happens:**
+   -  The command automatically detects Vitis 2023.2-2024.x
+   -  Launches the Classic Eclipse IDE (not the Unified IDE)
+   -  Workspace opens at ``build/`` directory
+   -  Standard Eclipse workspace with ``.metadata/`` directory
 
--  The command automatically detects Vitis 2023.2-2024.x
--  Launches the **Classic Eclipse IDE** (not the Unified IDE)
--  Workspace opens at ``build/`` directory
--  Standard Eclipse workspace with ``.metadata/`` directory
+   **Step 3: Create and Configure Debug (Manual)**
 
-Step 3: Create and Configure Debug (Manual)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   .. warning::
 
-.. warning::
+      Classic Eclipse requires manual debug configuration. This is a one-time
+      setup per project.
 
-   Classic Eclipse requires manual debug configuration. This is a one-time setup
-   per project.
+   A. Open Debug Configurations Dialog:
 
-**A. Open Debug Configurations Dialog:**
+   In the Vitis IDE menu bar:
 
-In the Vitis IDE menu bar:
+   -  Go to Run → Debug Configurations...
+   -  Or click the Debug toolbar button dropdown → Debug Configurations...
 
--  Go to **Run** → **Debug Configurations...**
--  Or click the **Debug** toolbar button dropdown → **Debug Configurations...**
+   The "Debug Configurations" dialog will open.
 
-The "Debug Configurations" dialog will open.
+   B. Create New Configuration:
 
-**B. Create New Configuration:**
+   -  In the left panel, expand "Single Application Debug"
+   -  Click the "New Configuration" button (first icon in the toolbar - looks like a document with a star/plus)
+   -  A new configuration will be created (e.g., ``Debugger_-Default``)
+   -  You can rename it if desired (e.g., ``adrv904x-debug``)
 
--  In the left panel, expand **"Single Application Debug"**
--  Click the **"New Configuration"** button (first icon in the toolbar - looks like a document with a star/plus)
--  A new configuration will be created (e.g., ``Debugger_-Default``)
--  You can rename it if desired (e.g., ``adrv904x-debug``)
+   C. Configure Main Tab:
 
-**C. Configure Main Tab:**
+   The "Main" tab should be selected by default.
 
-The **"Main"** tab should be selected by default.
+   Debug Type:
 
-**Debug Type:**
+   -  Select "Standalone Application Debug" from the dropdown
+   -  (Not "Attach to running target" - we want to reset and program the system)
 
--  Select **"Standalone Application Debug"** from the dropdown
--  (Not "Attach to running target" - we want to reset and program the system)
+   Connection:
 
-**Connection:**
+   -  Leave as "Local" (debugging via local JTAG connection)
 
--  Leave as **"Local"** (debugging via local JTAG connection)
+   D. Configure Target Setup Tab:
 
-**D. Configure Target Setup Tab:**
+   Click the "Target Setup" tab at the top.
 
-Click the **"Target Setup"** tab at the top.
+   Hardware Platform:
 
-**Hardware Platform:**
+   -  Should auto-populate with the path to your ``.xsa`` file
+   -  If empty, click "Browse..." and select ``system_top.xsa`` from your project root
 
--  Should auto-populate with the path to your ``.xsa`` file
--  If empty, click **"Browse..."** and select ``system_top.xsa`` from your project root
+   Bitstream File:
 
-**Bitstream File:**
+   -  Auto-populated from the XSA file
+   -  Path will be similar to: ``.../projects/your_project/system_top.bit``
 
--  Auto-populated from the XSA file
--  Path will be similar to: ``.../projects/your_project/system_top.bit``
+   FSBL Configuration (ZynqMP/Zynq-7000 only):
 
-**FSBL Configuration** (ZynqMP/Zynq-7000 only):
+   Check these boxes:
 
-Check these boxes:
+   -  ☑ Use FSBL flow for initialization
+   -  ☑ Reset entire system
+   -  ☑ Program FPGA
+   -  ☑ Initialize using FSBL
 
--  ☑ **Use FSBL flow for initialization**
--  ☑ **Reset entire system**
--  ☑ **Program FPGA**
--  ☑ **Initialize using FSBL**
+   FSBL File:
 
-**FSBL File:**
+   Browse to or enter the FSBL path:
 
-Browse to or enter the FSBL path:
+   ::
 
-::
+      build/tmp/output/hw0/export/hw0/sw/hw0/boot/fsbl.elf
 
-   build/tmp/output/hw0/export/hw0/sw/hw0/boot/fsbl.elf
+   .. note::
 
-.. note::
+      For MicroBlaze: Uncheck "Use FSBL flow for initialization" - MicroBlaze
+      doesn't use FSBL
 
-   For MicroBlaze: Uncheck "Use FSBL flow for initialization" - MicroBlaze
-   doesn't use FSBL
+   Summary Panel:
 
-**Summary Panel:**
+   After configuration, the Summary panel on the right shows the debug sequence:
 
-After configuration, the Summary panel on the right shows the debug sequence:
+   -  Reset system and clear FPGA
+   -  Program FPGA with bitstream
+   -  Initialize PS using FSBL
+   -  Load application and suspend processors
 
--  Reset system and clear FPGA
--  Program FPGA with bitstream
--  Initialize PS using FSBL
--  Load application and suspend processors
+   E. Configure Application Tab:
 
-**E. Configure Application Tab:**
+   Click the "Application" tab at the top.
 
-Click the **"Application"** tab at the top.
+   Processor Selection:
 
-**Processor Selection:**
+   The IDE shows a table with available processors. Check the box next to your
+   target processor:
 
-The IDE shows a table with available processors. Check the box next to your
-target processor:
+   -  ZynqMP: ``psu_cortexa53_0`` (or ``psu_cortexr5_0`` for R5)
+   -  Zynq-7000: ``ps7_cortexa9_0``
+   -  MicroBlaze: ``microblaze_0``
+   -  Versal: ``psv_cortexa72_0``
 
--  **ZynqMP**: ``psu_cortexa53_0`` (or ``psu_cortexr5_0`` for R5)
--  **Zynq-7000**: ``ps7_cortexa9_0``
--  **MicroBlaze**: ``microblaze_0``
--  **Versal**: ``psv_cortexa72_0``
+   Project and Application:
 
-**Project and Application:**
+   The IDE typically auto-populates these fields:
 
-The IDE typically auto-populates these fields:
+   -  Project: Should show your project name (e.g., ``adrv904x``)
+   -  Application: Should point to your ELF file: ``build/your_project.elf``
 
--  **Project**: Should show your project name (e.g., ``adrv904x``)
--  **Application**: Should point to your ELF file: ``build/your_project.elf``
+   .. tip::
 
-.. tip::
+      If the Application field is empty, click "Search..." and browse to ``build/your_project.elf``\
 
-   If the Application field is empty, click "Search..." and browse to ``build/your_project.elf``\
+   Stop at 'main':
 
-**Stop at 'main':**
+   -  Check this box to have the debugger stop at the ``main()`` function (recommended)
 
--  Check this box to have the debugger stop at the ``main()`` function (recommended)
+   F. Save and Apply:
 
-**F. Save and Apply:**
+   -  Click "Apply" to save the configuration
+   -  Click "Debug" to start debugging immediately, or "Close" to save for later
 
--  Click **"Apply"** to save the configuration
--  Click **"Debug"** to start debugging immediately, or **"Close"** to save for later
+   The configuration is now saved and ready to use!
 
-The configuration is now saved and ready to use!
+   Debugging Your Project
 
-Debugging Your Project
-----------------------
+   **Hardware Setup**
 
-Hardware Setup
-~~~~~~~~~~~~~~
+   -  Connect JTAG cable to your board
+   -  Connect UART cable (for console output)
+   -  Power on the board
 
--  Connect JTAG cable to your board
--  Connect UART cable (for console output)
--  Power on the board
+   **Start Debugging**
 
-Start Debugging
-~~~~~~~~~~~~~~~
+   In Vitis Classic Eclipse IDE:
 
-**In Vitis Classic Eclipse IDE:**
+   -  Make sure you've built with ``make DEBUG=1``
+   -  Go to Run → Debug Configurations...
+   -  Select your debug configuration (e.g., "adrv904x-debug")
+   -  Click "Debug" button
+   -  The Debug perspective will open automatically
 
--  Make sure you've built with ``make DEBUG=1``
--  Go to **Run** → **Debug Configurations...**
--  Select your debug configuration (e.g., "adrv904x-debug")
--  Click **"Debug"** button
--  The Debug perspective will open automatically
+   What happens:
 
-**What happens:**
+   -  Vitis connects to board via JTAG
+   -  Programs FPGA with bitstream
+   -  Runs FSBL to initialize processor (ZynqMP/Zynq only)
+   -  Loads your application ELF
+   -  Stops at entry point (usually ``main()``) - ready to debug!
 
--  Vitis connects to board via JTAG
--  Programs FPGA with bitstream
--  Runs FSBL to initialize processor (ZynqMP/Zynq only)
--  Loads your application ELF
--  Stops at entry point (usually ``main()``) - ready to debug!
+   Debug Features:
 
-**Debug Features:**
+   -  Set breakpoints (click left margin in code)
+   -  Step through code (F5=Step Into, F6=Step Over, F7=Step Return, F8=Resume)
+   -  Inspect variables, registers, call stack
+   -  Watch expressions
+   -  View memory and disassembly
 
--  Set breakpoints (click left margin in code)
--  Step through code (F5=Step Into, F6=Step Over, F7=Step Return, F8=Resume)
--  Inspect variables, registers, call stack
--  Watch expressions
--  View memory and disassembly
+   Daily Development Workflow
 
-Daily Development Workflow
---------------------------
+   After initial setup:
 
-After initial setup:
+   ::
 
-::
+      # 1. Edit code
 
-   # 1. Edit code
+      # 2. Build with debug symbols
+      make clean
+      make DEBUG=1
 
-   # 2. Build with debug symbols
-   make clean
-   make DEBUG=1
+      # 3. Debug
+      make sdkopen
+      # In Vitis Eclipse: Run → Debug Configurations → Select your config → Debug
 
-   # 3. Debug
-   make sdkopen
-   # In Vitis Eclipse: Run → Debug Configurations → Select your config → Debug
+   Architecture-Specific Notes
 
-Architecture-Specific Notes
----------------------------
+   ZynqMP (Cortex-A53/R5):
 
-**ZynqMP (Cortex-A53/R5):**
+   -  Processor: ``psu_cortexa53_0`` or ``psu_cortexr5_0``
+   -  FSBL Required: Yes
+   -  FSBL Path: ``build/tmp/output/hw0/export/hw0/sw/hw0/boot/fsbl.elf``
 
--  Processor: ``psu_cortexa53_0`` or ``psu_cortexr5_0``
--  FSBL Required: Yes
--  FSBL Path: ``build/tmp/output/hw0/export/hw0/sw/hw0/boot/fsbl.elf``
+   Zynq-7000 (Cortex-A9):
 
-**Zynq-7000 (Cortex-A9):**
+   -  Processor: ``ps7_cortexa9_0``
+   -  FSBL Required: Yes
+   -  FSBL Path: Same as ZynqMP
 
--  Processor: ``ps7_cortexa9_0``
--  FSBL Required: Yes
--  FSBL Path: Same as ZynqMP
+   MicroBlaze:
 
-**MicroBlaze:**
+   -  Processor: ``microblaze_0``
+   -  FSBL Required: No (soft processor)
+   -  In debug config: Uncheck "Use FSBL flow for initialization"
 
--  Processor: ``microblaze_0``
--  FSBL Required: No (soft processor)
--  In debug config: Uncheck "Use FSBL flow for initialization"
+   Versal (Cortex-A72):
 
-**Versal (Cortex-A72):**
+   -  Processor: ``psv_cortexa72_0``
+   -  Uses PLM (Platform Loader Manager) instead of FSBL
 
--  Processor: ``psv_cortexa72_0``
--  Uses PLM (Platform Loader Manager) instead of FSBL
+   Troubleshooting
 
-Troubleshooting
----------------
+   "Segmentation fault" when debugging:
 
-**"Segmentation fault" when debugging:**
+   -  Solution: Install xsdb WSL2 fix (see above)
 
--  Solution: Install xsdb WSL2 fix (see above)
+   Stepping doesn't work / variables optimized out:
 
-**Stepping doesn't work / variables optimized out:**
+   -  Solution: Rebuild with ``make clean && make DEBUG=1``
 
--  Solution: Rebuild with ``make clean && make DEBUG=1``
+   IDE doesn't open or wrong IDE opens:
 
-**IDE doesn't open or wrong IDE opens:**
+   -  Verify you're using Vitis 2023.2-2024.x
+   -  The Classic Eclipse IDE should open (not the Unified IDE)
+   -  If Unified IDE opens, the version detection may be incorrect
 
--  Verify you're using Vitis 2023.2-2024.x
--  The Classic Eclipse IDE should open (not the Unified IDE)
--  If Unified IDE opens, the version detection may be incorrect
-
-**For complete documentation, see:** :git-no-OS:`Xilinx Vitis Debugging Guide <doc/sphinx/source/build_guides/build_xilinx_vitis2025.rst>`
+   For complete documentation, see: :git-no-OS:`Xilinx Vitis Debugging Guide <doc/sphinx/source/build_guides/build_xilinx_vitis2025.rst>`

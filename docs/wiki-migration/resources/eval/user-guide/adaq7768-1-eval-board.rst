@@ -196,59 +196,56 @@ Warning
    to the PC, install the ACE software and SDP-H1 driver first before connecting
    the EV-ADAQ7768-1FMC1Z and SDP-H1 board to the USB port of the PC.
 
-++++ Installing the ACE Software \|
+.. collapsible:: Installing the ACE Software
 
-Installing the ACE Software
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   **Installing the ACE Software**
 
-To install the ACE software, take the following steps:
+   To install the ACE software, take the following steps:
 
--  Download the ACE software to a Windows-based PC.
--  Double-click the **ACEInstall.exe** file to begin the installation. By default, the software is saved to the following location: **C:\\Program Files (x86) \\Analog Devices\\ACE**.
--  A dialog box appears asking for permission to allow the program to make changes to the PC. Click **Yes** to begin the installation process.
--  Click **Next >** to continue the installation, as shown in Figure 5.
+   -  Download the ACE software to a Windows-based PC.
+   -  Double-click the **ACEInstall.exe** file to begin the installation. By default, the software is saved to the following location: **C:\\Program Files (x86) \\Analog Devices\\ACE**.
+   -  A dialog box appears asking for permission to allow the program to make changes to the PC. Click **Yes** to begin the installation process.
+   -  Click **Next >** to continue the installation, as shown in Figure 5.
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   |image3|\ *Figure 5. Evaluation Software Install Confirmation*
+      |image3|\ *Figure 5. Evaluation Software Install Confirmation*
 
--  Read the software license agreement and click I Agree (see Figure 6).
+   -  Read the software license agreement and click I Agree (see Figure 6).
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   |image4|\ *Figure 6. License Agreement*
+      |image4|\ *Figure 6. License Agreement*
 
--  Choose an installation location and click **Next** (see Figure 7).
+   -  Choose an installation location and click **Next** (see Figure 7).
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   |image5|\ *Figure 7. Choose Install Location*
+      |image5|\ *Figure 7. Choose Install Location*
 
--  Select the **Pre-Requisites** checkbox to include the installation of the SDP-H1 driver. Click **Install** (see Figure 8).
+   -  Select the **Pre-Requisites** checkbox to include the installation of the SDP-H1 driver. Click **Install** (see Figure 8).
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   |image6|\ *Figure 8. Choose Components*
+      |image6|\ *Figure 8. Choose Components*
 
--  The **Windows Security** window appears. Click **Install** (see Figure 9). The installation is in progress. No action is required (see Figure 10).
+   -  The **Windows Security** window appears. Click **Install** (see Figure 9). The installation is in progress. No action is required (see Figure 10).
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   |image7|\ *Figure 9. Windows Security Window*
+      |image7|\ *Figure 9. Windows Security Window*
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   |image8|\ *Figure 10. Installation in Progress*
+      |image8|\ *Figure 10. Installation in Progress*
 
--  The installation is complete (see Figure 11). Click **Next >** and then click **Finish** to complete.
+   -  The installation is complete (see Figure 11). Click **Next >** and then click **Finish** to complete.
 
-.. container:: centeralign
+   .. container:: centeralign
 
-   |image9|\ *Figure 11. Installation Complete*
+      |image9|\ *Figure 11. Installation Complete*
 
-++++ |image10|\ |image11|\ |image12|\
-
-|image13|
+ |image10|\ |image11|\ |image12|\ |image13|
 
 Evaluation Board Setup Procedures
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

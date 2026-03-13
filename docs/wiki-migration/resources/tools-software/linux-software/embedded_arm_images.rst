@@ -1324,8 +1324,7 @@ For example a custom board has a different reference clock.
    :align: center
    :width: 800
 
-#. Mount the FAT32 Boot partition by clicking on the 537MB Volume Icon on the
-desktop
+#. Mount the FAT32 Boot partition by clicking on the 537MB Volume Icon on the desktop
 #. Open a shell by clicking ion the Terminal Icon on the desktop (or CTRL+ALT+t)
 #. Now convert the devictree.dtb into a dts file
 #. Edit the file (mousepad or vi)

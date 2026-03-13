@@ -155,8 +155,6 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 ARM CMSIS
 
 ARM CMSIS was obtained from https://github.com/ARM and is subject to the CMSIS_END_USER_LICENCE_AGREEMENT reproduced below.
@@ -410,8 +408,6 @@ Header files; (c) ./CMSIS/Lib - DSP Library build for various toolchains; (d)
 ./Device - Template files and implementations for Cortex-M class processors.
 
 All of the above components (a– e) are licensed to you under the terms of the BSD licence, which is incorporated within or alongside the above components. (f) ./CMSIS/Driver – CMSIS-Driver header files (g) ./CMSIS/Pack – Example Device Family Pack The above components (f – g) are licensed to you under the terms of the zlib licence, which is incorporated within or alongside the above components.
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Math.NET numerics DLL
 

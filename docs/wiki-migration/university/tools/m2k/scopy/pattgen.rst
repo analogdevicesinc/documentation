@@ -60,32 +60,34 @@ Use cases
 Enable & run one channel
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. collapsible:: Click to expand XHIDDENSTARTSTOP 1. Enable channel 0 - select it and enable the clock pattern
+.. collapsible:: Click to expand
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_4.png
-   :align: center
+   1. Enable channel 0 - select it and enable the clock pattern
 
-2. Start pattern generator
+   .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_4.png
+      :align: center
 
-3. Connect channel 0 to the oscilloscope
+   2. Start pattern generator
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pg-uc/2017-06-09_16_45_45-ubuntu_running_-_oracle_vm_virtualbox_2.png
+   3. Connect channel 0 to the oscilloscope
 
-4. Stop pattern generator
+   .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pg-uc/2017-06-09_16_45_45-ubuntu_running_-_oracle_vm_virtualbox_2.png
 
-5. Modify parameters - set frequency to 1MHz, 70% duty cycle
+   4. Stop pattern generator
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_5.png
-   :align: center
+   5. Modify parameters - set frequency to 1MHz, 70% duty cycle
 
-6. Run pattern generator
+   .. image:: https://wiki.analog.com/_media/university/tools/m2k/scopy/pattern_generator_new_5.png
+      :align: center
 
-|image6| XHIDDENEND
+   6. Run pattern generator
+
+   |image6|
 
 Create a 4 channel binary counter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-XHIDDENSTART Click to expand
+.. collapsible:: Click to expand
 
    3.1 Select multiple channels (Selecting a channel is done by double clicking
    the handle of the channel on the left side of the plot). Enable multiple
