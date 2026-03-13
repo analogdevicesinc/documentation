@@ -44,6 +44,3 @@ Applications
 -  DOCSIS 3.0 CMTS and HFC networks
 -  Multiple input/multiple output (MIMO) radios
 -  Automated test equipment
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-trxboost1-ebz#none#./
-   :alt: User Guide#QuickStart

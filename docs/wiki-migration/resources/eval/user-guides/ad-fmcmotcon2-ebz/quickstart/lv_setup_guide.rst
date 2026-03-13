@@ -48,6 +48,3 @@ Getting Started
 
 +---+
 +---+
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon2-ebz#none#../
-   :alt: Overview#zynq|Linux on ZYNQ

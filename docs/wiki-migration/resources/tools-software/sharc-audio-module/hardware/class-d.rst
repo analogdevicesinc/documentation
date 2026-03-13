@@ -147,6 +147,3 @@ EEPROM
 
 The A\ :sup:`2`\ B Class-D Amplifier Module has a TWI 256k EEPROM for configuration data. The EEPROM used is the `24FC256I/MS <http://www.microchip.com/wwwproducts/en/24FC256>`_.
 
---------------
-
-`Audio Project Fin#..hardware|Hardware Reference#..faust|Faust and the SHARC Audio Module <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/navigation SHARC Audio Module#.audioproj-fin>`_

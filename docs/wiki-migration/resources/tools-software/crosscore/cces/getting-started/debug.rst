@@ -83,7 +83,3 @@ Some other useful views that aid in debugging that can be found under **Window â
 
 -  If you are working with image processing, the **Image Viewer** view allows you to view images stored on your PC and images stored in memory on your target processor while connected to an Emulator session. This tool is extremely useful when using ADIâ€™s Image Processing Tool Kits and when working with the Pipeline Vision Processor (PVP) on the ADSP-BF60x processors.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#help
-   :alt: Online Help & Example Browser#.|CCES Getting Started#bsp|Board Support Packages

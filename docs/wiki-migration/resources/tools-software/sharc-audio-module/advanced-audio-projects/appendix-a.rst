@@ -192,6 +192,3 @@ Software Update
 
 *\*EV-SC598-SOM Rev E. is not supported by CrossCore Serial Flash Programmer. Users must update using CLDP via Bootswitch*
 
---------------
-
-`Setting up a Debug Session#.|Advanced Audio Projects#.appendix-b|Appendix B - Common Problems <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.debug-session>`_

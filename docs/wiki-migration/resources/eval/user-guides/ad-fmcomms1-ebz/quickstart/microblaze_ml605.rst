@@ -251,9 +251,6 @@ Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should b
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#none#./
-   :alt: Quick Start Guides#zynq|Linux on ZC702, ZC706, ZED
-
 .. |ML605 Diagram| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/ml605.png
    :width: 500px
 .. |LCD image| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/ml605-lcd.png

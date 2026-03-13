@@ -83,8 +83,5 @@ The following plots detail results showing the isolation provided by the :adi:`H
 
 :adi:`HMC546LP2` Isolation Test, RX Channel 2 - Zoomed in, 2.2GHz to 2.7GHz.
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-pzsdr2400tdd-ebz#configuration_options#./
-   :alt: Hardware#Layout Considerations
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-pzsdr2400tdd-ebz/equipment-copy.png
    :width: 600px

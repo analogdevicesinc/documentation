@@ -1,22 +1,24 @@
 AD799x - No-OS Driver for Renesas Microcontroller Platforms
 ===========================================================
 
+
 Supported Devices
------------------
+=================
 
 -  :adi:`AD7991`
 -  :adi:`AD7995`
 -  :adi:`AD7999`
 
 Evaluation Boards
------------------
+=================
 
 -  `PmodAD2 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD2>`_
 -  :adi:`EVAL-AD7991EBZ`
 -  :adi:`EVAL-AD7995EBZ`
 
 Overview
---------
+========
+
 
 The :adi:`AD7991`/:adi:`AD7995`/:adi:`AD7999` are 12-/10-/8-bit, low power, successive approximation ADCs with an I2C®-compatible interface. Each part operates from a single 2.7 V to 5.5 V power supply and features a 1 μs conversion time.
 
@@ -27,7 +29,7 @@ The :adi:`AD7991`/:adi:`AD7995`/:adi:`AD7999` normally remain in a shutdown stat
 When four channels are used as analog inputs, the reference for the part is taken from VDD; this allows the widest dynamic input range to the ADC. Therefore, the analog input range to the ADC is 0 V to VDD. An external reference, applied through the VIN3/VREF input, can also be used with this part.
 
 Applications
-~~~~~~~~~~~~
+------------
 
 -  System Monitoring
 -  Battery Powered Systems
@@ -38,10 +40,11 @@ Applications
    :align: center
 
 
+
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-------------------
+==================
 
 The driver contains two parts:
 
@@ -56,7 +59,8 @@ There are three functions which are called by the AD799x driver:
 -  I2C_Write() – writes data to the device.
 -  I2C_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers//i2c_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -77,7 +81,6 @@ The following functions are implemented in this version of AD799x driver:
 | float AD799x_ConvertToVolts(short rawSample, float vRef)           | Converts a raw sample to volts.                         |
 +--------------------------------------------------------------------+---------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers//i2c_architecture.png
 
 
 **HW Platform(s):**
@@ -275,10 +278,11 @@ Software Project Setup
 More information
 ================
 
+
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 

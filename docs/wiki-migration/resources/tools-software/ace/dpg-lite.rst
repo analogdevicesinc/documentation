@@ -224,6 +224,7 @@ The Noise Generator generates a vector with pseudo-random noise, by a variety of
 Advanced Vector Generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 Advanced Vector Generator
 =========================
 
@@ -510,6 +511,7 @@ Payload Graph
 """""""""""""
 
 This graph provides a visual representation of each frame's payload. Payloads can be added by clicking and dragging within the graph. Once a payload has been added, it can be removed by right-clicking on the payload and selecting Delete from the menu. To edit a payload, right-click the payload and select Properties. From the Payload Properties window, the Source, Modulation, and Power Level can be adjusted.
+
 
 
 Graphing Vectors

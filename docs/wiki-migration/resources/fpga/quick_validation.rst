@@ -11,6 +11,3 @@ If your project is not integrated into the make flow see: :doc:`Xilinx SDK GUI <
 
 .. image:: https://wiki.analog.com/_media/section>/resources/tools-software/linux-software/adi-kuiper_images/master#master_no-os_files&
    :alt: master#master_no-os_files&
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/navigation_hdl_user_guide#resources/fpga/docs/hdl/porting_project_quick_start_guide
-   :alt: Porting an existing project to another carrier#resources/fpga/docs/tips|Main page#resources/fpga/docs/hdl/creating_new_ip_guide|Creating a new IP

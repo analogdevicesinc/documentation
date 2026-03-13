@@ -11,6 +11,7 @@ Evaluation Boards
 Overview
 ========
 
+
 The :adi:`AD7156` delivers a complete signal processing solution for capacitive sensors, featuring an ultralow power converter with fast response time.
 
 The :adi:`AD7156` uses an Analog Devices, Inc., capacitance-to-digital converter (CDC) technology, which combines features important for interfacing to real sensors, such as high input sensitivity and high tolerance of both input parasitic ground capacitance and leakage current.
@@ -33,6 +34,7 @@ Applications
 
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad7156_pmod_cdc1.jpg
    :align: center
+
 
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.

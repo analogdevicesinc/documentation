@@ -2391,6 +2391,3 @@ Help & Support
    
 
 
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcdaq3-ebz#hardware#./
-   :alt: User Guide#.:\|Software

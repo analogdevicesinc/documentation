@@ -44,7 +44,3 @@ Below is a brief description of the functionality provided by each driver and mo
 
 The 8 channel audio framework makes use of the bm A2B driver and provide a good example of how easy it is to load an “topology” that SigmaStudio generated, and then run “bm_adau_driver” to the callback to initialize the various ADCs and DACs on the slave nodes.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#using-shared-memory-structure
-   :alt: Sharing Data Between Cores#.|Bare Metal Framework#event-logging|Using the Event Logging Feature

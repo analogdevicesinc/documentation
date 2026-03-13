@@ -31,7 +31,3 @@ This procedure will use the application name of **my_app** for the purpose of ex
    A binary file will be created and then programmed to flash. The resulting binary file can be found in Output_LDR_Files
 
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#porting-to-new-hardware-tutorial
-   :alt: Porting framework to different HW#.|Bare Metal Framework#troubleshooting|Trouble Shooting

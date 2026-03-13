@@ -1,6 +1,7 @@
 ADXL345 - No-OS Driver for Microchip Microcontroller Platforms
 ==============================================================
 
+
 ADXL345 No-OS Driver
 ====================
 
@@ -25,6 +26,7 @@ Reference Circuits
 Overview
 --------
 
+
 The :adi:`ADXL345` is a small, thin, low power, 3-axis accelerometer with high resolution (13-bit) measurement at up to ±16 g. Digital output data is formatted as 16-bit twos complement and is accessible through either a SPI (3- or 4-wire) or I2C digital interface.
 
 The :adi:`ADXL345` is well suited for mobile device applications. It measures the static acceleration of gravity in tilt-sensing applications, as well as dynamic acceleration resulting from motion or shock. Its high resolution (4 mg/LSB) enables measurement of inclination changes less than 1.0°.
@@ -36,12 +38,13 @@ Low power modes enable intelligent motion-based power management with threshold 
 The :adi:`ADXL345` is supplied in a small, thin, 3 mm × 5 mm × 1 mm, 14-lead, plastic package.
 
 Applications
-~~~~~~~~~~~~
+============
 
 -  ADXL345-EP Supports defense and aerospace applications (AQEC)
 
 .. image:: https://wiki.analog.com/_media/resources/pmods/adxl345_pmod_acl.jpg
    :align: center
+
 
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
@@ -62,7 +65,8 @@ If the SPI communication is chosen, there are three functions which are called b
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -75,7 +79,8 @@ If the I2C communication is chosen, there are three functions which are called b
 -  I2C_Write() – writes data to the device.
 -  I2C_Read() – reads data from the device.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -114,8 +119,6 @@ The following functions are implemented in this version of ADXL345 driver:
 | void ADXL345_SetRangeResolution(unsigned char gRange, unsigned char fullRes)                                                                                                                      | Selects the measurement range.                                                      |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
 
 
 **HW Platform(s):**
@@ -207,6 +210,7 @@ The following image shows a generic list of commands in a serial terminal connec
 Software Project Setup
 ----------------------
 
+
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -245,6 +249,7 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
+
 
 
 Digilent Cerebot MC7 Quick Start Guide
@@ -306,6 +311,7 @@ The following image shows a list of commands in a serial terminal connected to p
 Software Project Setup
 ----------------------
 
+
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -344,6 +350,7 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
    :align: center
+
 
 
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
@@ -406,6 +413,7 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
+
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -430,15 +438,17 @@ This section presents the steps for developing a chipKIT application that will r
    :align: center
 
 
+
 More information
 ================
+
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

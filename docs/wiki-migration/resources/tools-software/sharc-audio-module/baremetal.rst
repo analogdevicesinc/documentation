@@ -70,7 +70,3 @@ Using MATLAB Generated Code in the Bare Metal Framework
 -  :doc:`Using a MATLAB Volume Control Function in the Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/matlab_volume_control>`
 -  :doc:`Using a MATLAB Pitch Shift Algorithm in the Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/matlab_pitchshift>`
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation_sharc_audio_module#gettingstarted
-   :alt: Getting Started#.|SHARC Audio Module#.hardware|Hardware Reference

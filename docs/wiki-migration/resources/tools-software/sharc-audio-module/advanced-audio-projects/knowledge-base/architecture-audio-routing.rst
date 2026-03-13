@@ -78,6 +78,3 @@ Tries to copy to ADC channels starting at destination offset of 2, which doesn't
 
 For more information regarding the source/destination offsets and how they may map to physical hardware, refer to the Audio Configuration table for your Audio Starter variant in :doc:`Appendix C </wiki-migration/resources/tools-software/sharc-audio-module/advanced-audio-projects/appendix-c>`.
 
---------------
-
-`Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/navigation Knowledge Base#.>`_

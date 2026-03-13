@@ -35,8 +35,6 @@ Details
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
 
-`Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/navigation Knowledge Base#.>`_
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase0.jpg
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase1.jpg

@@ -34,6 +34,3 @@ Optionally, users can generate a loader file that can be flashed into the SPI Fl
 
    "C:\Analog Devices\CrossCore Embedded Studio 2.8.1\elfloader.exe" -proc ADSP-SC589 -core0=firmware -init "C:\Analog Devices\CrossCore Embedded Studio 2.8.1\SHARC\ldr\ezkitSC589_initcode_core0_v10" -b SPI -f BINARY -Width 8 -bcode 0x1 -o micropython.ldr
 
---------------
-
-`Using MicroPython with Bare Metal Framework#..micropython|MicroPython Overview#.new-module|Creating a New MicroPython Module <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/micropython/navigation SHARC Audio Module#.bmsdk>`_

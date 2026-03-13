@@ -159,6 +159,3 @@ The following steps run through a **near mode calibration** with the target posi
 
    `Calibration Assembly Document <https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/calibration_assembly_doc.pdf>`_
 
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-96tof1-ebz#none#./
-   :alt: Overview#none#

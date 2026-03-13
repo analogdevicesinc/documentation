@@ -1,6 +1,7 @@
 libiio
 ======
 
+
 What is libiio?
 ===============
 
@@ -24,10 +25,10 @@ Network Backends
 
 If you just want to use libiio and iiod, which may be on a pre-compiled image - there are many places you can stream data to.
 
--  `MATLAB and Simulink <https://wiki.analog.com/libiio/clients/matlab_simulink>`_
--  `Visual Analog <https://wiki.analog.com/libiio/clients/Visual Analog>`_
--  `IIO oscilloscope for Windows <..//../tools-software/linux-software/iio_oscilloscope>`_
--  `GNU Radio <..//../tools-software/linux-software/gnuradio>`_
+-  :doc:`MATLAB and Simulink </wiki-migration/resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
+-  :doc:`Visual Analog </wiki-migration/resources/tools-software/linux-software/libiio/clients/visual_analog>`
+-  `IIO oscilloscope for Windows <https://wiki.analog.com/../../tools-software/linux-software/iio_oscilloscope>`_
+-  `GNU Radio <https://wiki.analog.com/../../tools-software/linux-software/gnuradio>`_
 -  :doc:`pyadi-iio: Device Specific Python Interfaces For IIO Drivers </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 
 Where to get libiio?
@@ -206,10 +207,7 @@ In order to use the libIIO USB Backend - support must be built into IIOD. A simp
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -229,15 +227,12 @@ Although your kernel itself probably is recent enough, your kernel headers are t
 
 The fix:
 
-#. Download the file: https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/usb/functionfs.h
-#. And place it in /usr/include/linux/usb/functionsfs.h, overwriting the old one.
+-  Download the file: https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/usb/functionfs.h
+-  And place it in /usr/include/linux/usb/functionsfs.h, overwriting the old one.
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
@@ -251,13 +246,13 @@ The fix:
 Rebuild LibIIO
 --------------
 
-#. cd /usr/local/src
-#. git clone `libiio <https://github.com/analogdevicesinc/libiio>`_
-#. cd /usr/local/src/libiio/
-#. git clean -d -f -x
-#. cmake .
-#. make
-#. sudo make install
+-  cd /usr/local/src
+-  git clone `libiio <https://github.com/analogdevicesinc/libiio>`_
+-  cd /usr/local/src/libiio/
+-  git clean -d -f -x
+-  cmake .
+-  make
+-  sudo make install
 
 USB Device Mode Kernel Support
 ------------------------------
@@ -336,4 +331,5 @@ libiio - AD9361 IIO streaming example
 +=============================================================================================================+==============================================================================================+
 | :git-libiio:`examples/ad9361-iiostream.c`                                                                   | Configures the AD9361 transceiver, receives samples, processes them and sends them back out. |
 +-------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
 

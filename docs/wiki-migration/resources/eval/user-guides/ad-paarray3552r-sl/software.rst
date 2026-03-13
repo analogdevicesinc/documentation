@@ -214,9 +214,6 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/ad-paarray3552r-sl
-   :alt: Overview #:resources:eval:user-guides:ad-paarray3552r-sl:hardware \| AD-PAARRAY3552R-SL Hardware User Guide#none
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_home.png
    :width: 410px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_dashboard.png

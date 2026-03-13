@@ -6,7 +6,3 @@ There are differences in working with single-core applications vs multi-core app
 -  :doc:`Single-Core LED Blink Example Application </wiki-migration/resources/tools-software/crosscore/cces/getting-started/led-blink-app/bf707-blink>`
 -  :doc:`Multi-Core LED Blink Example Application </wiki-migration/resources/tools-software/crosscore/cces/getting-started/led-blink-app/sc573-blink>`
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#bsp
-   :alt: Board Support Packages#.|CCES Getting Started#app|Creating Bootable Applications

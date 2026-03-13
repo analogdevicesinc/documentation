@@ -52,7 +52,3 @@ Within this Property Settings window, you can modify the Tool Settings, such as 
 
 -  The **Build Artifact** tab gives the flexibility to modify the output file type for the project to generate a processor executable (DXE), a bootable loader image (LDR), or a static library to be included as part of other projects (DLB), controlled via the **Artifact Type** pull-down. For example, a DXE is what is needed to debug the code in a simulator or emulator session, which employs the tool chain up to and including the linker. Once fully debugged, the DXE needs to be made into a defined boot stream, which requires the Loader component of the tool chain as well. Changing the Artifact type to **Loader File** and setting the appropriate fields in the Loader property pages on the Tool Settings tab is all that is required.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#create
-   :alt: Creating & Importing Projects#.|CCES Getting Started#view|Perspectives & Views

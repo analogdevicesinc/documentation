@@ -1,18 +1,20 @@
 AD7303 - No-OS Driver for Renesas Microcontroller Platforms
 ===========================================================
 
+
 Supported Devices
------------------
+=================
 
 -  :adi:`AD7303`
 
 Evaluation Boards
------------------
+=================
 
 -  `PmodDA1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DA1>`_
 
 Overview
---------
+========
+
 
 The :adi:`AD7303` is a dual, 8-bit voltage out DAC that operates from a single +2.7 V to +5.5 V supply. Its on-chip precision output buffers allow the DAC outputs to swing rail to rail. This device uses a versatile 3-wire serial interface that operates at clock rates up to 30 MHz, and is compatible with QSPI, SPI, microwire and digital signal processor interface standards. The serial input register is sixteen bits wide; 8 bits act as data bits for the DACs, and the remaining eight bits make up a control register.
 
@@ -26,10 +28,11 @@ The :adi:`AD7303` is available in an 8-pin plastic dual in-line package, 8-lead 
    :align: center
 
 
+
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-------------------
+==================
 
 The driver contains two parts:
 
@@ -44,7 +47,8 @@ There are three functions which are called by the AD7303 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -61,7 +65,6 @@ The following functions are implemented in this version of AD7303 driver:
 | void AD7303_Write(unsigned char controlReg, unsigned char dataReg) | Sends data to AD7303.                         |
 +--------------------------------------------------------------------+-----------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
 
 
 **HW Platform(s):**
@@ -235,10 +238,11 @@ Software Project Setup
 More information
 ================
 
+
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 

@@ -243,7 +243,3 @@ A MIDI-processing callback hook for can be found in the ARM core project, at ``$
        }
    }
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#event-logging
-   :alt: Using Event Logging#.|Bare Metal Framework#preconfigured-a2b-topology|Using pre-configured A2B topology files

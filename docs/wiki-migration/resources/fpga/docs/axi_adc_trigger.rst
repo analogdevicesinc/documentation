@@ -322,6 +322,3 @@ References
 -  :git-hdl:`AXI_ADC_TRIGGER source code <library/axi_adc_trigger>`
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
 -  :git-linux:`ADI Linux repository <tree/m2k>`
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
-   :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

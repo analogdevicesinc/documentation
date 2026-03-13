@@ -51,6 +51,3 @@ The goal of this tutorial is to help users with the following:
    This is a Windows-based tutorial only!
 
 
---------------
-
-`Sharc Audio Module#.advanced-audio-projects|Advanced Audio Projects#.advanced-audio-projects:prerequisites|Prerequisites <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation Advanced Audio Projects#.>`_

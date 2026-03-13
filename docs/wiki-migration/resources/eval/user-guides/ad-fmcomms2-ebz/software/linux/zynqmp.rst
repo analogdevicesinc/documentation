@@ -3,6 +3,7 @@
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/linux/kernel/zynqmp.html
 
 
+
 Building the ZynqMP / MPSoC Linux kernel and devicetrees from source
 ====================================================================
 
@@ -16,22 +17,20 @@ The script method
 
 We provide `a script that does automates <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/main/linux/build_zynqmp_kernel_image.sh>`_ the build for ZynqMP using the Linaro toolchain.
 
-<fc #ff0000>\ **Note**\ </fc> that this script differs from the one for Zynq.
+**Note** that this script differs from the one for Zynq.
 
 The script takes up to 3 parameters, but if left blank, it uses defaults:
 
-#. **<local_kernel_dir>** - default is **linux-adi** if left blank ; use this, if you want to use an already cloned kernel repo
-#. **<devicetree_file>** - which device tree should be exported/copied from the build ; default is ``zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dtb`` for Zynq
-#. **<path_to_other_toolchain>** - in case you have your own preferred ARM64 toolchain [other than Linaro's or Xilinx's] you can use override it with this 3rd param
+-  **<local_kernel_dir>** - default is **linux-adi** if left blank ; use this, if you want to use an already cloned kernel repo
+-  **<devicetree_file>** - which device tree should be exported/copied from the build ; default is ``zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dtb`` for Zynq
+-  **<path_to_other_toolchain>** - in case you have your own preferred ARM64 toolchain [other than Linaro's or Xilinx's] you can use override it with this 3rd param
 
 The script will:
 
-::
-
-    - clone the ADI kernel tree
-    - download the Linaro GCC toolchain [if no other is specified]
-    - build the ADI kernel tree
-    - export/copy the Image file and device tree file out of the kernel build folder
+-  clone the ADI kernel tree
+-  download the Linaro GCC toolchain [if no other is specified]
+-  build the ADI kernel tree
+-  export/copy the Image file and device tree file out of the kernel build folder
 
 Running the script in one line [with defaults]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,7 +96,7 @@ Inside the repository, generate the configuration file before building the kerne
 
 ::
 
-   linux$ make adi_zynqmp_defconfig 
+   linux$ make adi_zynqmp_defconfig
    #
    # configuration written to .config
    #
@@ -167,6 +166,7 @@ The output files for building the kernel and device tree are **Image** and **<de
 Building the ZynqMP boot image
 ------------------------------
 
+
 How to build the ZynqMP boot image BOOT.BIN
 ===========================================
 
@@ -175,8 +175,9 @@ How to build the ZynqMP boot image BOOT.BIN
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html\
 
 
-| The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
-| Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
+The boot image BOOT.BIN is build using the bootgen tool which requires several input files.
+
+Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
 
 -  `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_ projects
 
@@ -184,13 +185,12 @@ All further steps are lengthy explained on the `Xilinx Wiki Page <http://www.wik
 
 -  `Build u-boot <http://www.wiki.xilinx.com/Build+U-Boot>`_
 
-::
+   -  Make sure you checkout the proper git tag matching your Vivado Version (xilinx-v2022.2, xilinx-v2021.2, ...)
 
-      * Make sure you checkout the proper git tag matching your Vivado Version (xilinx-v2022.2, xilinx-v2021.2, ...)
-   * `Build FSBL <http://www.wiki.xilinx.com/Build+FSBL>`_
-   * `Build PMU Firmware <http://www.wiki.xilinx.com/Build+PMU+Firmware>`_
-   * `Build Arm Trusted Firmware (ATF) <http://www.wiki.xilinx.com/Build+Arm+Trusted+Firmware+%28ATF%29>`_
-   * `Build BOOT image <http://www.wiki.xilinx.com/Prepare+Boot+Image>`_
+-  `Build FSBL <http://www.wiki.xilinx.com/Build+FSBL>`_
+-  `Build PMU Firmware <http://www.wiki.xilinx.com/Build+PMU+Firmware>`_
+-  `Build Arm Trusted Firmware (ATF) <http://www.wiki.xilinx.com/Build+Arm+Trusted+Firmware+%28ATF%29>`_
+-  `Build BOOT image <http://www.wiki.xilinx.com/Prepare+Boot+Image>`_
 
 Use script to build BOOT.BIN
 ----------------------------
@@ -204,13 +204,15 @@ The script can be downloaded from here:
 
 -  `build_zynqmp_boot_bin.sh <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynqmp_boot_bin/build_zynqmp_boot_bin.sh>`_
 
-
-
 .. tip::
 
    \ NOTE: After downloading the script you need to make it executable
 
-   | ``$ chmod +x build_zynqmp_boot_bin.sh``
+   
+   ::
+   
+      $ chmod +x build_zynqmp_boot_bin.sh
+   
 
 
 Usage
@@ -223,24 +225,24 @@ Usage
 -  Make sure that Vivado and Vitis is included in the path and a cross compiler for arm64 exists before running the script. For more information about cross compilers, see :doc:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source </wiki-migration/resources/tools-software/linux-build/generic/zynqmp>`.
 -  Path to ``system_top.xsa`` and ``u-boot.elf`` are required parameters.
 
-::
+   -  To find ``system_top.xsa``, see `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_. After building a project in the HDL repository, it can be found inside a **<project>\_<board>.sdk** folder.
+   -  See the note at the bottom of the page regarding ``u-boot.elf``.
 
-      * To find ''system_top.xsa'', see `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_. After building a project in the HDL repository, it can be found inside a <project>_<board>.sdk folder.
-      * See the note at the bottom of the page regarding ''u-boot.elf''.
-   * The 3rd argument must either be ''download'' (which will git clone the ATF repository), ''bl31.elf'' or the file system ''path'' to the Arm Trusted Firmware source code repository
-      * See the note at the bottom of the page regarding ''bl31.elf''.
-   * An optionally 4th ''name'' parameter can be given to tar.gz the output directory. (''name''.tar.gz)
-   BOOT.BIN and other build output files are located at the newly created local directory named: output_boot_bin.
-   * This script requires Xilinx Vitis and bootgen in the PATH.\\
-     * A simple way is to source Vivado settings[32|64].sh for Linux:
+-  The 3rd argument must either be ``download`` (which will git clone the ATF repository), ``bl31.elf`` or the file system ``path`` to the Arm Trusted Firmware source code repository
+
+   -  See the note at the bottom of the page regarding ``bl31.elf``.
+
+-  An optionally 4th ``name`` parameter can be given to tar.gz the output directory. (``name``.tar.gz)
+-  **BOOT.BIN** and other build output files are located at the newly created local directory named: output_boot_bin.
+-  This script requires Xilinx Vitis and bootgen in the PATH.
+
+   -  A simple way is to source Vivado settings[32|64].sh for Linux:
 
 ::
 
    $ source /opt/Xilinx/Vivado/202x.x/settings64.sh
 
-::
-
-     * When using cygwin, you can add the following in the ~/.bashrc configuration file:
+-  When using **cygwin**, you can add the following in the ~/.bashrc configuration file:
 
 ::
 
@@ -248,17 +250,14 @@ Usage
    export PATH=$PATH:/cygdrive/c/Xilinx/Vitis/202x.x/bin
    export PATH=$PATH:/cygdrive/c/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
 
-
-
 .. tip::
 
-   \ NOTE: u-boot.elf and bl31.elf
+   \ NOTE: u-boot.elf and bl31.elf For those who don't want to build u-boot or bl31 themselves. Both u-boot.elf and bl31.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz.
 
-   | For those who don't want to build u-boot or bl31 themselves.
-   | Both u-boot.elf and bl31.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz.
    
    u-boot.elf may have a different name, rename that .elf file to u-boot.elf before using.
    
+
 
 
 
@@ -272,7 +271,7 @@ For DisplayPort projects, you may need to add a custom ``xorg.conf`` file.
 ::
 
    root@analog:~# printf "Section \"Device\"\n  Identifier \"myfb\"\n  Driver \"fbdev\"\n  Option \"fbdev\" \"/dev/fb0\"\nEndSection\n" > /etc/X11/xorg.conf
-   root@analog:~# cat /etc/X11/xorg.conf 
+   root@analog:~# cat /etc/X11/xorg.conf
    Section "Device"
      Identifier "myfb"
      Driver "fbdev"
@@ -282,4 +281,5 @@ For DisplayPort projects, you may need to add a custom ``xorg.conf`` file.
 After following that, the board should be rebooted.
 
 You can find a list with tested monitors `here <https://www.xilinx.com/support/answers/68671.html>`_. Resolution or image problems may appear if there is used a monitor that was not tested.
+
 

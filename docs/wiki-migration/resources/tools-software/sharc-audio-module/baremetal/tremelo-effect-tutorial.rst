@@ -219,7 +219,3 @@ We'll also need to make two small modifications to our callback. First, we're go
        }
    }
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#using-both-cores
-   :alt: Audio Processing Basics#.|Bare Metal Framework#ring-modulator-effect-tutorial|Implementing a Ring Modulator Effect

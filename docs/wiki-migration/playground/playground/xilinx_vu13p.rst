@@ -4,14 +4,15 @@ Xilinx Virtex UltraScale+ VU13P Power Solutions
 ===============================================
 
 
+
 HTG-910: Xilinx Virtex UltraScale+ Low-Profile PCI Express Development Platform
 ===============================================================================
 
-====== ==================================
+====== ===============================
 Type   |image1| FPGA Development Board
-====== ==================================
-Status <fc #00ff00>✔</fc> Fully Validated
-====== ==================================
+====== ===============================
+Status ✔ Fully Validated
+====== ===============================
 
 |image2| The HTG-910 is low profile network card that provides access to eight lanes of PCI Express. It is populated with the Xilinx Zynq Virtex Ultrascale VU5P, VU9P, VU13P or Ultrascale VU190 FPGA. Analog Devices power solution on this platform is fully validated to meet the requirements of Xilinx Zynq Virtex Ultrascale FPGAs to ensure a robust power delivery solution.
 
@@ -56,16 +57,18 @@ ADI Parts Used
    :width: 200px
 
 
+
 --------------
+
 
 Virtex UltraScale+ Generic Power Solution
 =========================================
 
-====== ===========================
+====== =====================
 Type   |image1| Paper Design
-====== ===========================
-Status <fc #ffa500>★</fc> Proposed
-====== ===========================
+====== =====================
+Status ★ Proposed
+====== =====================
 
 This Virtex UltraScale+ power solution is a general purpose power tree for the Xilinx Virtex UltraScale+ series of FPGAs. Blah, blah, blah...
 
@@ -92,4 +95,5 @@ Rail/Function Part Number Description
 
 .. |image1| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/paper.png
    :width: 32px
+
 

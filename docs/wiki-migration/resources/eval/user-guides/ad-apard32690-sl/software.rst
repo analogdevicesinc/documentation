@@ -155,7 +155,4 @@ The :git-no-OS:`AD-APARD32690-SL firmware <projects/apard32690>` is based on Ana
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-apard32690-sl#none#./
-   :alt: Overview#none#
-
 .. |resources-eval-user-guides-ad-swiot1l-sl-picture2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-swiot1l-sl/picture2.jpg

@@ -318,9 +318,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -413,9 +413,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -1031,9 +1031,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -1126,9 +1126,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -1744,9 +1744,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -1839,9 +1839,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -3017,9 +3017,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -3112,9 +3112,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -3498,9 +3498,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -3593,9 +3593,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -4211,9 +4211,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -4306,9 +4306,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -4924,9 +4924,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -5019,9 +5019,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 

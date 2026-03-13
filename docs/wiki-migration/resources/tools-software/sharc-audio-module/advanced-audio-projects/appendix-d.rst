@@ -28,6 +28,3 @@ Exporting A2B XML Files for use in the Audio Starter Projects
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/wiki_ss_pic3.png
    :width: 400px
 
---------------
-
-`Appendix C - Common Problems#.|Advanced Audio Projects#.|Advanced Audio Projects <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.appendix-c>`_

@@ -81,9 +81,6 @@ Creating Files for use with the Baremetal Framework
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/navigation_sharc_audio_module#ex-work-reverb
-   :alt: MIDI Controlled Reverb#.|Faust and the SHARC Audio Module#ex-work-virtual-analog|MIDI Virtual Analog Synth
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png
    :width: 50px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/diagram_button.png

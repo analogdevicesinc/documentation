@@ -49,9 +49,6 @@ SFDR
 | SFDR sweep from 60MHz to 550 MHz with full power input. | SFDR sweep compared to Eval board with AD9523-1 reference clock |
 +---------------------------------------------------------+-----------------------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcdaq2-ebz#functional_overview#./
-   :alt: Hardware#.:\|Reference HDL Design
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/hardware/cha_120mhz_fft.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/hardware/chb_120mhz_fft.png

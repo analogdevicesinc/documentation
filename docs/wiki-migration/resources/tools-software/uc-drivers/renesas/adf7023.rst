@@ -1,18 +1,20 @@
 ADF7023 - No-OS Driver for Renesas Microcontroller Platforms
 ============================================================
 
+
 Supported Devices
------------------
+=================
 
 -  :adi:`ADF7023`
 
 Evaluation Boards
------------------
+=================
 
 -  PmodRF3
 
 Overview
---------
+========
+
 
 The :adi:`ADF7023` is a very low power, high performance, highly integrated 2FSK/GFSK/OOK/MSK/GMSK transceiver designed for operation in the 862 MHz to 928 MHz and 431 MHz to 464 MHz frequency bands, which cover the worldwide license-free ISM bands at 433 MHz, 868 MHz, and 915 MHz. It is suitable for circuit applications that operate under the European ETSI EN300-220, the North American FCC (Part 15), the Chinese short-range wireless regulatory standards, or other similar regional standards. Data rates from 1 kbps to 300 kbps are supported.
 
@@ -23,7 +25,7 @@ The receiver is exceptionally linear, achieving an IP3 specification of −12.2 
 A patent pending, image rejection calibration scheme is available through a program download. The algorithm does not require the use of an external RF source nor does it require any user intervention once initiated. The results of the calibration can be stored in nonvolatile memory for use on subsequent power-ups of the transceiver.
 
 Applications
-~~~~~~~~~~~~
+------------
 
 -  Smart metering
 -  IEEE 802.15.4g
@@ -37,10 +39,11 @@ Applications
    :align: center
 
 
+
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-------------------
+==================
 
 The driver contains two parts:
 
@@ -55,7 +58,8 @@ There are three functions which are called by the ADF7023 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -90,7 +94,6 @@ The following functions are implemented in this version of ADF7023 driver:
 | void ADF7023_SetFrequencyDeviation(unsigned long freqDev)                              | Sets the frequency deviation.                                    |
 +----------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
 
 
 **HW Platform(s):**

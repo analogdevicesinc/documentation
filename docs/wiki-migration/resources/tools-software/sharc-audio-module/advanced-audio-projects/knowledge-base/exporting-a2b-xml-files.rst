@@ -36,6 +36,3 @@ Details
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/wiki_ss_pic3.png
    :width: 400px
 
---------------
-
-`Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/navigation Knowledge Base#.>`_

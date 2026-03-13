@@ -135,8 +135,5 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/navigation_ad-fmcmotcon2-ebz#signal_chain
-   :alt: Signal Measurement Chain#..:\|Overview#none
-
 .. |Dyno menu| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/dyno_menu.png
    :width: 500px

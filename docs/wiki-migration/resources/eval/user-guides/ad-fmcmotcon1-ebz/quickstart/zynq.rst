@@ -75,9 +75,6 @@ Using IIO SCOPE for AD-FMCMOTCON1-EBZ
 
    |image3|
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon1-ebz#none#../
-   :alt: Overview#chipscope|ISE Project with Chipscope
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/firefox.png
    :width: 200px
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/iio_scope.png

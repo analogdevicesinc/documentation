@@ -186,7 +186,3 @@ A C struct holds the configuration and state information for each instance of th
 
 See the tutorials that follow for examples of building and chaining various audio elements and audio effects.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#delay-effect-tutorial
-   :alt: Delay Effect from Scratch#.|Bare Metal Framework#volume-control-tutorial|Programming a Volume Control

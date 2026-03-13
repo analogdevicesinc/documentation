@@ -2409,6 +2409,3 @@ Help & Support
    
 
 
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcdaq2-ebz#hardware#./
-   :alt: Reference HDL Design#Software

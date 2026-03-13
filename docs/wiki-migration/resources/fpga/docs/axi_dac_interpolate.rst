@@ -223,6 +223,3 @@ References
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
 -  `ADI Linux repository <https://github.com/analogdevicesinc/linux/>`_
 -  `7 Series libraries <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2016_2/ug953-vivado-7series-libraries.pdf>`_
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
-   :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

@@ -25,6 +25,3 @@ The software suite for the motor control system consists of the following elemen
 
 -  :doc:`Linux IIO Drivers </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/linux_drivers>`
 -  :doc:`Linux IIO Scope user-space application for monitoring and control </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/iio_scope>`
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation_ad-fmcmotcon1-ebz#reference_hdl
-   :alt: HDL#.:\|Overview#matlab_models|Simulink Models

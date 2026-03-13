@@ -84,6 +84,7 @@ Create a folder called “\ **ADIEvalBoard**\ ” on your PC and extract the **a
 Install the USB-Blaster Device Driver
 -------------------------------------
 
+
 The USB Blaster is used to program the FPGA on the CED1Z board and also for data exchange between the system and a PC. To install the driver plug the Terasic USB Blaster into one of the PCs USB ports. Your Windows PC will find the new hardware and try to install the driver.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image007.png
@@ -100,7 +101,7 @@ Since Windows cannot locate the driver for the device the automatic installation
 
 In the next dialog box select the option **Browse my computer for driver software**. A new dialog will open where it is possible to point to the driver’s location. Set the location to **altera\\11.0\\quartus\\drivers\\usb-blaster** and press **Next**.
 
-|image011.png|\ |image013.png|
+|image011.png| |image013.png|
 
 
 .. tip::
@@ -118,6 +119,7 @@ In the next dialog box select the option **Browse my computer for driver softwar
    :width: 400px
 .. |image016.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image016.jpg
    :width: 400px
+
 
 
 AD7938 Evaluation Project Overview
@@ -296,7 +298,9 @@ Table 4 describes the registers of the Avalon peripheral:
 Quick Evaluation
 ================
 
+
 The next sections of this document present all the steps needed to create a fully functional project that can be used for evaluating the operation of the ADI platform. It is possible to skip these steps and load into the FPGA an image that contains a fully functional system that can be used together with the uC-Probe interface for the ADI platform evalution. The first step of the quick evaluation process is to program the FPGA with the image provided in the lab files. Before the image can be loaded the **Quartus II Web Edition** tool or the `Quartus II Programmer <https://www.altera.com/download/programming/quartus2/pq2-index.jsp>`_ must be installed on your computer. To load the FPGA image you must first make sure that the USB cable is not connected to the CED1Z board. Connect the USB Blaster to the J6 connector of the CED1Z and power the board. Run the **program_fpga.bat** batch file located in the **ADIEvalBoard/FPGA** folder. Now the FPGA contains a fully functional system and it is possible to skip directly to the **Evaluation Project User Interface** section of this document
+
 
 
 NIOS II Software Design
@@ -508,10 +512,11 @@ To run the software project on the Nios II processor:
 uC-Probe Interface
 ==================
 
+
 A notable challenge in embedded systems development is to overcome the lack of feedback that such systems typically provide. Many developers resort to blinking LEDs or instrumenting their code with *printf()* in order to determine whether or not their systems are running as expected. **Micrium** provides a unique tool named **µC-Probe** to assist these developers. With this tool, developers can effortlessly read and write the variables on a running embedded system. This section presents the steps required to run the demonstration project for the ADI evaluation board. A description of the **uC-Probe** demonstration interface is provided.
 
 Configure uC-Probe
-------------------
+==================
 
 Launch **uC-Probe** from the **Start -> All Programs -> Micrium -> uC-Probe**.
 
@@ -555,6 +560,7 @@ Setup **JTAG UART** communication settings
    :width: 400px
 
 -  Press **Apply** and **OK** to exit the options menu. The embedded target has two UARTs. **uC-Probe** will be communicating with the **uCProbe_uart**.
+
 
 
 Load and Run the Demonstration Project
@@ -612,6 +618,7 @@ In order to capture data from the ADC using the uCProbe demonstration project th
 Troubleshooting
 ===============
 
+
 In case there is a communication problem with the board the follwing actions can be perfomed in order to try to fix the issues:
 
 -  Check that the evaluation board is powered.
@@ -641,13 +648,14 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |ucproberemovesymbols.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucproberemovesymbols.png
    :width: 400px
 .. |ucproberemovesymbolsdlg.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucproberemovesymbolsdlg.png
    :width: 400px
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
 
 
 .. |eclipsebuildbsp.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildbsp.png

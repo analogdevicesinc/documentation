@@ -42,6 +42,3 @@ To link this module into a MicroPython build, one also needs to add the module i
 
 And add the file implement the library into Makefile.
 
---------------
-
-`Building MicroPython with CCES#.|MicroPython Overview#..|Back to main SHARC Audio Module <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/micropython/navigation SHARC Audio Module#.building>`_

@@ -92,7 +92,4 @@ For example, if the processor is running at 450MHz, the audio sampling rate is 4
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#configuring-the-framework
-   :alt: Configuring the Framework#.|Bare Metal Framework#audio-frameworks|Selecting Between HW Platforms
-
 .. |Dual core audio latency| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/dual-core-latency.png

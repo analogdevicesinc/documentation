@@ -158,8 +158,6 @@ And of course, each shell command implementation will be implemented differently
 
 --------------
 
-`Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/navigation Knowledge Base#.>`_
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase26.jpg
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase27.jpg

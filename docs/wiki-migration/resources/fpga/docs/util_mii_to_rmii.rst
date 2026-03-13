@@ -159,6 +159,3 @@ References
 -  :adi:`CN0506 Reference Note <media/en/reference-design-documentation/reference-designs/cn0506.pdf>`
 -  :doc:`CN0506 HDL Reference Design </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0506/hdl>`
 -  :doc:`CN0506 User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0506>`
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
-   :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

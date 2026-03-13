@@ -22,9 +22,6 @@ Receive path of AD9361 with and without TRXBOOST1
 | |image13|                           | |image14|                                           |
 +-------------------------------------+-----------------------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-trxboost1-ebz#introduction#./
-   :alt: Hardware#.:\|Help and Support
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/rx_path.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/tx_path.png

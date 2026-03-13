@@ -163,8 +163,6 @@ Audio Configuration
 +-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------+----------------------------+
 
 
-`Appendix B - Common Problems#.|Advanced Audio Projects#.knowledge-base|Knowledge Base <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.appendix-b>`_
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/codecinpic.jpg
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/spdif1.jpg

@@ -127,6 +127,3 @@ This selects the :doc:`MathWorks FOC IP </wiki-migration/resources/eval/user-gui
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/software/mc_foc_ctrl.png
    :alt: Matlab Controller
    :width: 500px
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon1-ebz#none#../
-   :alt: Overview#none

@@ -20,6 +20,3 @@ Where to Buy
 
    :adi:`FMCMOTCON2 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-FMCMOTCON2.html#eb-overview>`
 
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon2-ebz#none#./
-   :alt: Overview#none

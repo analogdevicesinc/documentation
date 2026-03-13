@@ -1,3 +1,4 @@
+
 AD5421 - Microcontroller No-OS Driver
 =====================================
 
@@ -56,7 +57,8 @@ The Communication Driver has a standard interface, so the AD5421 driver can be u
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -229,5 +231,4 @@ More information
    See `more-information <https://wiki.analog.com/more-information>`_
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
 

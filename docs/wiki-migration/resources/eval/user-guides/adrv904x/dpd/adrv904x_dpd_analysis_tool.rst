@@ -132,6 +132,3 @@ Other parameters, such as nonlinearity order of the DPD model basis functions ca
 Pressing the "Generate DPD Models" button will begin the model optimization, which may take up to 10 minutes to complete. The progress bar will update for each of the eight models created. The PSD of the model results will be shown in the PSD Model tab of the figure viewer. Models are output to the 'Data Export Folder' under the subfolder 'models'.
 
 Documentation for the GUI and its features can be easily accessed through the help toolbar option.
-
-.. image:: https://wiki.analog.com/_media/navigation_adrv904x_dpd_user_guide#resources/eval/user-guides/adrv904x/dpd/error_troubleshooting
-   :alt: ERROR TROUBLESHOOTING #resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME

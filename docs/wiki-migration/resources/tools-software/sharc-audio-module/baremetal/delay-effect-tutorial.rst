@@ -230,7 +230,3 @@ This is a situation where we should take advantage of the ``processAudio_Backgro
 
 Note that the delay length will only increase *after* the zeroing of both delay line expansion areas so it is quite safe. Now compile, upload and run your code again. You can turn the pots on the Audio Project Fin to control the delay parameters in real time.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#ring-modulator-effect-tutorial
-   :alt: Implementing a Ring Modulator Effect#.|Bare Metal Framework#audio-elements\|"Audio Elements" and "Audio Effects"

@@ -708,9 +708,6 @@ CRITICAL WARNING: [IP_Flow 19-459] IP file 'C:/Git/hdl/library/common/ad_pnmon.v
 
 These warnings appear because the libraries are using common modules which are located under the **./library/common/**. These warnings can be ignored, they won't affect the functionality of the IP or the project. However, you may not be able to 'archive' these projects. The irony is that it does copy these files to the project area, but ignores them.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#releases
-   :alt: Releases and supported tool versions#hdl|Main page#run|Running on hardware
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_4.png
    :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_12.png

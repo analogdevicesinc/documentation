@@ -11,6 +11,3 @@ A typical development flow for DPD development with the ADRV904x Integrated DPD 
 3. **ADI DPD Integration with Custom Radio:** This step involves bring up and tuning of ADI-DPD with custom radio. Some considerations could include optimizing DPD model and settings to account for design variation between evaluation setup and the custom radio platform to ensure that the radio is still meeting specifications from step 2.
 
 4. **Mass Production of Custom Radios with ADI DPD:** At this stage, the user can enable ADI DPD robustness features to ensure that DPD is stable in faulty conditions and dynamic traffic that a radio could encounter in a real world deployment.
-
-.. image:: https://wiki.analog.com/_media/navigation_adrv904x_dpd_user_guide#resources/eval/user-guides/adrv904x/dpd/adrv904x_dpd_capabilities
-   :alt: ADRV904x DPD SPECS#resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME page#resources:eval:user-guides:adrv904x:dpd:pre-requisites|ADRV904x DPD EVAL PRE-REQUISITES

@@ -46,8 +46,5 @@ If the LEDs are strobing rapidly, it has encountered an initialization error. Ha
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#project-wizard
-   :alt: Bare Metal Project Wizard#.|Bare Metal Framework#configuring-cces|Configuring CCES
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/bm-cces-open-framework.gif
    :width: 600px

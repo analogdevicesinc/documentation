@@ -35,9 +35,6 @@ The TIA output is fed to the ADA4950, a buffer which converts the signal from si
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmclidar1-ebz#none#./
-   :alt: Overview#none#
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/afe_top_pic.jpg
    :width: 300px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/afe_bot_pic.jpg

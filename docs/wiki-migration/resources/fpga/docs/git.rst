@@ -143,6 +143,3 @@ Need help?
 ----------
 
 -  :ez:`FPGA Reference Designs support forum <community/fpga>`
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#intro
-   :alt: Introduction#hdl|Main page#releases|Releases and supported tool versions

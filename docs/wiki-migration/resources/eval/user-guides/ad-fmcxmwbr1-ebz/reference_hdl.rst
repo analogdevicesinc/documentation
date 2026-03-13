@@ -2312,6 +2312,3 @@ Help & Support
    
 
 
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcxmwbr1-ebz#./
-   :alt: Hardware#.:\|Reference HDL Design#.:\|Software

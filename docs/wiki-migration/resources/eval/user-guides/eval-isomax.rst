@@ -166,9 +166,6 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/eval-isomax
-   :alt: Overview #:resources:eval:user-guides:eval-isomax:hardware\| EVAL-ISOMAX Hardware Guide# :resources:eval:user-guides:eval-isomax:software\| EVAL-ISOMAX Software Guide#none
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_with_ad-apard32690-sl.png
    :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/adbms2950_with_isomax_and_sdp-k1.png

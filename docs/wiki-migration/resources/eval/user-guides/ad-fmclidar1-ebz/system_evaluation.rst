@@ -121,7 +121,3 @@ For the distance measurement, a correlation method is used. The LIDAR board has 
 
 Each displayed distance measurement is a mean value of the last 10 measurements to smooth out the variations in the received signals as much as possible. Each change to the GUI parameters only takes effect after Config Board is pressed. A snapshot of all the current received signals can be saved in a CSV file format.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmclidar1-ebz#none#./
-   :alt: Overview#none#

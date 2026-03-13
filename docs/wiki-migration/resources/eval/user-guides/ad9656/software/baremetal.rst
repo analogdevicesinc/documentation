@@ -27,6 +27,7 @@ Downloads
 Make
 ----
 
+
 No-OS Build Guide
 =================
 
@@ -143,9 +144,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -238,9 +239,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -279,12 +280,12 @@ Go in the project directory that should be built.
 
 .. collapsible:: Intel (Click to expand)
 
-   Copy the **.sof** and **.sopcinfo** to the project folder.
+   Copy the .sof and .sopcinfo to the project folder.
 
       ::
 
          $ ls
-         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof 
+         Makefile  profiles  src  src.mk  system_bd.sopcinfo  adrv9009_a10gx.sof
          $ make
 
          # Alternatively you may select a .sopcinfo file explicitly by:
@@ -408,7 +409,7 @@ Go in the project directory that should be built.
 
 .. collapsible:: Xilinx (Click to expand)
 
-   Copy the **.xsa** to the project folder and run:
+   Copy the .xsa to the project folder and run:
 
       ::
 
@@ -573,10 +574,11 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
 If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
 
+-  It is recommended to have a version of Windows 10 or 11.
+-  You must have all updates installed in WSL.
+
 ::
 
-    * It is recommended to have a version of Windows 10 or 11.
-    * You must have all updates installed in WSL.
         To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
 ::
@@ -586,10 +588,8 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
 
 WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
 
-::
-
-    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
-    * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers: 
+-  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+-  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
 
@@ -611,9 +611,7 @@ If there is a device connected to the USB port, it can be checked from the Devic
 
 To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
 
-::
-
-    * Open Command Prompt in Administrator mode and enter the command:
+-  Open Command Prompt in Administrator mode and enter the command:
 
 ::
 
@@ -643,9 +641,7 @@ In WSL enter the following command:
 
 A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
 
-::
-
-    * To attach a USB device to WSL enter the following command in Command Prompt:
+-  To attach a USB device to WSL enter the following command in Command Prompt:
 
 ::
 
@@ -683,9 +679,7 @@ In WSL if you run: **lsusb** we have:
 
 If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
 
-::
-
-    * If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+-  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -856,9 +850,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -951,9 +945,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -992,7 +986,7 @@ Go in the project directory that should be built.
 
 .. collapsible:: Intel (Click to expand)
 
-   Copy the **.sof** and **.sopcinfo** to the project folder.
+   Copy the .sof and .sopcinfo to the project folder.
 
       ::
 
@@ -1121,7 +1115,7 @@ Go in the project directory that should be built.
 
 .. collapsible:: Xilinx (Click to expand)
 
-   Copy the **.xsa** to the project folder and run:
+   Copy the .xsa to the project folder and run:
 
       ::
 
@@ -1286,10 +1280,11 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
 If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
 
+-  It is recommended to have a version of Windows 10 or 11.
+-  You must have all updates installed in WSL.
+
 ::
 
-    * It is recommended to have a version of Windows 10 or 11.
-    * You must have all updates installed in WSL.
         To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
 ::
@@ -1299,10 +1294,8 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
 
 WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
 
-::
-
-    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
-    * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+-  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+-  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
 
@@ -1324,9 +1317,7 @@ If there is a device connected to the USB port, it can be checked from the Devic
 
 To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
 
-::
-
-    * Open Command Prompt in Administrator mode and enter the command:
+-  Open Command Prompt in Administrator mode and enter the command:
 
 ::
 
@@ -1356,9 +1347,7 @@ In WSL enter the following command:
 
 A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
 
-::
-
-    * To attach a USB device to WSL enter the following command in Command Prompt:
+-  To attach a USB device to WSL enter the following command in Command Prompt:
 
 ::
 
@@ -1396,9 +1385,7 @@ In WSL if you run: **lsusb** we have:
 
 If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
 
-::
-
-    * If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+-  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -1569,9 +1556,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio 2.10 (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_)
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio 2.10 (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`)
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
 
       .. important::
@@ -1664,9 +1651,9 @@ Use the following commands to prepare your environment for building no-OS projec
 
    .. collapsible:: ADuCM3029 (Click to expand)
 
-      -  Install the CrossCore Embedded Studio (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide <resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`_) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
-      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
-      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to `resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces <resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_install_or_upgrade_packs_for_cces>`_)
+      -  Install the CrossCore Embedded Studio (refer to :doc:`cces_setup_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_setup_guide>`) to a path without whitespaces such as ``C:\ADI\cces2.11.1``.
+      -  Manually Install ``ADuCM302x Device Family Pack (DFP3.2.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
+      -  Manually Install ``ARM.CMSIS pack (5.7.0+)`` (refer to :doc:`cces_user_guide#how_to_install_or_upgrade_packs_for_cces </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`)
       -  Make sure you don't have multiple versions of ADuCM302x DFP and ARM CMSIS packs installed.
       -  Set the CCES_HOME environment variable to point to the CrossCore Embedded Studio installation directory: ``export CCES_HOME=/c/ADI/cces2.11.1``.
 
@@ -1705,7 +1692,7 @@ Go in the project directory that should be built.
 
 .. collapsible:: Intel (Click to expand)
 
-   Copy the **.sof** and **.sopcinfo** to the project folder.
+   Copy the .sof and .sopcinfo to the project folder.
 
       ::
 
@@ -1834,7 +1821,7 @@ Go in the project directory that should be built.
 
 .. collapsible:: Xilinx (Click to expand)
 
-   Copy the **.xsa** to the project folder and run:
+   Copy the .xsa to the project folder and run:
 
       ::
 
@@ -1999,10 +1986,11 @@ If you use WSL you can not test the boards on Linux because it does not support 
 
 If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to switch the USB device from Windows to WSL. To do this, the following steps must be followed:
 
+-  It is recommended to have a version of Windows 10 or 11.
+-  You must have all updates installed in WSL.
+
 ::
 
-    * It is recommended to have a version of Windows 10 or 11.
-    * You must have all updates installed in WSL.
         To be able to see the kernel version, the WSL version, and other features, in WSL (Ubuntu) you can enter the command:
 
 ::
@@ -2012,10 +2000,8 @@ If you use WSL (Ubuntu) and want to connect to JTAG with a board, you have to sw
 
 WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL2.Testing was done on version 22.4 of Ubuntu.
 
-::
-
-    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
-    * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
+-  You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
+-  You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
 
@@ -2037,9 +2023,7 @@ If there is a device connected to the USB port, it can be checked from the Devic
 
 To attach the JTAG (or any USB device) from Windows to WSL we must do the following:
 
-::
-
-    * Open Command Prompt in Administrator mode and enter the command:
+-  Open Command Prompt in Administrator mode and enter the command:
 
 ::
 
@@ -2069,9 +2053,7 @@ In WSL enter the following command:
 
 A list of all attached USB devices will be displayed here. At this moment we will only see roots hubs.
 
-::
-
-    * To attach a USB device to WSL enter the following command in Command Prompt:
+-  To attach a USB device to WSL enter the following command in Command Prompt:
 
 ::
 
@@ -2109,9 +2091,7 @@ In WSL if you run: **lsusb** we have:
 
 If Device Manager checks the USB device attached in WSL, it will no longer appear in the list of devices.
 
-::
-
-    * If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
+-  If you want to return to the initial settings (the USB device must be attached to Windows): The USB device must be disconnected and connected to the computer or in Command Prompt, run the following command:
 
 ::
 
@@ -2294,9 +2274,9 @@ Step 3: Verify Configuration (Optional)
 
 If you want to verify or customize the auto-generated configuration:
 
-#. In Vitis Explorer, expand ``_ide`` folder
-#. Open ``launch.json`` to view the configuration
-#. Configuration named ``<project_name>_app_hw_1`` is ready to use
+-  In Vitis Explorer, expand ``_ide`` folder
+-  Open ``launch.json`` to view the configuration
+-  Configuration named ``<project_name>_app_hw_1`` is ready to use
 
 The configuration is automatically regenerated each time you run ``make sdkopen``.
 
@@ -2315,9 +2295,9 @@ Start Debugging
 
 **In Vitis IDE:**
 
-#. Make sure you've built with ``make DEBUG=1``
-#. Click **FLOW** panel (left side) → Click **"Debug"**
-#. Debug session starts immediately!
+-  Make sure you've built with ``make DEBUG=1``
+-  Click **FLOW** panel (left side) → Click **"Debug"**
+-  Debug session starts immediately!
 
 .. warning::
 
@@ -2326,11 +2306,11 @@ Start Debugging
 
 **What happens:**
 
-#. Vitis connects to board via JTAG
-#. Programs FPGA with bitstream
-#. Runs FSBL to initialize processor (ZynqMP/Zynq only)
-#. Loads your application ELF
-#. Stops at entry point - ready to debug!
+-  Vitis connects to board via JTAG
+-  Programs FPGA with bitstream
+-  Runs FSBL to initialize processor (ZynqMP/Zynq only)
+-  Loads your application ELF
+-  Stops at entry point - ready to debug!
 
 **Debug Features:**
 
@@ -2538,10 +2518,10 @@ The "Debug Configurations" dialog will open.
 
 **B. Create New Configuration:**
 
-#. In the left panel, expand **"Single Application Debug"**
-#. Click the **"New Configuration"** button (first icon in the toolbar - looks like a document with a star/plus)
-#. A new configuration will be created (e.g., ``Debugger_-Default``)
-#. You can rename it if desired (e.g., ``adrv904x-debug``)
+-  In the left panel, expand **"Single Application Debug"**
+-  Click the **"New Configuration"** button (first icon in the toolbar - looks like a document with a star/plus)
+-  A new configuration will be created (e.g., ``Debugger_-Default``)
+-  You can rename it if desired (e.g., ``adrv904x-debug``)
 
 **C. Configure Main Tab:**
 
@@ -2596,10 +2576,10 @@ Browse to or enter the FSBL path:
 
 After configuration, the Summary panel on the right shows the debug sequence:
 
-#. Reset system and clear FPGA
-#. Program FPGA with bitstream
-#. Initialize PS using FSBL
-#. Load application and suspend processors
+-  Reset system and clear FPGA
+-  Program FPGA with bitstream
+-  Initialize PS using FSBL
+-  Load application and suspend processors
 
 **E. Configure Application Tab:**
 
@@ -2632,8 +2612,8 @@ The IDE typically auto-populates these fields:
 
 **F. Save and Apply:**
 
-#. Click **"Apply"** to save the configuration
-#. Click **"Debug"** to start debugging immediately, or **"Close"** to save for later
+-  Click **"Apply"** to save the configuration
+-  Click **"Debug"** to start debugging immediately, or **"Close"** to save for later
 
 The configuration is now saved and ready to use!
 
@@ -2652,19 +2632,19 @@ Start Debugging
 
 **In Vitis Classic Eclipse IDE:**
 
-#. Make sure you've built with ``make DEBUG=1``
-#. Go to **Run** → **Debug Configurations...**
-#. Select your debug configuration (e.g., "adrv904x-debug")
-#. Click **"Debug"** button
-#. The Debug perspective will open automatically
+-  Make sure you've built with ``make DEBUG=1``
+-  Go to **Run** → **Debug Configurations...**
+-  Select your debug configuration (e.g., "adrv904x-debug")
+-  Click **"Debug"** button
+-  The Debug perspective will open automatically
 
 **What happens:**
 
-#. Vitis connects to board via JTAG
-#. Programs FPGA with bitstream
-#. Runs FSBL to initialize processor (ZynqMP/Zynq only)
-#. Loads your application ELF
-#. Stops at entry point (usually ``main()``) - ready to debug!
+-  Vitis connects to board via JTAG
+-  Programs FPGA with bitstream
+-  Runs FSBL to initialize processor (ZynqMP/Zynq only)
+-  Loads your application ELF
+-  Stops at entry point (usually ``main()``) - ready to debug!
 
 **Debug Features:**
 
@@ -2736,7 +2716,7 @@ Troubleshooting
 
 **For complete documentation, see:** :git-no-OS:`Xilinx Vitis Debugging Guide <doc/sphinx/source/build_guides/build_xilinx_vitis2025.rst>`
 
-++++
+
 
 
 Software setup
@@ -2751,61 +2731,50 @@ Software setup
 GUI
 ---
 
-::
 
-    * Open Xilinx Software Development Kit (XSDK) and provide the workspace location.
+-  Open Xilinx Software Development Kit (XSDK) and provide the workspace location.
 
-::
-
-    * Create a new Application Project: go to File -> New -> Application Project
+-  Create a new Application Project: go to **File -> New -> Application Project**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/new_app_project.png
    :alt: Creating a new application project
    :align: center
    :width: 650px
 
-::
-
-    * Create a new Hardware Platform: click New from the Target Hardware section
+-  Create a new Hardware Platform: click **New** from the **Target Hardware** section
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/create_new_hardware.png
    :alt: Creating a new hardware platform
    :align: center
    :width: 450px
 
-::
-
-    * Specify the already generated Hardware Platform Specification File (more details about the generation: :doc:`/wiki-migration/resources/fpga/docs/build`): in the Target Hardware Specification section browse the desired file
+-  Specify the already generated Hardware Platform Specification File (more details about the generation: :doc:`/wiki-migration/resources/fpga/docs/build`): in the **Target Hardware Specification** section browse the desired file
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/create_hw_project.png
    :alt: Import hardware description file
    :align: center
    :width: 450px
 
-::
-
-    * Give a name to the project and to the board support package and click Next
+-  Give a name to the project and to the board support package and click **Next**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/create_app_project.png
    :alt: Application project settings
    :align: center
    :width: 450px
 
-::
-
-    * Select the Empty Application templeta and click Finish
+-  Select the **Empty Application** templeta and click **Finish**
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/project_templates.png
    :alt: Choose application template
    :align: center
    :width: 450px
 
-::
+-  The new **Empty Application project** should look like:
 
-    * The new Empty Application project should look like:
-
-
-    |Empty application project|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/empty_project.png
+   :alt: Empty application project
+   :align: center
+   :width: 650px
 
 .. important::
 
@@ -2814,10 +2783,8 @@ GUI
 
    |image1|
 
-::
-
-    * Copy the source code files into the src directory
-    * Make sure you uncomment the the required carrier vendor and CPU architecture from the app_config.h (or config.h) header file.
+-  Copy the source code files into the **src** directory
+-  Make sure you uncomment the the required carrier vendor and CPU architecture from the **app_config.h** (or **config.h**) header file.
 
 -  Example for choosing the Altera carrier in the **app_config.h** header file:
 
@@ -2826,46 +2793,34 @@ GUI
    //#define XILINX
    #define ALTERA
 
-::
+-  If there are multiple folders present in in the src one, include all the paths of the folders: go to the settings of the project and in the **C/C++ Build -> Settings -> Tool Settings -> gcc compiler -> Directories** section and add the paths of all the folders.
 
-    * If there are multiple folders present in in the src one, include all the paths of the folders: go to the settings of the project and in the C/C++ Build -> Settings -> Tool Settings -> gcc compiler -> Directories section and add the paths of all the folders.
+-  The SDK should automatically build the projects and the Console window will display the result of the build. If the build is not done automatically select the **Project -> Build Automatically** menu option.
 
-::
+-  At this point the software project setup is complete, the FPGA can be programmed and the software can be downloaded into the system. You can program the FPGA by clicking on **Xilinx Tools -> Program FPGA**
 
-    * The SDK should automatically build the projects and the Console window will display the result of the build. If the build is not done automatically select the Project -> Build Automatically menu option.
-     
-    * At this point the software project setup is complete, the FPGA can be programmed and the software can be downloaded into the system. You can program the FPGA by clicking on Xilinx Tools -> Program FPGA 
-
-::
-
-    * After the FPGA was programmed, we need to create a new Run configuration, by selecting Run -> Run Configurations..., in the Run Configuration windows select the Xilinx C/C++ application (System Debugger) and click at the New Configuration button at the upper left corner.
+-  After the FPGA was programmed, we need to create a new Run configuration, by selecting **Run** -> **Run Configurations...**, in the Run Configuration windows select the Xilinx C/C++ application (System Debugger) and click at the **New Configuration** button at the upper left corner.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/new_run_configurations.png
    :alt: Create new run configuration
    :align: center
    :width: 650px
 
-::
-
-    * If your target carrier has a Zync SoC, make sure, that you specify the Initialization file, and select the Run ps7_init and Run ps7_post_config options.
+-  If your target carrier has a Zync SoC, make sure, that you specify the **Initialization file**, and select the **Run ps7_init** and **Run ps7_post_config** options.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/zynq_init_file.png
    :alt: Define Zynq initialization file
    :align: center
    :width: 650px
 
-::
-
-    * At the Application tab define your current project name and application executable. (.elf)
+-  At the **Application** tab define your current project name and application executable. (.elf)
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/elf_app.png
    :alt: Define Zynq initialization file
    :align: center
    :width: 650px
 
-::
-
-       * The output of the example program can be viewed in the SDK console by enabling the Connect STDIO Console option and setting the baud rate of the UART port to 115200.
+-  The output of the example program can be viewed in the SDK console by enabling the Connect STDIO Console option and setting the baud rate of the UART port to 115200.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/stdio_config.png
    :alt: Define Zynq initialization file
@@ -2874,24 +2829,19 @@ GUI
 
 ::
 
-       * As an alternative a UART terminal can be used to capture the output of the example program. The number of used UART port depends on the computer's configuration. The following settings must be used in the UART terminal:
-       Baud Rate: 115200bps
-       Data: 8 bit
-       Parity: None
-       Stop bits: 1 bit
-       Flow Control: none
+     * As an alternative a UART terminal can be used to capture the output of the example program. The number of used UART port depends on the computer's configuration. The following settings must be used in the UART terminal:
+     Baud Rate: 115200bps
+     Data: 8 bit
+     Parity: None
+     Stop bits: 1 bit
+     Flow Control: none
 
-::
+-  When the run configuration is done, the software can be started by clicking the **Run** button.
 
-     * When the run configuration is done, the software can be started by clicking the Run button.
+-  Your new bare metal application should run
 
-::
-
-     * Your new bare metal application should run  
-
-.. |Empty application project| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/empty_project.png
-   :width: 650px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/ad9361_no_os_microblaze_heap_size.png
+
 
 
 More information

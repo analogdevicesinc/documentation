@@ -119,6 +119,3 @@ Support
    -  Questions? :ez:`Ask Help & Support <sw-interface-tools>`.
    
 
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation_ad-fmcmotcon1-ebz#software
-   :alt: Software#.:\|Overview#qdesys_ip|QDESYS Motor Control IP

@@ -96,9 +96,6 @@ Where to Buy
    :adi:`FMCMOTCON2 Evaluation Kit <design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-FMCMOTCON2.html>`
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/navigation_ad-fmcmotcon2-ebz#quickstart
-   :alt: Quick Start Guides#.:\|Overview#reference_hdl|HDL Reference Design
-
 .. |AD-FMCMOTCON2-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_ctrl_single.jpg
    :width: 300px
 .. |AD-DRVLV2-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_lv_single.jpg

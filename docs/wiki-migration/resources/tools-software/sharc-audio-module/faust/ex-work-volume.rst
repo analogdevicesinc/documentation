@@ -86,8 +86,6 @@ When you run the project through the debugger, you will be able to control the v
 
 --------------
 
-`Hardware Reference#.|Faust and the SHARC Audio Module#ex-work-reverb|MIDI Controlled Referb <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/navigation SHARC Audio Module#..hardware>`_
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png
    :width: 50px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/diagram_button.png

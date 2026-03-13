@@ -1,18 +1,20 @@
 ADXL362 - No-OS Driver for Renesas Microcontroller Platforms
 ============================================================
 
+
 Supported Devices
------------------
+=================
 
 -  :adi:`ADXL362`
 
 Evaluation Boards
------------------
+=================
 
 -  `PmodACL2 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-ACL2>`_
 
 Overview
---------
+========
+
 
 The :adi:`ADXL362` is an ultralow power, 3-axis MEMS accelerometer that consumes less than 2 μA at a 100 Hz output data rate and 270 nA when in motion triggered wake-up mode. Unlike accelerometers that use power duty cycling to achieve low power consumption, the :adi:`ADXL362` does not alias input signals by undersampling; it samples the full bandwidth of the sensor at all data rates.
 
@@ -23,7 +25,7 @@ In addition to its ultralow power consumption, the :adi:`ADXL362` has many featu
 The :adi:`ADXL362` operates on a wide 1.6 V to 3.5 V supply range, and can interface, if necessary, to a host operating on a separate, lower supply voltage. :adi:`ADXL362` is available in a 3 mm × 3.25 mm × 1.06 mm package.
 
 Applications
-~~~~~~~~~~~~
+------------
 
 -  Hearing aids
 -  Home healthcare devices
@@ -35,10 +37,11 @@ Applications
    :align: center
 
 
+
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-------------------
+==================
 
 The driver contains two parts:
 
@@ -53,7 +56,8 @@ There are three functions which are called by the ADXL362 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -94,7 +98,6 @@ The following functions are implemented in this version of ADXL362 driver:
 | void ADXL362_SetupInactivityDetection(unsigned char refOrAbs, unsigned short threshold, unsigned short time)          | Configures inactivity detection.                                       |
 +-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
 
 
 **HW Platform(s):**
@@ -258,10 +261,11 @@ Software Project Setup
 More information
 ================
 
+
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 

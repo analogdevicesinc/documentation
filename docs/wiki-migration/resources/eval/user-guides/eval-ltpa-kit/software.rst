@@ -1769,10 +1769,6 @@ Additional Resources
 
 >>>>
 
-.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/eval-ltpa-kit/hardware
-   :alt: EVAL-LTPA-KIT Hardware Guide #:resources:eval:user-guides:eval-ltpa-kit|EVAL-LTPA-KIT Overview #none
-   :align: left
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/calibrationwarning.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/run_calibrate.png

@@ -3,6 +3,7 @@
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/linux/kernel/zynq.html
 
 
+
 Building the Zynq Linux kernel and devicetrees from source
 ==========================================================
 
@@ -18,25 +19,23 @@ We provide `a script that does automates <https://raw.githubusercontent.com/anal
 
 The script takes up to 3 parameters, but if left blank, it uses defaults:
 
-#. **<local_kernel_dir>** - default is **linux-adi** if left blank ; use this, if you want to use an already cloned kernel repo
-#. **<devicetree_file>** - which device tree should be exported/copied from the build ; default is ``zynq-zc702-adv7511-ad9361-fmcomms2-3.dtb`` for Zynq
-#. **<path_to_other_toolchain>** - in case you have your own preferred toolchain [other than Linaro's or Xilinx's] you can use override it with this 3rd param
+-  **<local_kernel_dir>** - default is **linux-adi** if left blank ; use this, if you want to use an already cloned kernel repo
+-  **<devicetree_file>** - which device tree should be exported/copied from the build ; default is ``zynq-zc702-adv7511-ad9361-fmcomms2-3.dtb`` for Zynq
+-  **<path_to_other_toolchain>** - in case you have your own preferred toolchain [other than Linaro's or Xilinx's] you can use override it with this 3rd param
 
 The script will:
 
-::
-
-    - clone the ADI kernel tree
-    - download the Linaro GCC toolchain [if no other is specified]
-    - build the ADI kernel tree
-    - export/copy the Image file and device tree file out of the kernel build folder
+-  clone the ADI kernel tree
+-  download the Linaro GCC toolchain [if no other is specified]
+-  build the ADI kernel tree
+-  export/copy the Image file and device tree file out of the kernel build folder
 
 Running the script in one line [with defaults]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-   wget https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/main/linux/build_zynq_kernel_image.sh && chmod +x build_zynq_kernel_image.sh && ./build_zynq_kernel_image.sh 
+   wget https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/main/linux/build_zynq_kernel_image.sh && chmod +x build_zynq_kernel_image.sh && ./build_zynq_kernel_image.sh
 
 Building using Petalinux
 ------------------------
@@ -72,41 +71,51 @@ Checkout the Release branch
 
 +============================+
 
+
 | 2014_R2                    |
 
 +----------------------------+
+
 
 | 2015_R2                    |
 
 +----------------------------+
 
+
 | 2016_R1                    |
 
 +----------------------------+
+
 
 | 2016_R2                    |
 
 +----------------------------+
 
+
 | 2017_R1                    |
 
 +----------------------------+
+
 
 | 2018_R1                    |
 
 +----------------------------+
 
+
 | 2018_R2                    |
 
 +----------------------------+
+
 
 | 2019_R1                    |
 
 +----------------------------+
 
+
 | 2019_R2                    |
 
 +----------------------------+
+
 
 | 2021_R1                    |
 
@@ -348,6 +357,7 @@ Modifying devicetrees
 Building the Zynq boot image
 ----------------------------
 
+
 How to build the Zynq boot image BOOT.BIN
 =========================================
 
@@ -356,8 +366,9 @@ How to build the Zynq boot image BOOT.BIN
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html\
 
 
-| The boot image BOOT.BIN is built using the bootgen tool which requires several input files.
-| Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
+The boot image BOOT.BIN is built using the bootgen tool which requires several input files.
+
+Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
 
 -  `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_ projects
 
@@ -379,13 +390,15 @@ The script can be downloaded from here:
 
 -  `build_boot_bin.sh <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynq_boot_bin/build_boot_bin.sh>`_
 
-
-
 .. tip::
 
    \ NOTE: After downloading the script you need to make it executable
 
-   | ``$ chmod +x build_boot_bin.sh``
+   
+   ::
+   
+      $ chmod +x build_boot_bin.sh
+   
 
 
 Usage
@@ -406,9 +419,7 @@ Usage
 
    $ source /opt/Xilinx/Vivado/202x.x/settings64.sh
 
-::
-
-      * When using cygwin, you can add the following in the ~/.bashrc configuration file:
+-  When using **cygwin**, you can add the following in the ~/.bashrc configuration file:
 
 ::
 
@@ -417,15 +428,13 @@ Usage
 
 There is also a version of script that works in Windows Powershell: `build_boot_bin.ps1 <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynq_boot_bin/build_boot_bin.ps1>`_
 
-
-
 .. tip::
 
-   \ NOTE: u-boot.elf
+   \ NOTE: u-boot.elf For those who don't want to build u-boot themselves. The u-boot.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz
 
-   | For those who don't want to build u-boot themselves.
-   | The u-boot.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz
    
+
+
 
 
 

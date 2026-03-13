@@ -15,6 +15,3 @@ An H-bridge power circuit enables four quadrant control
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/dc_control.png
    :width: 400px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/introduction/navigation_ad-fmcmotcon1-ebz#drives
-   :alt: Electric Motor Drives#..:\|Overview#bldc_control|Brushless DC Motor Control

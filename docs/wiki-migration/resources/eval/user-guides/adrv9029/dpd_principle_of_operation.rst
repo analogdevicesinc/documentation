@@ -14,6 +14,3 @@ The intermodulation distortion products between various subcarriers due to PA no
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpd_prepostdpd_comparisonlte20.png
    :align: center
    :width: 400px
-
-.. image:: https://wiki.analog.com/_media/navigation_adrv9029_dpd_user_guide#none#resources/eval/user-guides/adrv9029
-   :alt: main page#dpd_system_overview|ADRV9029 DFE System Overview

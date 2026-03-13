@@ -27,6 +27,3 @@ This page captures the capabilities of ADRV9029 compared with the previous gener
 +--------------------------------+---+------------+-----------------------------------------------------+
 |                                |   |            | \* HW Cholesky Decomposition for acceleration       |
 +--------------------------------+---+------------+-----------------------------------------------------+
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation_adrv9029_dpd_user_guide#dpd_system_overview2
-   :alt: DPD System Overview#resources:eval:user-guides:adrv9029|main page#dpd_development_flow|ADRV9029 DPD Development Flow

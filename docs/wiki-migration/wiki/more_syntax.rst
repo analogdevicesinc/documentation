@@ -113,12 +113,13 @@ Allows you to `include <https://www.dokuwiki.org/plugin:include>`_ different wik
 
 Example:
 
-::
 
 
 
-   Analog Devices Wiki
-======================
+
+   
+Analog Devices Wiki
+===================
 
 This wiki provides developers using Analog Devices products with software and documentation, including HDL interface code, software drivers, and reference project examples for FPGA connectivity. It also contains user guides for some Analog Devices evaluation boards to help developers get up and running fast.
 
@@ -132,16 +133,16 @@ Browse the Wiki
 Resources and Tools
 ~~~~~~~~~~~~~~~~~~~
 
--  `Evaluation Board & Kit Documentation and User Guides <resources/eval>`_
--  `FPGA Reference Designs <resources/fpga>`_
--  `External Peripheral Drivers for Linux <resources/tools-software/linux-drivers-all>`_
--  `External Peripheral Drivers for Microcontroller Software <resources/no-os/drivers>`_
--  `SigmaStudio and SigmaDSP Documentation <resources/tools-software/sigmastudio>`_
+-  :doc:`Evaluation Board & Kit Documentation and User Guides </wiki-migration/resources/eval>`
+-  :doc:`FPGA Reference Designs </wiki-migration/resources/fpga>`
+-  :doc:`External Peripheral Drivers for Linux </wiki-migration/resources/tools-software/linux-drivers-all>`
+-  :doc:`External Peripheral Drivers for Microcontroller Software </wiki-migration/resources/no-os/drivers>`
+-  :doc:`SigmaStudio and SigmaDSP Documentation </wiki-migration/resources/tools-software/sigmastudio>`
 
 University Program
 ~~~~~~~~~~~~~~~~~~
 
--  `University Home Page <university>`_
+-  :doc:`University Home Page </wiki-migration/university>`
 
    -  Learning Material
    -  Lab Exercises
@@ -154,9 +155,9 @@ University Program
 Help make the Wiki Better
 -------------------------
 
-We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive `help section <wiki/help>`_ for those new to the wiki.
+We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive :doc:`help section </wiki-migration/wiki/help>` for those new to the wiki.
 
-`View Recent Updates to the wiki <recent-updates>`_
+:doc:`View Recent Updates to the wiki </wiki-migration/recent-updates>`
 
 Analog Devices Support
 ----------------------
@@ -164,7 +165,9 @@ Analog Devices Support
 Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the `EngineerZone Support Community <https://ez.analog.com/>`_.
 
 
+
 provides the first section of the start page
+
 
 Analog Devices Wiki
 ===================
@@ -181,16 +184,16 @@ Browse the Wiki
 Resources and Tools
 ~~~~~~~~~~~~~~~~~~~
 
--  `Evaluation Board & Kit Documentation and User Guides <resources/eval>`_
--  `FPGA Reference Designs <resources/fpga>`_
--  `External Peripheral Drivers for Linux <resources/tools-software/linux-drivers-all>`_
--  `External Peripheral Drivers for Microcontroller Software <resources/no-os/drivers>`_
--  `SigmaStudio and SigmaDSP Documentation <resources/tools-software/sigmastudio>`_
+-  :doc:`Evaluation Board & Kit Documentation and User Guides </wiki-migration/resources/eval>`
+-  :doc:`FPGA Reference Designs </wiki-migration/resources/fpga>`
+-  :doc:`External Peripheral Drivers for Linux </wiki-migration/resources/tools-software/linux-drivers-all>`
+-  :doc:`External Peripheral Drivers for Microcontroller Software </wiki-migration/resources/no-os/drivers>`
+-  :doc:`SigmaStudio and SigmaDSP Documentation </wiki-migration/resources/tools-software/sigmastudio>`
 
 University Program
 ~~~~~~~~~~~~~~~~~~
 
--  `University Home Page <university>`_
+-  :doc:`University Home Page </wiki-migration/university>`
 
    -  Learning Material
    -  Lab Exercises
@@ -203,14 +206,15 @@ University Program
 Help make the Wiki Better
 -------------------------
 
-We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive `help section <wiki/help>`_ for those new to the wiki.
+We welcome user contributions to this wiki. To contribute, just `register/log in <this>start?do=login&sectok=137703aab4ae2af40b719b88eb5f214d>`__ and click edit on any of the pages. There is an extensive :doc:`help section </wiki-migration/wiki/help>` for those new to the wiki.
 
-`View Recent Updates to the wiki <recent-updates>`_
+:doc:`View Recent Updates to the wiki </wiki-migration/recent-updates>`
 
 Analog Devices Support
 ----------------------
 
 Technical support discussions about ADI products, hardware, software, and solutions found on this Wiki can be found in the `EngineerZone Support Community <https://ez.analog.com/>`_.
+
 
 
 interwiki links

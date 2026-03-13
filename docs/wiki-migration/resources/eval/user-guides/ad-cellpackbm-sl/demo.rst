@@ -467,9 +467,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    
 
 
-.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/ad-cellpackbm-sl
-   :alt: Overview #:resources:eval:user-guides:ad-cellpackbm-sl:software|AD-CELLPACKBM-SL Software User Guide#none
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/quick-meausre-tab.png
    :width: 2000px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_pack_current.png

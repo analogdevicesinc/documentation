@@ -37,6 +37,3 @@ ADRV904x DPD ERROR TROUBLESHOOTING
 
 -  Grab a memory dump and contact ADI if you encounter this error.
 -  These errors may require a full system reset
-
-.. image:: https://wiki.analog.com/_media/navigation_adrv904x_dpd_user_guide#resources/eval/user-guides/adrv904x/dpd/evaluation_user_guide
-   :alt: EVALUATING ADRV904x DPD #resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME #resources:eval:user-guides:adrv904x:dpd:adrv904x_dpd_analysis_tool|ADRV904x DPD ANALYSIS TOOL

@@ -1,18 +1,20 @@
 AD7780 - No-OS Driver for Microchip Microcontroller Platforms
 =============================================================
 
+
 Supported Devices
------------------
+=================
 
 -  :adi:`AD7780`
 
 Evaluation Boards
------------------
+=================
 
 -  PmodAD3
 
 Overview
---------
+========
+
 
 The :adi:`AD7780` is a complete low power front-end solution for bridge sensor products, including weigh scales, strain gages, and pressure sensors. It contains a precision, low power, 24-bit sigma-delta (Σ-Δ) ADC; an on-chip, low noise programmable gain amplifier (PGA); and an on-chip oscillator.
 
@@ -25,7 +27,7 @@ The on-chip PGA has a gain of 1 or 128, supporting a full-scale differential inp
 The :adi:`AD7780` operates with a power supply from 2.7 V to 5.25 V. It is available in a narrow body, 14-lead SOIC package and a 16-lead TSSOP package.
 
 Applications
-~~~~~~~~~~~~
+------------
 
 -  Weigh scales
 -  Pressure Measurement
@@ -36,10 +38,11 @@ Applications
    :align: center
 
 
+
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-------------------
+==================
 
 The driver contains two parts:
 
@@ -54,7 +57,8 @@ There are three functions which are called by the AD7780 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -75,7 +79,6 @@ The following functions are implemented in this version of AD7780 driver:
 | float AD7780_ConvertToVoltage(unsigned long rawSample, float vRef, unsigned char gain) | Converts the 24-bit raw value to volts.                                       |
 +----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
 
 
 **HW Platform(s):**
@@ -191,6 +194,7 @@ The following image shows a generic list of commands in a serial terminal connec
 Software Project Setup
 ----------------------
 
+
 This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Run the **MPLAB X** integrated development environment.
@@ -229,6 +233,7 @@ This section presents the steps for developing a software application that will 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
    :align: center
+
 
 
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
@@ -292,6 +297,7 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
+
 This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
 
 -  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
@@ -316,15 +322,17 @@ This section presents the steps for developing a chipKIT application that will r
    :align: center
 
 
+
 More information
 ================
+
 
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad3_pic32.jpg

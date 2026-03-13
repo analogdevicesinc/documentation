@@ -31,6 +31,3 @@ This page captures the capabilities of ADRV904x compared with the previous gener
 +---------------------------------+-----------------------------------------------------+--------------------------------------------------------------+
 
 **NOTE:** DDR Stands for Dynamic Deviation Reduction based Volterra Series that effectively compensates for memory effects in wide bandwidth PAs
-
-.. image:: https://wiki.analog.com/_media/navigation_adrv904x_dpd_user_guide#resources/eval/user-guides/adrv904x/dpd/dfe_system_overview
-   :alt: ADRV904x DFE SYSTEM OVERVIEW#resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME page#resources:eval:user-guides:adrv904x:dpd:high_level_development_flow|ADRV904x DEVELOPMENT FLOW

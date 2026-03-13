@@ -253,15 +253,16 @@ ADC Common (axi_ad\*)
 |         |        | [7:0]       | CUSTOM_CONTROL      | RW   | 0x00    |                                                                                                                                                                                                                                                                                                |
 +---------+--------+-------------+---------------------+------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+
 ADAQ8092
-~~~~~~~~
+========
 
 | Select output format decode mode.
 | - bit [0] - enables digital output randomizer decode
 | - bit [1] - enables alternate bit polarity decode
 
 AD4858
-~~~~~~
+======
 
 | Select data format/oversampling
 | - bit [2] - enable oversampling
@@ -273,7 +274,7 @@ AD4858
 -  3 = 32 bit
 
 AD7606X_PI
-~~~~~~~~~~
+==========
 
 | Select the parallel interface's operation mode
 | - bit [2] - change mode with the selected one
@@ -283,6 +284,7 @@ AD7606X_PI
 -  1 = CRC_ENABLED
 -  2 = STATUS_HEADER
 -  3 = CRC_STATUS
+
 
 
 \|
@@ -403,7 +405,7 @@ AD7606X_PI
 
 
 ADC Channel (axi_ad\*)
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 ++++ Click to expand regmap \|
 
@@ -508,7 +510,7 @@ ADC Channel (axi_ad\*)
 
 
 IO Delay Control (axi_ad\*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 ++++ Click to expand regmap \|
 
@@ -538,7 +540,7 @@ IO Delay Control (axi_ad\*)
 
 
 DAC Common (axi_ad)
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 ++++ Click to expand regmap \|
 
@@ -674,7 +676,7 @@ DAC Common (axi_ad)
 
 
 DAC Channel (axi_ad\*)
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 ++++ Click to expand regmap \|
 
@@ -788,7 +790,7 @@ DAC Channel (axi_ad\*)
 
 
 Generic TDD Control (axi_tdd)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 ++++ Click to expand regmap \|
 
@@ -1142,7 +1144,7 @@ Generic TDD Control (axi_tdd)
 
 
 Transceiver TDD Control (axi_ad\*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 ++++ Click to expand regmap \|
 
@@ -1288,7 +1290,7 @@ Transceiver TDD Control (axi_ad\*)
 
 
 JESD TPL (up_tpl_common)
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 ++++ Click to expand regmap \|
 
@@ -1330,7 +1332,7 @@ JESD TPL (up_tpl_common)
 
 
 JESD204 RX (axi_jesd204_rx)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 ++++ Click to expand regmap \|
 
@@ -1516,8 +1518,8 @@ JESD204 RX (axi_jesd204_rx)
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                           |                 | [31:2]                         | Reserved                     | RO     | 0x00        |                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                           |                 | [1:0]                          | STATUS_STATE                 | RO-V   | 0x00        | 8B/10B : State of the `8B/10B link state machine <#b10b_link_state_machine>`_. (0 = RESET, 1 = WAIT_FOR_PHY, 2 = CGS, 3 = SYNCHRONIZED)                                                                                                                                                                                                                                                            |
-|                           |                 |                                |                              |        |             | 64B/66B : State of the `64B/66B link state machine <#b66b_link_state_machine>`_. (0 = RESET, 1 = WAIT_BS, 2 = BLOCK_SYNC, 3 = DATA)                                                                                                                                                                                                                                                                |
+|                           |                 | [1:0]                          | STATUS_STATE                 | RO-V   | 0x00        | 8B/10B : State of the `8B/10B link state machine <https://wiki.analog.com/>`_. (0 = RESET, 1 = WAIT_FOR_PHY, 2 = CGS, 3 = SYNCHRONIZED)                                                                                                                                                                                                                                                            |
+|                           |                 |                                |                              |        |             | 64B/66B : State of the `64B/66B link state machine <https://wiki.analog.com/>`_. (0 = RESET, 1 = WAIT_BS, 2 = BLOCK_SYNC, 3 = DATA)                                                                                                                                                                                                                                                                |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 0xc0 + 0x08\*n            | 0x0300 +0x20\*n | LANEn_STATUS                   |                              |        |             |                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------+-----------------+--------------------------------+------------------------------+--------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1616,7 +1618,7 @@ JESD204 RX (axi_jesd204_rx)
 
 
 JESD204 TX (axi_jesd204_tx)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 ++++ Click to expand regmap \|
 
@@ -1853,7 +1855,7 @@ JESD204 TX (axi_jesd204_tx)
 
 
 DMA Controller (axi_dmac)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2036,7 +2038,7 @@ DMA Controller (axi_dmac)
 
 
 Fan Controller (axi_fan_control)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2204,7 +2206,7 @@ Fan Controller (axi_fan_control)
 
 
 System ID (axi_system_id)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2246,7 +2248,7 @@ System ID (axi_system_id)
 
 
 Clock Generator (axi_clkgen)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2294,7 +2296,7 @@ Clock Generator (axi_clkgen)
 
 
 Clock Monitor (axi_clock_monitor)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2388,7 +2390,7 @@ Clock Monitor (axi_clock_monitor)
 
 
 HDMI Transmit (axi_hdmi_tx)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2494,7 +2496,7 @@ HDMI Transmit (axi_hdmi_tx)
 
 
 HDMI Receive (axi_hdmi_rx)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2562,7 +2564,7 @@ HDMI Receive (axi_hdmi_rx)
 
 
 General Purpose Registers (axi_gpreg)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2608,7 +2610,7 @@ General Purpose Registers (axi_gpreg)
 
 
 SPI Engine (axi_spi_engine)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2716,7 +2718,7 @@ SPI Engine (axi_spi_engine)
 
 
 Xilinx XCVR (axi_xcvr) Regmap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 ++++ Click to expand regmap \|
 
@@ -2767,9 +2769,9 @@ Xilinx XCVR (axi_xcvr) Regmap
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                          |        | [10:8]        | RATE[2:0]        | RW   | 0x00    | Transceiver primitive control, refer Xilinx documentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          |        | [5:4]         | SYSCLK_SEL[1:0]  | RW   | 0x00    | For GTX drives directly the (RX/TX)SYSCLKSEL pin of the transceiver. Refer to Xilinx documentation. For GTH/GTY drives directly the (RX/TX)PLLCLKSEL pin of the transceiver and indirectly the (RX/TX)SYSCLKSEL pin of the transceiver see :doc:`axi_adxcvr#Table 1 </wiki-migration/resources/fpga/docs/axi_adxcvr>`.                                                                                                                                                                                                                                         |
+|                          |        | [5:4]         | SYSCLK_SEL[1:0]  | RW   | 0x00    | For GTX drives directly the (RX/TX)SYSCLKSEL pin of the transceiver. Refer to Xilinx documentation. For GTH/GTY drives directly the (RX/TX)PLLCLKSEL pin of the transceiver and indirectly the (RX/TX)SYSCLKSEL pin of the transceiver see :doc:`axi_adxcvr#table_1 </wiki-migration/resources/fpga/docs/axi_adxcvr>`.                                                                                                                                                                                                                                         |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                          |        | [2:0]         | OUTCLK_SEL[2:0]  | RW   | 0x00    | Transceiver primitive control :doc:`axi_adxcvr#Table 2 </wiki-migration/resources/fpga/docs/axi_adxcvr>`, refer Xilinx documentation.                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|                          |        | [2:0]         | OUTCLK_SEL[2:0]  | RW   | 0x00    | Transceiver primitive control :doc:`axi_adxcvr#table_2 </wiki-migration/resources/fpga/docs/axi_adxcvr>`, refer Xilinx documentation.                                                                                                                                                                                                                                                                                                                                                                                                                          |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 0x0009                   | 0x0024 | GENERIC_INFO  |                  |      |         | Physical layer info                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +--------------------------+--------+---------------+------------------+------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2898,7 +2900,7 @@ Xilinx XCVR (axi_xcvr) Regmap
 
 
 PWM Generator (axi_pwm_gen)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 ++++ Click to expand regmap \|
 
@@ -3432,9 +3434,9 @@ Analog Devices supplies a full-stack supporting JESD204B/C which provides a full
    :class: download
 
    
-   -  `Reference hardware platforms <#jesd204b_rapid_prototyping_platforms>`_ for rapid-prototyping
-   -  `FPGA HDL <#fpga_hdl_support>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
-   -  `Software <#software_support>`_ to configure the converter devices and FPGA HDL peripherals
+   -  `Reference hardware platforms <https://wiki.analog.com/>`_ for rapid-prototyping
+   -  `FPGA HDL <https://wiki.analog.com/>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
+   -  `Software <https://wiki.analog.com/>`_ to configure the converter devices and FPGA HDL peripherals
    
 
 
@@ -3473,16 +3475,16 @@ Physical Layer
 
 Physical layer peripherals are responsible for interfacing and configuring the high-speed serial transceivers. Currently we have support for GTXE2, GTHE3, GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
 
--  `AXI_ADXCVR <../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
--  `UTIL_ADXCVR <../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
+-  `AXI_ADXCVR <https://wiki.analog.com/../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
+-  `UTIL_ADXCVR <https://wiki.analog.com/../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
 
 Link Layer
 ~~~~~~~~~~
 
 Link layer peripherals are responsible for JESD204B/C protocol handling, including scrambling/descrambling, lane alignment, character replacement and alignment monitoring.
 
--  `JESD204B/C Transmit Peripheral <jesd204/axi_jesd204_tx>`_: JESD204B/C Link Layer Transmit Peripheral
--  `JESD204B/C Receive Peripheral <jesd204/axi_jesd204_rx>`_: JESD204B/C Link Layer Receive Peripheral
+-  :doc:`JESD204B/C Transmit Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`: JESD204B/C Link Layer Transmit Peripheral
+-  :doc:`JESD204B/C Receive Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`: JESD204B/C Link Layer Receive Peripheral
 
 Transport Layer
 ~~~~~~~~~~~~~~~
@@ -3535,15 +3537,15 @@ No-OS
 Tutorial
 --------
 
-#. `Introduction <jesd204/tutorial/introduction>`_
-#. `System Architecture <jesd204/tutorial/system_architecture>`_
+#. :doc:`Introduction </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/introduction>`
+#. :doc:`System Architecture </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/system_architecture>`
 #. :doc:`Generic JESD204B block designs </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`. This will help you understand the generic blocks for the next steps.
 #. Checkout the :doc:`HDL Source </wiki-migration/resources/fpga/docs/build>`, and then build either one of:
 
-   #. `HDL Xilinx <jesd204/tutorial/hdl_xilinx>`_
-   #. `HDL Altera <jesd204/tutorial/hdl_altera>`_
+   #. :doc:`HDL Xilinx </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/hdl_xilinx>`
+   #. :doc:`HDL Altera </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/hdl_altera>`
 
-#. `Linux <jesd204/tutorial/linux>`_
+#. :doc:`Linux </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/linux>`
 
 Example Projects
 ----------------
@@ -3617,7 +3619,7 @@ Example Projects
 Additional Information
 ----------------------
 
--  `JESD204B Glossary <jesd204/jesd204_glossary>`_
+-  :doc:`JESD204B Glossary </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>`
 
 Technical Articles
 ~~~~~~~~~~~~~~~~~~
@@ -3719,9 +3721,9 @@ Analog Devices supplies a full-stack supporting JESD204B/C which provides a full
    :class: download
 
    
-   -  `Reference hardware platforms <#jesd204b_rapid_prototyping_platforms>`_ for rapid-prototyping
-   -  `FPGA HDL <#fpga_hdl_support>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
-   -  `Software <#software_support>`_ to configure the converter devices and FPGA HDL peripherals
+   -  `Reference hardware platforms <https://wiki.analog.com/>`_ for rapid-prototyping
+   -  `FPGA HDL <https://wiki.analog.com/>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
+   -  `Software <https://wiki.analog.com/>`_ to configure the converter devices and FPGA HDL peripherals
    
 
 
@@ -3760,16 +3762,16 @@ Physical Layer
 
 Physical layer peripherals are responsible for interfacing and configuring the high-speed serial transceivers. Currently we have support for GTXE2, GTHE3, GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
 
--  `AXI_ADXCVR <../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
--  `UTIL_ADXCVR <../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
+-  `AXI_ADXCVR <https://wiki.analog.com/../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
+-  `UTIL_ADXCVR <https://wiki.analog.com/../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
 
 Link Layer
 ~~~~~~~~~~
 
 Link layer peripherals are responsible for JESD204B/C protocol handling, including scrambling/descrambling, lane alignment, character replacement and alignment monitoring.
 
--  `JESD204B/C Transmit Peripheral <jesd204/axi_jesd204_tx>`_: JESD204B/C Link Layer Transmit Peripheral
--  `JESD204B/C Receive Peripheral <jesd204/axi_jesd204_rx>`_: JESD204B/C Link Layer Receive Peripheral
+-  :doc:`JESD204B/C Transmit Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`: JESD204B/C Link Layer Transmit Peripheral
+-  :doc:`JESD204B/C Receive Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`: JESD204B/C Link Layer Receive Peripheral
 
 Transport Layer
 ~~~~~~~~~~~~~~~
@@ -3822,15 +3824,15 @@ No-OS
 Tutorial
 --------
 
-#. `Introduction <jesd204/tutorial/introduction>`_
-#. `System Architecture <jesd204/tutorial/system_architecture>`_
+#. :doc:`Introduction </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/introduction>`
+#. :doc:`System Architecture </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/system_architecture>`
 #. :doc:`Generic JESD204B block designs </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`. This will help you understand the generic blocks for the next steps.
 #. Checkout the :doc:`HDL Source </wiki-migration/resources/fpga/docs/build>`, and then build either one of:
 
-   #. `HDL Xilinx <jesd204/tutorial/hdl_xilinx>`_
-   #. `HDL Altera <jesd204/tutorial/hdl_altera>`_
+   #. :doc:`HDL Xilinx </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/hdl_xilinx>`
+   #. :doc:`HDL Altera </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/hdl_altera>`
 
-#. `Linux <jesd204/tutorial/linux>`_
+#. :doc:`Linux </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/linux>`
 
 Example Projects
 ----------------
@@ -3904,7 +3906,7 @@ Example Projects
 Additional Information
 ----------------------
 
--  `JESD204B Glossary <jesd204/jesd204_glossary>`_
+-  :doc:`JESD204B Glossary </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>`
 
 Technical Articles
 ~~~~~~~~~~~~~~~~~~
@@ -4006,9 +4008,9 @@ Analog Devices supplies a full-stack supporting JESD204B/C which provides a full
    :class: download
 
    
-   -  `Reference hardware platforms <#jesd204b_rapid_prototyping_platforms>`_ for rapid-prototyping
-   -  `FPGA HDL <#fpga_hdl_support>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
-   -  `Software <#software_support>`_ to configure the converter devices and FPGA HDL peripherals
+   -  `Reference hardware platforms <https://wiki.analog.com/>`_ for rapid-prototyping
+   -  `FPGA HDL <https://wiki.analog.com/>`_ for interfacing JESD204B/C ADCs, DACs, and RF Transceivers
+   -  `Software <https://wiki.analog.com/>`_ to configure the converter devices and FPGA HDL peripherals
    
 
 
@@ -4047,16 +4049,16 @@ Physical Layer
 
 Physical layer peripherals are responsible for interfacing and configuring the high-speed serial transceivers. Currently we have support for GTXE2, GTHE3, GTHE4, GTYE4 for Xilinx and Arria 10 transceivers for Intel.
 
--  `AXI_ADXCVR <../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
--  `UTIL_ADXCVR <../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
+-  `AXI_ADXCVR <https://wiki.analog.com/../docs/axi_adxcvr>`_: JESD204B Gigabit Transceiver Register Configuration Peripheral
+-  `UTIL_ADXCVR <https://wiki.analog.com/../docs/util_xcvr>`_: JESD204B Gigabit Transceiver Interface Peripheral for Xilinx FPGAs
 
 Link Layer
 ~~~~~~~~~~
 
 Link layer peripherals are responsible for JESD204B/C protocol handling, including scrambling/descrambling, lane alignment, character replacement and alignment monitoring.
 
--  `JESD204B/C Transmit Peripheral <jesd204/axi_jesd204_tx>`_: JESD204B/C Link Layer Transmit Peripheral
--  `JESD204B/C Receive Peripheral <jesd204/axi_jesd204_rx>`_: JESD204B/C Link Layer Receive Peripheral
+-  :doc:`JESD204B/C Transmit Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`: JESD204B/C Link Layer Transmit Peripheral
+-  :doc:`JESD204B/C Receive Peripheral </wiki-migration/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`: JESD204B/C Link Layer Receive Peripheral
 
 Transport Layer
 ~~~~~~~~~~~~~~~
@@ -4109,15 +4111,15 @@ No-OS
 Tutorial
 --------
 
-#. `Introduction <jesd204/tutorial/introduction>`_
-#. `System Architecture <jesd204/tutorial/system_architecture>`_
+#. :doc:`Introduction </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/introduction>`
+#. :doc:`System Architecture </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/system_architecture>`
 #. :doc:`Generic JESD204B block designs </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`. This will help you understand the generic blocks for the next steps.
 #. Checkout the :doc:`HDL Source </wiki-migration/resources/fpga/docs/build>`, and then build either one of:
 
-   #. `HDL Xilinx <jesd204/tutorial/hdl_xilinx>`_
-   #. `HDL Altera <jesd204/tutorial/hdl_altera>`_
+   #. :doc:`HDL Xilinx </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/hdl_xilinx>`
+   #. :doc:`HDL Altera </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/hdl_altera>`
 
-#. `Linux <jesd204/tutorial/linux>`_
+#. :doc:`Linux </wiki-migration/resources/fpga/peripherals/jesd204/tutorial/linux>`
 
 Example Projects
 ----------------
@@ -4191,7 +4193,7 @@ Example Projects
 Additional Information
 ----------------------
 
--  `JESD204B Glossary <jesd204/jesd204_glossary>`_
+-  :doc:`JESD204B Glossary </wiki-migration/resources/fpga/peripherals/jesd204/jesd204_glossary>`
 
 Technical Articles
 ~~~~~~~~~~~~~~~~~~
@@ -4286,8 +4288,5 @@ More Information
 ----------------
 
 -  `JESD204 High-Speed Serial Interface Support <https://wiki.analog.com/.>`_
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/navigation_hdl_user_guide#../../docs/ip_cores
-   :alt: IP cores#../../docs/hdl|Main page#../../docs/tips|Using and modifying the HDL design
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/peripherals/jesd204/quadmxfe_linkbringup_204b_adc.png

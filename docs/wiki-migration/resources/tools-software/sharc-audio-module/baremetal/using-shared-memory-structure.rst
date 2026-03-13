@@ -104,7 +104,3 @@ If you want the ARM core to manage a user interface, this is a very easy way to 
    Tip: Add multicore_data to the expressions window in CCES. You can halt the ARM core and see the contents of the shared memory structure while the SHARC cores are running.
 
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#audio-frameworks
-   :alt: Selecting Between HW Platforms#.|Bare Metal Framework#peripheral-and-system-drivers|Using Peripheral and System Drivers

@@ -6,6 +6,3 @@ Both `CE <https://en.wikipedia.org/wiki/CE_marking>`_ and `FCC <https://en.wikip
 Because ADI boards are custom built evaluation kits destined for professionals (you) to be used solely at research and development facilities for such purposes, they are considered exempt from the EU product directives and normally are not tested for CE or FCC compliance.
 
 If you choose to use your board to transmit using an antenna, it is your responsibility to make sure that you are in compliance with all laws for the country, frequency, and power levels in which the device is used. Additionally, some countries regulate reception in certain frequency bands. Again, it is the responsibility of the user to maintain compliance with all local laws and regulations.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/navigation_ad-fmcomms11-ebz
-   :alt: #Configuration options#.:\|Hardware#none#

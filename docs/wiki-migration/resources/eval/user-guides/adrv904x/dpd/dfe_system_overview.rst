@@ -18,6 +18,3 @@ Please note that the observation path on ADRV904x consists of a direct RF sampli
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/adrv904x_dfe_system_overview.jpg
    :align: center
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv904x/dpd/navigation_adrv904x_dpd_user_guide#dpd_principle_of_operation
-   :alt: ADRV904x DPD INTRODUCTION#resources:eval:user-guides:adrv904x:dpd|ADRV904x DPD HOME page#resources:eval:user-guides:adrv904x:dpd:adrv904x_dpd_capabilities|ADRV904x DPD SPECS

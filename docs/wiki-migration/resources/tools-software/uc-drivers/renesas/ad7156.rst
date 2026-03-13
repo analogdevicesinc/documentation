@@ -1,18 +1,20 @@
 AD7156 - No-OS Driver for Renesas Microcontroller Platforms
 ===========================================================
 
+
 Supported Devices
------------------
+=================
 
 -  :adi:`AD7156`
 
 Evaluation Boards
------------------
+=================
 
 -  `PmodCDC1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-CDC1>`_
 
 Overview
---------
+========
+
 
 The :adi:`AD7156` delivers a complete signal processing solution for capacitive sensors, featuring an ultralow power converter with fast response time.
 
@@ -25,7 +27,7 @@ By default, the :adi:`AD7156` operates in standalone mode using the fixed power-
 The :adi:`AD7156` operates with a 1.8 V to 3.6 V power supply. It is specified over the temperature range of −40°C to +85°C.
 
 Applications
-~~~~~~~~~~~~
+------------
 
 -  Buttons and switches
 -  Proximity sensing
@@ -38,10 +40,11 @@ Applications
    :align: center
 
 
+
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-------------------
+==================
 
 The driver contains two parts:
 
@@ -54,7 +57,8 @@ There are three functions which are called by the AD7156 driver:
 -  I2C_Write() – writes data to the device.
 -  I2C_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -97,7 +101,6 @@ The following functions are implemented in this version of AD7156 driver:
 | float AD7156_WaitReadChannelCapacitance(unsigned char channel)                                                       | Waits for a finished CDC conversion the selected channel, reads a sample and converts the data to picofarads(pF).       |
 +----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
 
 
 **HW Platform(s):**
@@ -218,10 +221,11 @@ Software Project Setup
 More information
 ================
 
+
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 

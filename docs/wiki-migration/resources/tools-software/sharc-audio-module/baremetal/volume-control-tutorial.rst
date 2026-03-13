@@ -125,7 +125,3 @@ Other Fun Things to Try
 -  Use a third pot to control the left-right balance of the signal
 -  Create a phase shift effect on one channel by multiplying it by a negated value of volume_level
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#audio-elements
-   :alt: "Audio Elements" and "Audio Effects"#.|Bare Metal Framework#chaining-audio-elements|Chaining Elements and Effects

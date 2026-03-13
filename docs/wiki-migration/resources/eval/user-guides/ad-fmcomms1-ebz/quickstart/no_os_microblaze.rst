@@ -327,9 +327,6 @@ After running the example program the system is configured to generate a sinewav
    :align: center
    :width: 600px
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/navigation_ad-fmcomms1-ebz#zynq
-   :alt: Linux on ZC702, ZC706, ZED#.:\|Quick Start Guides#none
-
 .. |Open New Hardware Target| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/vivado_open_new_hardaware_target_start.png
    :width: 290px
 .. |Server name| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/vivado_open_new_hardaware_target_server_name.png

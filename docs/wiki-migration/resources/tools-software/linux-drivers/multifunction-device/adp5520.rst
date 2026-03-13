@@ -156,7 +156,7 @@ This method is appropriate when the I2C bus is a system bus, as in many embedded
 
 So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
 
-For more information see: `Documentation/i2c/instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`_
+For more information see: `instantiating-devices.rst </git.linux.org>documentation/i2c/instantiating-devices.rst>`__
 
 
 <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:adp5520_pdev_data{} c linux-kernel> <source trunk/arch/blackfin/mach-bf537/boards/stamp.c:/CONFIG_PMIC_ADP5520/2-/#if/ c linux-kernel>

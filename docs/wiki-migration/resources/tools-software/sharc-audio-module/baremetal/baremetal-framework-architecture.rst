@@ -69,7 +69,3 @@ Each core also has one or more callbacks which is where your custom audio proces
 -  ``Callback_MIDI_Message.cpp`` - add any MIDI processing functions to this file
 -  ``Callback_Pushbuttons.cpp`` - add any code to respond to push button events to this file
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#configuring-cces
-   :alt: Configuring CCES#.|Bare Metal Framework#configuring-the-framework|Configuring the Framework

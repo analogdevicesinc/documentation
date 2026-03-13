@@ -32,6 +32,3 @@ OTHER REQUIREMENTS
    -  Typically, an OFDM signal with -14dBFS rms and 8dB Peak-To-Average-Power Ratio is used for DPD evaluation.
 
       -  Third party vector signal generation tools such as `Keysight Signal Studio <https://www.keysight.com/us/en/lib/resources/miscellaneous/signal-studio-software-free-trial-1368357.html>`_, `Matlab Vector Generation <https://www.mathworks.com/help/5g/ug/downlink-carrier-waveform-generation.html>`_ can be used for generating wideband OFDM signals.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation_adrv9029_dpd_user_guide#dpd_system_overview2
-   :alt: DPD System Overview#resources:eval:user-guides:adrv9029|main page#evaluating_dpd_through_tes_gui|TES GUI

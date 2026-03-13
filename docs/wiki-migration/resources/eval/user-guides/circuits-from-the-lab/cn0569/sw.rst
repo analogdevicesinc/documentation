@@ -61,8 +61,9 @@ Building the software
 
 After installing CrossCore Embedded Studio and necessary support pack the user can open a command line terminal (with admin privileges on Windows) and navigate to the project folder in the cloned no-OS repository. There the following list of commands can be used:
 
+
 No-OS Build System
-------------------
+==================
 
 ::
 
@@ -81,22 +82,23 @@ When modifications are performed, the following three commands trigger the neces
 <code> make debug </code> - downloads the executable on the target board and opens a command-line ``gdb`` instance to debug it (only on some platforms)
 
 Workflows
-~~~~~~~~~
+---------
 
 .. image:: https://wiki.analog.com/_media/resources/no-os/workflows.drawio_1_.svg
    :align: center
 
 Compilation Using Generic Tools
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/no-os/workflownosdk.drawio_1_.svg
    :align: center
 
 Compilation Using Platform-Specific Tools
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------
 
 .. image:: https://wiki.analog.com/_media/resources/no-os/workflowsdk.drawio_1_.svg
    :align: center
+
 
 
 Running the example

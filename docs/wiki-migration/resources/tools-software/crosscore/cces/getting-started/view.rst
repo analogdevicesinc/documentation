@@ -73,7 +73,3 @@ The **Graphical Editor** perspective was designed for use with GUI Add-ins, such
 
 Further information about these views and the others available is located in CCES Online Help.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#config
-   :alt: System & Project Configuration#.|CCES Getting Started#help|Online Help & Example Browser

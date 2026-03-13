@@ -24,9 +24,6 @@ An external power supply is used to power the lasers. The kit comes with a 12V @
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmclidar1-ebz#none#./
-   :alt: Overview#none#
-
 .. |Top View| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/laser_bot_pic.jpg
    :width: 300px
 .. |Bottom view| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmclidar1-ebz/laser_top.png

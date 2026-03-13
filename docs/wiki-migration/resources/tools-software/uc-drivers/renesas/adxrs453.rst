@@ -1,18 +1,20 @@
 ADXRS453 - No-OS Driver for Renesas Microcontroller Platforms
 =============================================================
 
+
 Supported Devices
------------------
+=================
 
 -  :adi:`ADXRS453`
 
 Evaluation Boards
------------------
+=================
 
 -  `PmodGYRO2 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-GYRO2>`_
 
 Overview
---------
+========
+
 
 The :adi:`ADXRS453` is an angular rate sensor (gyroscope) intended for industrial, instrumentation, and stabilization applications in high vibration environments. An advanced, differential, quad sensor design rejects the influence of linear acceleration, enabling the :adi:`ADXRS453` to offer high accuracy rate sensing in harsh environments where shock and vibration are present.
 
@@ -23,7 +25,7 @@ The :adi:`ADXRS453` is capable of sensing an angular rate of up to ±300°/sec. 
 The :adi:`ADXRS453` is available in a 16-lead plastic cavity SOIC (SOIC_CAV) and an SMT-compatible vertical mount package (LCC_V), and is capable of operating across a wide voltage range (3.3 V to 5 V).
 
 Applications
-~~~~~~~~~~~~
+------------
 
 -  Rotation sensing in high vibration environments
 -  Rotation sensing for industrial and instrumentation applications
@@ -33,10 +35,11 @@ Applications
    :align: center
 
 
+
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
 
 Driver Description
-------------------
+==================
 
 The driver contains two parts:
 
@@ -51,7 +54,8 @@ There are three functions which are called by the ADXRS453 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -76,7 +80,6 @@ The following functions are implemented in this version of ADXRS453 driver:
 | float ADXRS453_GetTemperature(void)                                              | Reads temperature from ADXRS453 and converts it to degrees Celsius. |
 +----------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
 
 
 **HW Platform(s):**
@@ -258,10 +261,11 @@ Software Project Setup
 More information
 ================
 
+
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 

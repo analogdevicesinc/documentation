@@ -33,6 +33,3 @@ With the initialization DXE generated and the application DXE finalized, the loa
 
 With the loader image generated, it is ready to be programmed into the boot source memory, which will require use of the **Command-Line Device Programmer (CLDP)**.
 
---------------
-
-`Creating Bootable Applications#.app|Creating Bootable Applications#boot-app-bf60x|Creating a Boot Image (ADSP-BF60x) <https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#.app>`_

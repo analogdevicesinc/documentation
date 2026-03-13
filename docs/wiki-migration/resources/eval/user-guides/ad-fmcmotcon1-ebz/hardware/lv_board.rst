@@ -184,9 +184,6 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/navigation_ad-fmcmotcon1-ebz#controller_board
-   :alt: Controller Board#..:\|Overview#signal_chain|Signal Measurement Chain
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_block_diagram_simplified.png
    :width: 350px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/lv_block_diagram.png

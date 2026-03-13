@@ -305,9 +305,6 @@ Bandwidth (Modified Board)
 | BW with 3.6GHz LO and 0dBm input (Ch1). | BW with 3.6GHz LO and 0dBm input (Ch2). |
 +-----------------------------------------+-----------------------------------------+
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#functional_overview#./
-   :alt: Hardware#Configuration options
-
 .. |AD9122 Spurs| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/ad9122_fig10.png
    :width: 250px
 .. |ADL5375 Bandwidth| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/hardware/adl5375-05_fig63.png

@@ -109,9 +109,6 @@ Downloads
    
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/navigation_ad-fmcmotcon2-ebz#controller_board
-   :alt: Controller Board#..:\|Overview#signal_chain|Signal Measurement Chain
-
 .. |AD-DRVLV2-EBZ Top| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/ad-drvlv2-ebz_top_parts.jpg
    :width: 600px
 .. |AD-DRVLV2-EBZ Bottom| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/hardware/ad-drvlv2-ebz_bottom_parts.jpg

@@ -192,7 +192,3 @@ When we press SW2, the LED next to the push button toggles. To disable this beha
 
    }
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#tremelo-effect-tutorial
-   :alt: Implementing a Tremolo Effect#.|Bare Metal Framework#delay-effect-tutorial|Implementing a Delay Effect

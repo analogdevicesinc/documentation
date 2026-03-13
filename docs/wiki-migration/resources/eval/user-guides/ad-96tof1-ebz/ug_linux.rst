@@ -1,11 +1,12 @@
 Linux User Guide
 ================
 
+
 Setting up the system
----------------------
+=====================
 
 Required hardware
-~~~~~~~~~~~~~~~~~
+-----------------
 
 -  :adi:`AD-96TOF1-EBZ development kit <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ad-96tof1-ebz.html>`
 -  `DragonBoard 410c <https://www.96boards.org/product/dragonboard410c/>`_
@@ -13,7 +14,7 @@ Required hardware
 -  Micro-USB to USB Cable
 
 Power on sequence
-~~~~~~~~~~~~~~~~~
+-----------------
 
 -  Plug the SD card that came in the AD-96TOF1-EBZ box into the DragonBoard410c SD card slot. To benefit from the most recent software updates it is highly recommended to update the SD card with the `latest SD card image <https://github.com/analogdevicesinc/aditof_sdk>`_
 -  Make sure that switch S6 on the DragonBoard410C is set to SD BOOT (position 2 ON, all others OFF)
@@ -26,6 +27,7 @@ Power on sequence
    :alt: DragonBoard410c USB connection
    :align: center
    :width: 300px
+
 
 
 Enable the USB connection to the host PC
@@ -70,6 +72,7 @@ Running the evaluation application
 
 You can build the evaluation application from source as part of the SDK build process described on github.
 
+
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/aditof_demo.png
    :alt: aditof-demo
    :align: center
@@ -94,7 +97,7 @@ The evaluation application also displays the temperature in deg C of the camera 
 The framerate at which data is acquired from the system is constantly updated on the GUI. The camera board outputs data at 30 frames per second (fps), but due to USB connection limitations, the host PC acquires the frames at a lower rate.
 
 Enabling the point cloud display in aditof-demo
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================
 
 -  The demo application has the capability to display a point cloud image if it detects an OpenCV module called viz.
 
@@ -113,12 +116,10 @@ Unfortunately OpenCV does not provide binaries for this module so a manual build
 
 
 Troubleshooting
-~~~~~~~~~~~~~~~
+===============
 
 -  The demo application hangs after closing the main window
 
    -  Due to some limitations the application always hangs if it is closed using the regular X button from the window top bar (title bar). To avoid this unpleasant hang, we've made available a second X button in the top right corner right above the title bar that can be used to safely close the demo application. We hope this to be a temporary workaround.
 
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-96tof1-ebz#none#./
-   :alt: Overview#none#

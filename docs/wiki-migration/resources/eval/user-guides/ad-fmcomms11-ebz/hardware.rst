@@ -53,8 +53,5 @@ The AD-FMCOMMS11-EBZ is a 12 layer board.
 
 |image2|
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/navigation_ad-fmcomms11-ebz
-   :alt: #none#|User Guide#prerequisites
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/board_size.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/board_layer.jpg

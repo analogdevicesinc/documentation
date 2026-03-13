@@ -15,6 +15,3 @@ The following boards are currently available:
 -  :doc:`EVAL-CN0396-ARDZ Shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0396>`
 -  :doc:`EVAL-CN0397-ARDZ Shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0397>`
 -  :doc:`EVAL-CN0398-ARDZ Shield </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0398>`
-
-.. image:: https://wiki.analog.com/_media/navigation_eval-adicup360#introduction#./
-   :alt: Overview#quickstart|Quick Start Guides

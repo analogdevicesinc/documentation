@@ -198,8 +198,6 @@ Audio Connection Setup: CODEC->VBAN
 
 --------------
 
-`Application Examples - Wave Audio#.|Advanced Audio Projects#.examples-ethernet-audio-mdns|Application Examples - Ethernet Audio MDNS <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.examples-wav-audio>`_
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/switch0.png
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/switch1.png

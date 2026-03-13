@@ -137,8 +137,6 @@ Application Flash via CrossCore Serial Flash Programmer
 
 --------------
 
-`Environment Setup and Compilation#.|Advanced Audio Projects#.examples-analog-audio|Application Examples - Analog Audio <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.environment_setup>`_
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/boot11.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/boot10.png

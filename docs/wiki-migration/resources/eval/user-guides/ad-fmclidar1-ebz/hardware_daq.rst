@@ -55,7 +55,3 @@ The DAQ board allows for an alternative use of the AD9528 where both its PLL sta
    `Design Files(Schematics, Layout, BOM) <https://wiki.analog.com/_media/resources/eval/user-guides/AD-FMCLIDAR1-EBZ/revb_daq.zip>`_
 
 
---------------
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmclidar1-ebz#none#./
-   :alt: Overview#none#

@@ -30,6 +30,3 @@ Schematic, PCB Layout, Bill of Materials
    -  Allegro Project
    
 
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/navigation_ad-fmcdaq3-ebz#quickstart
-   :alt: Quick Start Guides#.:\|Overview#reference_hdl|Reference HDL Design

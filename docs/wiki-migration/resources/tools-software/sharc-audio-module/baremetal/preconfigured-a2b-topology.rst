@@ -101,7 +101,3 @@ To access the four channels on the Class D amp, use the first four buffers assoc
 
 As mentioned above, if we are using an A2B configuration that sends four channels of audio (two stereo pairs) from the SHARC Audio Module to the Class D board, these will always be the first four channels.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#audioproj-tutorial
-   :alt: Using the Audio Project Fin#.|Bare Metal Framework#custom-a2b-topology|Adding Custom A2B Configurations

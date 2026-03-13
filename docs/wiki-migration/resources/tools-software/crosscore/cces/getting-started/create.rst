@@ -69,6 +69,3 @@ In the **Import Projects** window, click **Browse…** next to the **Select root
    Make sure the Copy projects into workspace option is selected if you want to preserve the original project and make a local copy to make edits to. NOTE: Files outside of the project folder will not be copied.
 
 
---------------
-
-`CCES Getting Started#.|CCES Getting Started#config|System & Project Configuration <https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#.>`_

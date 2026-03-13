@@ -259,9 +259,6 @@ There are a few key commands in the Linux environment that can help identify if 
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-gmslcamrpi-adp#none#./
-   :alt: Overview#none#
-
 .. [1]
    More information about these commands found here `i2c-tools - i2cdetect <https://www.mankier.com/8/i2cdetect>`_
 

@@ -15,6 +15,3 @@ Here can be found a collection of wiki pages, each providing examples how to mod
 -  :doc:`Quick system validation with no-Os </wiki-migration/resources/fpga/quick_validation>`
 -  :doc:`Creating a new IP </wiki-migration/resources/fpga/docs/hdl/creating_new_ip_guide>`
 -  :doc:`Use ADI IPs </wiki-migration/resources/fpga/docs/hdl/use_adi_ips>`
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
-   :alt: IP cores#hdl|Main page#intro|Introduction

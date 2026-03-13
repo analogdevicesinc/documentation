@@ -18,6 +18,7 @@
 
 
 
+
 AD-FMComms1-EBZ : no-OS Software Drivers
 ========================================
 
@@ -141,14 +142,13 @@ Downloads
 
 The latest stable source code can be downloaded from the Analog Devices github.
 
-
-
 .. admonition:: Download
    :class: download
 
    Release 2014_R2:
 
-   | https://github.com/analogdevicesinc/no-OS/tree/2014_R2/fmcomms1
+   
+   https://github.com/analogdevicesinc/no-OS/tree/2014_R2/fmcomms1
 
 
 Using the XCOMM API
@@ -186,5 +186,3 @@ After running the example program the system is configured to generate a sinewav
    :width: 500px
 
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcomms1-ebz#linux#./
-   :alt: Software#i2c_to_spi_bridge|I2C-to-SPI bridge

@@ -54,6 +54,3 @@ Support
    -  Questions? :ez:`Ask Help & Support <fpga>`.
    
 
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/reference_hdl/navigation_ad-fmcmotcon1-ebz#linux
-   :alt: HDL Design for Linux#..:\|Overview#none

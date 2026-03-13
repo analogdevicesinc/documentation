@@ -5,6 +5,3 @@ A typical DPD development flow with the ADRV9029 transceiver based DPD is shown 
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_typicaldpddevelopmentflow.png
    :align: center
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation_adrv9029_dpd_user_guide#evaluating_dpd_through_tes_gui
-   :alt: TES GUI#resources:eval:user-guides:adrv9029|main page#none

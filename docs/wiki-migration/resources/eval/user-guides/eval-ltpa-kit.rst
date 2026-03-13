@@ -278,9 +278,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/eval-ltpa-kit
-   :alt: Overview #:resources:eval:user-guides:eval-ltpa-kit:hardware|EVAL-LTPA-KIT Hardware Guide #:resources:eval:user-guides:eval-ltpa-kit:software|EVAL-LTPA-KIT Software User #none
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/power_analyzer_board_pinout.png
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/current_probes.jpg

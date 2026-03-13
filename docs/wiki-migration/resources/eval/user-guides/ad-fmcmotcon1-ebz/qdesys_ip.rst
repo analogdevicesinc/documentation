@@ -27,9 +27,6 @@ A FOC implementation targeted for the **AD-FMCMOTCON1-EBZ** is available from `Q
 
 |Phase currents| |Stator Currents vs Space|
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation_ad-fmcmotcon1-ebz#matlab_models
-   :alt: Simulink Models#.:\|Overview#help_and_support|Help and Support
-
 .. |Main panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_main_panel.png
    :width: 400px
 .. |PWM control panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/qdesys_pwm_panel.png

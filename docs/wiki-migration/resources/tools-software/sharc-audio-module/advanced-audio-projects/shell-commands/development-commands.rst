@@ -505,9 +505,6 @@ Argument Echo (echo)
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/navigation_shell_commands
-   :alt: Shell Commands#.network-commands|Network Commands#.|Shell Commands#.audio-commands|Audio Commands
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/edit_help.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit1.jpg

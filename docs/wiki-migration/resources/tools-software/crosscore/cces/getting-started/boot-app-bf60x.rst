@@ -70,7 +70,3 @@ Continuing with the example:
 
 10. Build the LDR file using the **Project → Build Project** pull-down.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#boot-app-bf70x
-   :alt: Creating a Boot Image (ADSP-BF70x)#.app|Creating Bootable Applications#boot-app-sc5xx|Creating a Boot Image (ADSP-SC5xx)

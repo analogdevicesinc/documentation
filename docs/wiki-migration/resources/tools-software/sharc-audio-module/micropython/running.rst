@@ -46,6 +46,3 @@ Now MicroPython has been flashed into the board, follow these steps to connect t
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/micropython/mpy.png
 
---------------
-
-`Faust and the SHARC Audio Module#..micropython|MicroPython Overview#.peripherals|Using Hardware Peripherals <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/micropython/navigation SHARC Audio Module#..faust>`_

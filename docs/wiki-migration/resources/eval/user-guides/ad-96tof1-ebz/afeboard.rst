@@ -23,6 +23,3 @@ The AD-96TOF1-EBZ AFE Board from factor is compliant with the 96Boards mezzanine
 
    
 
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-96tof1-ebz#none#./
-   :alt: Overview#none#

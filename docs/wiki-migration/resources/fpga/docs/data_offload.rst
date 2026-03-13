@@ -257,6 +257,3 @@ The former of those two is covered by the device tree, which implements five opt
 -  ``adi,transfer-length``: This option is useful for RX instances, where the size of the receive buffer can be reduced from the default (All available storage).
 
 The latter is addressed by the integration into :git-linux:`drivers/iio/frequency/cf_axi_dds.c` and :git-linux:`drivers/iio/frequency/cf_axi_dds_buffer_stream.c`, which allow the drivers to control the oneshot functionality of the data offload based on what was requested with the current IIO buffer, assuming bypass was disabled.
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#ip_cores
-   :alt: IP cores#hdl|Main page#tips|Using and modifying the HDL design

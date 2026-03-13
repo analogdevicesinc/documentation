@@ -31,6 +31,3 @@ Quick Start Guides are available for
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/mc_system_iio_scope.jpg
    :alt: FMCMOTCON1 on Zed board running linux
    :width: 500px
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon1-ebz#introduction#./
-   :alt: Overview#Hardware

@@ -6,7 +6,3 @@ Hardware Reference Manuals
 -  :doc:`Class-D Amplifier Module </wiki-migration/resources/tools-software/sharc-audio-module/hardware/class-d>` - Hardware reference guide for the Class-D Amplifier Module that connects to the SHARC Audio Module main board using the A2B bus.
 -  :doc:`Create your own Fin </wiki-migration/resources/tools-software/sharc-audio-module/hardware/creating>` - Design file templates and guidelines for creating your own SHARC Audio Module Fin board
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation_sharc_audio_module#baremetal
-   :alt: Bare Metal Framework#.|SHARC Audio Module#.faust|Faust and the SHARC Audio Module

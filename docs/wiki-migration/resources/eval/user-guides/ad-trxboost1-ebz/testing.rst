@@ -63,6 +63,3 @@ The TRXBOOST1 testing should be done using the following steps:
    :width: 800px
 
 -  Remove the TRXBOOST1 card and return to step 1 to continue with the next board.
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/navigation_ad-trxboost1-ebz#hardware
-   :alt: Hardware#.:\|User Guide#.:help_and_support|Help and Support

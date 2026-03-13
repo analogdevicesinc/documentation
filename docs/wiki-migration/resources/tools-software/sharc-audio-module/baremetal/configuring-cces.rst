@@ -15,7 +15,3 @@ Steps to Configure CCES
 -  Click the bug again once the debug profile has been created to download your binary files to the SHARC Audio Module.
 -  Once the files have been downloaded and the debugger is halted at the start of main(), go to Target->Settings->Target Options... Check the "Mask interrupts during step" checkbox.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#downloading-and-installing
-   :alt: Opening the Framework in CCES#.|Bare Metal Framework#baremetal-framework-architecture|Bare Metal Framework Architecture

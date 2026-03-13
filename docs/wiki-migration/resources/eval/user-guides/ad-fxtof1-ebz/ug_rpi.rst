@@ -70,6 +70,3 @@ Unfortunately OpenCV does not provide binaries for this module so a manual build
    :alt: aditof-demo
    :align: center
    :width: 800px
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fxtof1-ebz#none#./
-   :alt: Overview#none#

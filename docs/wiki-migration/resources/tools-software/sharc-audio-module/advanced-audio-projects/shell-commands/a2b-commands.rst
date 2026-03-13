@@ -166,9 +166,6 @@ Expansion Port AD242x (tdm)
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/navigation_shell_commands
-   :alt: Audio Commands#.audio-commands|Audio Commands#.|Shell Commands#.filesystem-commands|Filesystem Commands
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/discover_help.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/a2b0.jpg

@@ -82,8 +82,5 @@ The monitoring function of board's DC voltages is accomplished using :adi:`AD729
 
 For differential to single-ended conversion and for minimizing 2nd harmonic distortion in transmitting and receiving, a double-balun configuration is used for TX and RX as front-end interface. More topology detail and information about the front-end design insights are presented in the following articles: 1. :adi:`"Wideband A/D Converter Front-End Design Considerations: When to Use a Double Transformer Configuration" by Rob Reeder and Ramya Ramachandran <en/analog-dialogue/articles/wideband-a-d-converter-front-end-design-considerations.html>` 2. :adi:`"Ask The Application Engineer—36: Wideband A/D Converter Front-End Design Considerations II: Amplifier-or Transformer Drive for the ADC?" by Rob Reeder and Jim Caserta <en/analog-dialogue/articles/wideband-adc-design-considerations-2.html>` 3. :adi:`"Transformer-Coupled Front-End for Wideband A/D Converters" by Rob Reeder <en/analog-dialogue/articles/transformer-coupled-front-end-a-d-converters.html>`
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcdaq2-ebz#none#./
-   :alt: Hardware#card_specification|Card specifications
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/hardware/220307_fmcdaq2_monitoring_adc.jpg
    :width: 600px

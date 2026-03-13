@@ -54,6 +54,3 @@ Additional Resources
 
 -  `Presentation: SPI Engine Design Philosophy <https://wiki.analog.com/_media/resources/fpga/peripherals/spi-engine3.pdf>`_
 -  :doc:`PulSAR ADC Tutorial </wiki-migration/resources/fpga/peripherals/spi_engine/tutorial>`
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/peripherals/navigation_hdl_user_guide#../docs/ip_cores
-   :alt: IP cores#../docs/hdl|Main page#../docs/tips|Using and modifying the HDL design

@@ -73,7 +73,3 @@ GMSL Articles
 
 Gigabit Multimedia Serial Link™ (GMSL™) and Gigabit Ethernet (GigE) are two popular link technologies for camera applications that are often seen in different end markets. This article conducts a comparative analysis of the two technologies in system architectures, key features, and limitations. It will help explain the fundamentals of both technologies and provide insights into why GMSL cameras are a strong alternative to GigE Vision® cameras.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/navigation_gmsl#none#./
-   :alt: GMSL Wiki Home#none#

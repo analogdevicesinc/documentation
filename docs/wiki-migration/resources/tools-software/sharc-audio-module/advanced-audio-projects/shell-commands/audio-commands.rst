@@ -422,9 +422,6 @@ Asynchrnous Sample Rate Converter (asrc)
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/navigation_shell_commands
-   :alt: Shell Commands#.development-commands|Development and Debug Commands#.|Shell Commands#.a2b-commands|A2B Commands
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/route_help.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellindex.jpg

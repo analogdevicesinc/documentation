@@ -56,8 +56,5 @@ Command List
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation_advanced_audio_projects
-   :alt: Advanced Audio Projects#.examples-signal-generator|Application Examples - Signal Generator#.|Advanced Audio Projects#.debug-session|Setting up a Debug Session
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/help-cmd.png
    :width: 400px

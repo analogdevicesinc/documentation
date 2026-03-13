@@ -105,6 +105,3 @@ Troubleshooting
 -  The demo application hangs after closing the main window
 
    -  Due to some limitations the application always hangs if it is closed using the regular X button from the window top bar (title bar). To avoid this unpleasant hang, we've made available a second X button in the top right corner right above the title bar that can be used to safely close the demo application. We hope this to be a temporary workaround.
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-96tof1-ebz#none#./
-   :alt: Overview#none#

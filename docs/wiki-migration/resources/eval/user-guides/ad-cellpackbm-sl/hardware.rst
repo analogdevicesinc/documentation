@@ -353,9 +353,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/ad-cellpackbm-sl
-   :alt: Overview #:resources:eval:user-guides:ad-cellpackbm-sl:software|AD-CELLPACKBM-SL Software User Guide#none
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_license.png
    :width: 500px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png

@@ -357,6 +357,3 @@ Some carriers have a different name for these files, for example A10SoC has cons
 
 -  a10soc_plddr4_assign.tcl --- constraints file for the PL
 -  a10soc_system_assign.tcl --- constraints file for the PS
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation_hdl_user_guide#run
-   :alt: Running on hardware#hdl|Main page#ip_cores|IP Cores

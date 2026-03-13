@@ -144,8 +144,6 @@ Install Your Preferred VBAN Audio Program
 
 --------------
 
-`Advanced Audio Projects#.|Advanced Audio Projects#.environment_setup|Environment Setup and Compilation <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.>`_
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git1.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/git2.png

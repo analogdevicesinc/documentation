@@ -12,6 +12,7 @@ ADI maintains support for all FMComms, ADALM-PLUTO, and ADRV board variants, as 
 ADI libiio Support
 ==================
 
+
 IIO System Object
 =================
 
@@ -51,12 +52,11 @@ The configuration file for a device has the .cfg extension and the name must mat
 -  **ctrl_device** - name of the Linux driver used for controlling and monitoring the device
 -  **channel** - defines a control/monitoring channel. A channel is defined by a sequence of parameters as follows *<channel name, channel type, Linux attribute, associated device>*
 
-::
+   -  *channel name* - represents the name of the channel to be displayed on the corresponding Simulink block port
 
-       * //channel name// - represents the name of the channel to be displayed on the corresponding Simulink block port
-       * //channel type// - can be either IN or OUT
-       * *Linux attribute* - the Linux attribute that will be called to set/get data for the channel
-       * //associated device// - the device to which the Linux attribute is associated to. This parameter can have the values //'data_in_device'//, //'data_out_device'// or //'ctrl_device'//. The parameter is optional, if it isn't specified then it is implied to be //'ctrl_device'//.  
+      -  *channel type* - can be either IN or OUT
+      -  *Linux attribute* - the Linux attribute that will be called to set/get data for the channel
+      -  *associated device* - the device to which the Linux attribute is associated to. This parameter can have the values *'data_in_device'*, *'data_out_device'* or *'ctrl_device'*. The parameter is optional, if it isn't specified then it is implied to be *'ctrl_device'*.
 
 Below is presented a configuration file example for the AD9361.
 
@@ -160,15 +160,15 @@ In order to establish the connection between the host PC and the target, there a
 
 Target side:
 
-#. Get the latest libiio library by following the :doc:`instructions </wiki-migration/resources/tools-software/linux-software/libiio>`.
+-  Get the latest libiio library by following the :doc:`instructions </wiki-migration/resources/tools-software/linux-software/libiio>`.
 
 PC side:
 
-#. Run the Windows libiio installer provided in "Downloads" section, which will install all the dlls and dependencies on your PC.
-#. Find out the IP address of the target by typing "ifconfig" in a terminal on the Linux side
+-  Run the Windows libiio installer provided in "Downloads" section, which will install all the dlls and dependencies on your PC.
+-  Find out the IP address of the target by typing "ifconfig" in a terminal on the Linux side
 
-   #. If used in MATLAB: Assign the IP address of the target to your object.
-   #. If used in Simulink: Open the Simulink block and type the IP address of the target in the block. Please note even if the IP address in the System objects property window seems correct, it is a good idea to edit it and click 'Apply' to avoid any caching issues.
+   -  If used in MATLAB: Assign the IP address of the target to your object.
+   -  If used in Simulink: Open the Simulink block and type the IP address of the target in the block. Please note even if the IP address in the System objects property window seems correct, it is a good idea to edit it and click 'Apply' to avoid any caching issues.
 
 Next Generation System Objects
 ==============================
@@ -179,6 +179,7 @@ Starting with MATLAB R2018b, ADI is transitioning to a new system object infrast
    :width: 400px
 .. |Configuration Dialog| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/sys_obj_block_cfg.png
    :width: 250px
+
 
 
 Data Streaming Example in MATLAB

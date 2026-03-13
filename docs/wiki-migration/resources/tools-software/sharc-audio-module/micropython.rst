@@ -36,6 +36,3 @@ Follow these tutorials to become familiar with using MicroPython on the SHARC Au
 -  :doc:`Tutorial: Building MicroPython with CrossCore Embedded Stuidio </wiki-migration/resources/tools-software/sharc-audio-module/micropython/building>`
 -  :doc:`Tutorial: Creating a New C-language MicroPython Module </wiki-migration/resources/tools-software/sharc-audio-module/micropython/new-module>`
 
---------------
-
-`Faust and the SHARC Audio Module#.|SHARC Audio Module#.|Back to main SHARC Audio Module <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation SHARC Audio Module#.faust>`_

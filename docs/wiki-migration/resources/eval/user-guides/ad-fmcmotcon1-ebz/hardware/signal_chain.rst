@@ -131,9 +131,6 @@ The Vbus XADC measurement chain utilizes the entire path of the regular measurem
 +---+
 +---+
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/navigation_ad-fmcmotcon1-ebz#lv_board
-   :alt: Low Voltage Drive Board#..:\|Overview#dyno|Dynamometer Drive system
-
 .. |counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3 } {ADCbits = 16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/counts_=_adc_value_}_{rs_=_6e-3}_{adcrange_=_320e-3_}_{adcbits_=_16
 .. |counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3} {ADCbits = 16} \\frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/counts_=_adc_value_}_{rs_=_6e-3}_{adcrange_=_320e-3}_{adcbits_=_16}_\frac{ctrlgain_=_1}{10}{drvgain_=_20}{pgagain_=_1,_2,_4_or_8
 .. |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3 } {ADCbits = 16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/counts_=_adc_value_}_{rs_=_5e-3}_{adcrange_=_320e-3_}_{adcbits_=_16

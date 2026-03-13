@@ -292,8 +292,6 @@ Post-Build Loader Settings
 
 --------------
 
-`Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/navigation Knowledge Base#.>`_
-
 .. |1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/1.jpg
    :width: 400px
 .. |1-2.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/cces-project/1-2.jpg

@@ -38,6 +38,3 @@ Two HDL reference designs are provided targeting different use cases and system 
       -  Infrastructure for Linux support
       -  Integration of automatically generated HDL code for Simulink designed motor controller
       -  EDK and Vivado projects
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/navigation_ad-fmcmotcon1-ebz#hardware
-   :alt: Hardware#.:\|Overview#software|Software

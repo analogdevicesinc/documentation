@@ -594,16 +594,18 @@ Useful IIO commands
    :align: center
    :width: 400px
 
+
 IIO Command Line Tools
 ======================
 
 There are a few command line tools that are included with the libIIO.
 
--  `./iio_info <https://wiki.analog.com/iio_info>`_ : dump the IIO attributes
--  `./iio_attr <https://wiki.analog.com/iio_attr>`_ : read and write IIO attributes
--  `./iio_readdev <https://wiki.analog.com/iio_readdev>`_ : read an IIO buffer device
--  `./iio_writedev <https://wiki.analog.com/iio_writedev>`_ : write an IIO buffer device
--  `./iio_reg <https://wiki.analog.com/iio_reg>`_ : read or write SPI or I2C registers in an IIO device (useful to debug drivers)
+-  :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` : dump the IIO attributes
+-  :doc:`iio_attr </wiki-migration/resources/tools-software/linux-software/libiio/iio_attr>` : read and write IIO attributes
+-  :doc:`iio_readdev </wiki-migration/resources/tools-software/linux-software/libiio/iio_readdev>` : read an IIO buffer device
+-  :doc:`iio_writedev </wiki-migration/resources/tools-software/linux-software/libiio/iio_writedev>` : write an IIO buffer device
+-  :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` : read or write SPI or I2C registers in an IIO device (useful to debug drivers)
+
 
 
 .. important::

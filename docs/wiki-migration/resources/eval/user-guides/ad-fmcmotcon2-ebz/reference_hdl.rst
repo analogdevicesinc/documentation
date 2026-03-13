@@ -53,6 +53,3 @@ Support
    -  Questions? :ez:`Ask Help & Support <community/fpga>`.
    
 
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/navigation_ad-fmcmotcon2-ebz#reference_hdl
-   :alt: HDL Reference Design#.:\|Overview#software|Software

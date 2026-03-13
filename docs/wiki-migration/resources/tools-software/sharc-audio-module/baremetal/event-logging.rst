@@ -139,7 +139,3 @@ The code snippet below shows how to log an event
 
        log_event(EVENT_INFO, "Bare Metal Framework for the ADI SHARC Audio Module");
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#peripheral-and-system-drivers
-   :alt: Using Peripheral and System Drivers#.|Bare Metal Framework#audioproj-tutorial|Using the Audio Project Fin

@@ -275,7 +275,3 @@ The ``audio_system_config.h`` file can also be used to configure the system cloc
    #define CORE_CLOCK_FREQ_HZ    (450000000)
    #define EXT_OSCILLATOR_FREQ_HZ  (25000000)
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#baremetal-framework-architecture
-   :alt: Framework Architecture#.|Bare Metal Framework#processing-audio|Processing Audio within the Framework

@@ -122,7 +122,4 @@ All of the modules are instantiated inside the spi_engine_create function. This 
    ad_ip_parameter spi_ad463x/axi_regmap CONFIG.CFG_INFO_2 $CLK_MODE
    ad_ip_parameter spi_ad463x/axi_regmap CONFIG.CFG_INFO_3 $DDR_EN 
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/navigation_hdl_user_guide_#resources/fpga/docs/hdl/creating_new_ip_guide
-   :alt: Create a new IP#resources/fpga/docs/tips|Main page#resources/fpga/docs/hdl/xcomm2ip|A simple BBP for RF Transceivers
-
 .. |name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/name_"spi_engine"}_{data_width_32}_{async_spi_clk_1}_{num_cs_1}_{num_sdi_1}_{sdi_delay_0}_{echo_sclk_0

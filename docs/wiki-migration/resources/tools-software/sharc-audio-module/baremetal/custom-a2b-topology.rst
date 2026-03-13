@@ -138,9 +138,6 @@ Executing the Code in CCES
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#preconfigured-a2b-topology
-   :alt: Using Pre-configured A2B Topology Files#.|Bare Metal Framework#driver-creation-tutorial|Creating Drivers for New Audio Components
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/export_ss.png
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/a2b_export_config.png

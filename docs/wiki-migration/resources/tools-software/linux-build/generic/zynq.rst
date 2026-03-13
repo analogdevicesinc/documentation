@@ -341,6 +341,7 @@ Modifying devicetrees
 Building the Zynq boot image
 ----------------------------
 
+
 How to build the Zynq boot image BOOT.BIN
 =========================================
 
@@ -349,8 +350,9 @@ How to build the Zynq boot image BOOT.BIN
    We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html\
 
 
-| The boot image BOOT.BIN is built using the bootgen tool which requires several input files.
-| Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
+The boot image BOOT.BIN is built using the bootgen tool which requires several input files.
+
+Instructions on how to build the Xilinx Shell Archive (XSA) handover file can be found here:
 
 -  `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_ projects
 
@@ -372,13 +374,15 @@ The script can be downloaded from here:
 
 -  `build_boot_bin.sh <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynq_boot_bin/build_boot_bin.sh>`_
 
-
-
 .. tip::
 
    \ NOTE: After downloading the script you need to make it executable
 
-   | ``$ chmod +x build_boot_bin.sh``
+   
+   ::
+   
+      $ chmod +x build_boot_bin.sh
+   
 
 
 Usage
@@ -399,9 +403,7 @@ Usage
 
    $ source /opt/Xilinx/Vivado/202x.x/settings64.sh
 
-::
-
-      * When using cygwin, you can add the following in the ~/.bashrc configuration file:
+-  When using **cygwin**, you can add the following in the ~/.bashrc configuration file:
 
 ::
 
@@ -410,14 +412,11 @@ Usage
 
 There is also a version of script that works in Windows Powershell: `build_boot_bin.ps1 <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynq_boot_bin/build_boot_bin.ps1>`_
 
-
-
 .. tip::
 
-   \ NOTE: u-boot.elf
+   \ NOTE: u-boot.elf For those who don't want to build u-boot themselves. The u-boot.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz
 
-   | For those who don't want to build u-boot themselves.
-   | The u-boot.elf can be extracted from the project folder on the :doc:`SD Card image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, bootgen_sysfiles.tgz
    
+
 
 

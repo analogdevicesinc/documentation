@@ -190,6 +190,3 @@ If this tutorial was not enough and you need more in depth information about cre
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :doc:`add_hdl_ip </wiki-migration/resources/fpga/docs/hdl/add_hdl_ip>`
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/navigation_hdl_user_guide#resources/fpga/quick_validation
-   :alt: Quick system validation with no-Os#resources/fpga/docs/tips|Main page#resources/fpga/docs/hdl/use_adi_ips|Use ADI IPs

@@ -516,7 +516,3 @@ Further Changes
 
 Depending on your hardware configuration, the ports assignments of the peripherals you're using may have changed. In this case, open up the system.svc (at the bottom of the project file tree in the ARM core in CCES). The window that opens will have a number of tabs at the bottom. Click Pin Multiplexing and here you'll be able to map the peripherals you're using to the corresponding I/O pins on the processor.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#driver-creation-tutorial
-   :alt: Creating Drivers for New Audio Components#.|Bare Metal Framework#flashing|Programming BM Framework to Flash

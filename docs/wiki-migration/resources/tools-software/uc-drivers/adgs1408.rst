@@ -1,3 +1,4 @@
+
 ADGS1408/ADGS1409 - No-OS Driver
 ================================
 
@@ -29,11 +30,11 @@ Each switch conducts equally well in both directions when on, and each switch ha
 Product highlights
 ------------------
 
-#. SPI interface removes the need for parallel conversion, logic traces and reduces GPIO channel count.
-#. Daisy-chain mode removes additional logic traces when multiple devices are used.
-#. CRC error detection, invalid read/write address detection, and SCLK count error detection ensures a robust digital interface.
-#. CRC and Error detection capabilities allows for the use of the ADGS1408/ADGS1409 in safety critical systems.
-#. Minimum distortion.
+-  SPI interface removes the need for parallel conversion, logic traces and reduces GPIO channel count.
+-  Daisy-chain mode removes additional logic traces when multiple devices are used.
+-  CRC error detection, invalid read/write address detection, and SCLK count error detection ensures a robust digital interface.
+-  CRC and Error detection capabilities allows for the use of the ADGS1408/ADGS1409 in safety critical systems.
+-  Minimum distortion.
 
 No-OS Driver Description
 ------------------------
@@ -74,55 +75,62 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------+
+.. code-block:: c
 
+::
 
-| ``enum adgs1408_type {                              |
+    enum adgs1408_type {
+     ID_ADGS1408,
+     ID_ADGS1409,
+    };
 
-|     ID_ADGS1408,                                    |
-|     ID_ADGS1409,                                    |
-| };                                                  |
+::
 
-| enum adgs1408_state {                               |
-|     ADGS1408_ENABLE,                                |
-|     ADGS1408_DISABLE,                               |
-| };                                                  |
+    enum adgs1408_state {
+     ADGS1408_ENABLE,
+     ADGS1408_DISABLE,
+    };
 
-| struct adgs1408_rrobin_config {                     |
-|     bool rrobin_sw1;                                |
-|     bool rrobin_sw2;                                |
-|     bool rrobin_sw3;                                |
-|     bool rrobin_sw4;                                |
-|     bool rrobin_sw5;                                |
-|     bool rrobin_sw6;                                |
-|     bool rrobin_sw7;                                |
-|     bool rrobin_sw8;                                |
-| };                                                  |
+::
 
-| struct adgs1408_dev {                               |
-|     /* SPI */                                       |
-|     spi_desc    *spi_desc;                          |
-|     /* Device Settings */                           |
-|     enum adgs1408_state crc_en;                     |
-|     enum adgs1408_state burst_mode_en;              |
-|     enum adgs1408_state daisy_chain_en;             |
-|     enum adgs1408_state round_robin_en;             |
-|     struct adgs1408_rrobin_config rrobin_sw_config; |
-|     enum adgs1408_type act_device;                  |
-| };                                                  |
+    struct adgs1408_rrobin_config {
+     bool rrobin_sw1;
+     bool rrobin_sw2;
+     bool rrobin_sw3;
+     bool rrobin_sw4;
+     bool rrobin_sw5;
+     bool rrobin_sw6;
+     bool rrobin_sw7;
+     bool rrobin_sw8;
+    };
 
-| struct adgs1408_init_param {                        |
-|     /* SPI */                                       |
-|     spi_init_param  spi_init;                       |
-|     /* Device Settings */                           |
-|     enum adgs1408_state crc_en;                     |
-|     enum adgs1408_state burst_mode_en;              |
-|     enum adgs1408_state daisy_chain_en;             |
-|     enum adgs1408_state round_robin_en;             |
-|     struct adgs1408_rrobin_config rrobin_sw_config; |
-|     enum adgs1408_type act_device;                  |
-| };``                                                |
-+-----------------------------------------------------+
+::
+
+    struct adgs1408_dev {
+     /* SPI */
+     spi_desc    *spi_desc;
+     /* Device Settings */
+     enum adgs1408_state crc_en;
+     enum adgs1408_state burst_mode_en;
+     enum adgs1408_state daisy_chain_en;
+     enum adgs1408_state round_robin_en;
+     struct adgs1408_rrobin_config rrobin_sw_config;
+     enum adgs1408_type act_device;
+    };
+
+::
+
+    struct adgs1408_init_param {
+     /* SPI */
+     spi_init_param  spi_init;
+     /* Device Settings */
+     enum adgs1408_state crc_en;
+     enum adgs1408_state burst_mode_en;
+     enum adgs1408_state daisy_chain_en;
+     enum adgs1408_state round_robin_en;
+     struct adgs1408_rrobin_config rrobin_sw_config;
+     enum adgs1408_type act_device;
+    };
 
 No-OS Downloads
 ---------------
@@ -133,5 +141,6 @@ No-OS Downloads
    
    -  :git-no-OS:`adgs1408 source and header files <drivers/mux/adgs1408>`
    
+
 
 

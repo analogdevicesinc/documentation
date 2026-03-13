@@ -29,7 +29,3 @@ Or say we had written a function call ``volume_half( float * in, float * out, in
 
 As noted in the :doc:`Processing Audio </wiki-migration/resources/tools-software/sharc-audio-module/baremetal/processing-audio>` section, we have callbacks on both SHARC cores. If both SHARC cores are configured to process audio (set in common/audio_system_config.h), the output buffers from core 1 are passed to core 2 and become input buffers. So the processing flow is input->core 1->core 2->output.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#troubleshooting
-   :alt: Troubleshooting#.|Bare Metal Framework#tremelo-effect-tutorial|Implementing a Tremolo Effect

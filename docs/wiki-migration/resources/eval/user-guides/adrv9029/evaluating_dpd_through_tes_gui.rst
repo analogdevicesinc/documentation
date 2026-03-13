@@ -101,9 +101,6 @@ Adjust the digital scaling if required and hit the "Submit" button to load the w
    :align: center
    :width: 300px
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation_adrv9029_dpd_user_guide#prerequisites
-   :alt: Getting Started#resources:eval:user-guides:adrv9029|main page#dpd_error_troubleshooting|DPD error troubleshooting
-
 .. |resources-eval-user-guides-adrv9029-adrv9029_dpd_modelload.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpd_modelload.png
 .. |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingcal_enable.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdtrackingcal_enable.png
 .. |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingconfig.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdtrackingconfig.png

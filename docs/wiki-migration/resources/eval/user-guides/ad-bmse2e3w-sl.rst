@@ -467,9 +467,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-.. image:: https://wiki.analog.com/_media/navigation_#/resources/eval/user-guides/ad-bmse2e3w-sl
-   :alt: Overview #:resources:eval:user-guides:ad-bmse2e3w-sl:software|AD-BMSE2E3W-SL Software User Guide#none
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_emulator_pins.png
    :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/max32625_power_usb_pc.png

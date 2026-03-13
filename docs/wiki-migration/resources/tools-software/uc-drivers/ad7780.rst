@@ -11,6 +11,7 @@ Evaluation Boards
 Overview
 ========
 
+
 The :adi:`AD7780` is a complete low power front-end solution for bridge sensor products, including weigh scales, strain gages, and pressure sensors. It contains a precision, low power, 24-bit sigma-delta (Σ-Δ) ADC; an on-chip, low noise programmable gain amplifier (PGA); and an on-chip oscillator.
 
 Consuming only 330 μA, the :adi:`AD7780` is particularly suitable for portable or battery-operated products where very low power is required. The :adi:`AD7780` also has a power-down mode that allows the user to switch off the power to the bridge sensor and power down the :adi:`AD7780` when not converting, thus increasing the battery life of the product.
@@ -31,6 +32,7 @@ Applications
 
 .. image:: https://wiki.analog.com/_media/resources/pmods/ad7780_pmod_ad3.jpg
    :align: center
+
 
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.

@@ -16,6 +16,3 @@ The figure below is a simplified system level overview of the transceiver signal
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dfe_systemleveloverview.png
    :align: center
    :width: 800px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation_adrv9029_dpd_user_guide#dpd_principle_of_operation
-   :alt: Principle of operation#resources:eval:user-guides:adrv9029|main page#dpd_system_overview2|DPD System Overview

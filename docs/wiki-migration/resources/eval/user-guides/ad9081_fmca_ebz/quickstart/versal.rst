@@ -1971,29 +1971,29 @@ Example Device Trees
 AD9081-FMCA-EBZ / AD9082-FMCA-EBZ / AD9988-FMCB-EBZ on ZCU102 (Zynq UltraScale+ MPSoC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                                                                                              |
-+==========+===================================================================================================================================================================================================+
-| dtsi     | :git-linux:`arch/arm64/boot/dts/xilinx/adi-ad9081-fmc-ebz.dtsi`                                                                                                                                   |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4-qpllrx.dts`                                                                                                               |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4-vcxo122p88.dts`                                                                                                           |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4.dts`                                                                                                                      |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081.dts`                                                                                                                            |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9082-m4-l8.dts`                                                                                                                      |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-204b-txmode9-rxmode4.dts`                                                                                                       |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-204c-txmode0-rxmode1.dts`                                                                                                       |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`ynqmp-zcu102-rev10-ad9082-204c-txmode22-rxmode23.dts <arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9082-204c-txmode22-rxmode23.dts>`                                              |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9988-fmcb-m8-l4.dts`                                                                                                                 |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                                             |
++==========+==================================================================================================================================================================+
+| dtsi     | `adi-ad9081-fmc-ebz.dtsi </linux.github>master?arch/arm64/boot/dts/xilinx/adi-ad9081-fmc-ebz.dtsi>`__                                                            |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-m8-l4-qpllrx.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4-qpllrx.dts>`__                    |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-m8-l4-vcxo122p88.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4-vcxo122p88.dts>`__            |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-m8-l4.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4.dts>`__                                  |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081.dts>`__                                              |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9082-m4-l8.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9082-m4-l8.dts>`__                                  |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-204b-txmode9-rxmode4.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-204b-txmode9-rxmode4.dts>`__    |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-204c-txmode0-rxmode1.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-204c-txmode0-rxmode1.dts>`__    |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `ynqmp-zcu102-rev10-ad9082-204c-txmode22-rxmode23.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9082-204c-txmode22-rxmode23.dts>`__ |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9988-fmcb-m8-l4.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9988-fmcb-m8-l4.dts>`__                        |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Testing
 =======
@@ -3063,8 +3063,10 @@ Frequency Domain View
    :width: 400px
 
 
+
+
 AD9081 Plugin Description
--------------------------
+=========================
 
 The AD9081 plugin works with the :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You always use the latest version if possible. Changing any field will immediately write changes which have been made to the AD9081 settings to the hardware, and then read it back to make sure the setting is valid. If you want to set something that the GUI changes to a different number, that either means that GUI is rounding (sorry), or the hardware (either the AD9081 or the FPGA fabric) does not support that mode/precision.
 
@@ -3083,7 +3085,7 @@ The AD9081 view is divided in three sections:
 --------------
 
 Receive Chain
-~~~~~~~~~~~~~
+-------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_rx.png
    :align: right
@@ -3099,7 +3101,7 @@ Receive Chain
 --------------
 
 Transmit Chain
-~~~~~~~~~~~~~~
+--------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_tx.png
    :align: right
@@ -3116,10 +3118,10 @@ Transmit Chain
 --------------
 
 FPGA Settings
-~~~~~~~~~~~~~
+-------------
 
 Transmit/DDS
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_fpga.png
    :align: center
@@ -3132,7 +3134,7 @@ It is possible to either use the built-in two tone **Direct Digital Synthesizer 
 This can be achieved by selecting one of the following options listed by the **DDS Mode**:
 
 One CW Tone
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/one_cw_tone.png
    :align: right
@@ -3141,7 +3143,7 @@ In **One CW Tone** mode one continuous wave (CW) tone will be outputted. The plu
 
 
 Two CW Tone
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/two_cw_tones.png
    :align: right
@@ -3150,39 +3152,34 @@ In **Two CW Tone** mode two continuous wave (CW) tones will be outputted. The pl
 
 
 Independent I/Q Control
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iq_independent.png
    :align: right
 
 In **Independent I/Q Control** the plugin displays the controls to set the frequencies, amplitudes and phases for the two tones that will be outputted on channel I and additionally it allows for the two tones that will be outputted on channel Q of the DAC to be configured independently.
 
-
-
 .. note::
 
-   Note: The bi-tonal signal (T) is defined as the sum of two tones:
-
-   | T(t) = A1 \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2),
-   | where A-amplitude, F-frequency, P-phase of a tone.
+   Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1 \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2), where A-amplitude, F-frequency, P-phase of a tone.
 
 
 
 DAC Buffer Output
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 |image1| The file selector under the **File Selection** section is used to locate and choose the desired data file. Under the **DAC Channels** section the enabled channels will be used to transmit the data stored in the file. To finalize the process, a click on the **Load** button is required.
 
-| **Restrictions:**
-| \* There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
-| \* Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
+**Restrictions:**
+
+-  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
+-  Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
 
 
 Disable
-^^^^^^^
+~~~~~~~
 
-| In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
-
+In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
 
 .. note::
 
@@ -3195,6 +3192,7 @@ Disable
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/dac_output_buffer_panel.png
+
 
 
 Shut down
@@ -3762,29 +3760,29 @@ Example Device Trees
 AD9081-FMCA-EBZ / AD9082-FMCA-EBZ / AD9988-FMCB-EBZ on ZCU102 (Zynq UltraScale+ MPSoC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                                                                                              |
-+==========+===================================================================================================================================================================================================+
-| dtsi     | :git-linux:`arch/arm64/boot/dts/xilinx/adi-ad9081-fmc-ebz.dtsi`                                                                                                                                   |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4-qpllrx.dts`                                                                                                               |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4-vcxo122p88.dts`                                                                                                           |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4.dts`                                                                                                                      |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081.dts`                                                                                                                            |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9082-m4-l8.dts`                                                                                                                      |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-204b-txmode9-rxmode4.dts`                                                                                                       |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-204c-txmode0-rxmode1.dts`                                                                                                       |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`ynqmp-zcu102-rev10-ad9082-204c-txmode22-rxmode23.dts <arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9082-204c-txmode22-rxmode23.dts>`                                              |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9988-fmcb-m8-l4.dts`                                                                                                                 |
-+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                                             |
++==========+==================================================================================================================================================================+
+| dtsi     | `adi-ad9081-fmc-ebz.dtsi </linux.github>master?arch/arm64/boot/dts/xilinx/adi-ad9081-fmc-ebz.dtsi>`__                                                            |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-m8-l4-qpllrx.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4-qpllrx.dts>`__                    |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-m8-l4-vcxo122p88.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4-vcxo122p88.dts>`__            |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-m8-l4.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-m8-l4.dts>`__                                  |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081.dts>`__                                              |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9082-m4-l8.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9082-m4-l8.dts>`__                                  |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-204b-txmode9-rxmode4.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-204b-txmode9-rxmode4.dts>`__    |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9081-204c-txmode0-rxmode1.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9081-204c-txmode0-rxmode1.dts>`__    |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `ynqmp-zcu102-rev10-ad9082-204c-txmode22-rxmode23.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9082-204c-txmode22-rxmode23.dts>`__ |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | `zynqmp-zcu102-rev10-ad9988-fmcb-m8-l4.dts </linux.github>master?arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9988-fmcb-m8-l4.dts>`__                        |
++----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Testing
 =======
@@ -4854,8 +4852,10 @@ Frequency Domain View
    :width: 400px
 
 
+
+
 AD9081 Plugin Description
--------------------------
+=========================
 
 The AD9081 plugin works with the :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You always use the latest version if possible. Changing any field will immediately write changes which have been made to the AD9081 settings to the hardware, and then read it back to make sure the setting is valid. If you want to set something that the GUI changes to a different number, that either means that GUI is rounding (sorry), or the hardware (either the AD9081 or the FPGA fabric) does not support that mode/precision.
 
@@ -4874,7 +4874,7 @@ The AD9081 view is divided in three sections:
 --------------
 
 Receive Chain
-~~~~~~~~~~~~~
+-------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_rx.png
    :align: right
@@ -4890,7 +4890,7 @@ Receive Chain
 --------------
 
 Transmit Chain
-~~~~~~~~~~~~~~
+--------------
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_tx.png
    :align: right
@@ -4907,10 +4907,10 @@ Transmit Chain
 --------------
 
 FPGA Settings
-~~~~~~~~~~~~~
+-------------
 
 Transmit/DDS
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ad9081_osc_plugin_fpga.png
    :align: center
@@ -4923,7 +4923,7 @@ It is possible to either use the built-in two tone **Direct Digital Synthesizer 
 This can be achieved by selecting one of the following options listed by the **DDS Mode**:
 
 One CW Tone
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/one_cw_tone.png
    :align: right
@@ -4932,7 +4932,7 @@ In **One CW Tone** mode one continuous wave (CW) tone will be outputted. The plu
 
 
 Two CW Tone
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/two_cw_tones.png
    :align: right
@@ -4941,39 +4941,34 @@ In **Two CW Tone** mode two continuous wave (CW) tones will be outputted. The pl
 
 
 Independent I/Q Control
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iq_independent.png
    :align: right
 
 In **Independent I/Q Control** the plugin displays the controls to set the frequencies, amplitudes and phases for the two tones that will be outputted on channel I and additionally it allows for the two tones that will be outputted on channel Q of the DAC to be configured independently.
 
-
-
 .. note::
 
-   Note: The bi-tonal signal (T) is defined as the sum of two tones:
-
-   | T(t) = A1 \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2),
-   | where A-amplitude, F-frequency, P-phase of a tone.
+   Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1 \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2), where A-amplitude, F-frequency, P-phase of a tone.
 
 
 
 DAC Buffer Output
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 |image1| The file selector under the **File Selection** section is used to locate and choose the desired data file. Under the **DAC Channels** section the enabled channels will be used to transmit the data stored in the file. To finalize the process, a click on the **Load** button is required.
 
-| **Restrictions:**
-| \* There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
-| \* Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
+**Restrictions:**
+
+-  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
+-  Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
 
 
 Disable
-^^^^^^^
+~~~~~~~
 
-| In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
-
+In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
 
 .. note::
 
@@ -4986,6 +4981,7 @@ Disable
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/dac_output_buffer_panel.png
+
 
 
 Shut down

@@ -163,7 +163,3 @@ Note that, if we were registering GPIO callbacks, we would need to allocate memo
 
 Now you are ready to :doc:`Debug </wiki-migration/resources/tools-software/crosscore/cces/getting-started/debug>` your application.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/led-blink-app/navigation_cces_getting_started#bf707-blink
-   :alt: Single-Core LED Blink Application#.|LED Blink Application#..app|Creating Bootable Applications

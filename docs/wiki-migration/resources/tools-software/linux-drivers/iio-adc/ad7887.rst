@@ -148,7 +148,7 @@ Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level.
 
 This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
 
-For more information see: `Documentation/spi/spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`_
+For more information see: `spi-summary.rst </git.linux.org>documentation/spi/spi-summary.rst>`__
 
 
 Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
@@ -362,17 +362,17 @@ If deviceX supports triggered sampling, it’s a so called trigger consumer and 
 Available standalone trigger drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------+-------------------------------------------------------------------------------+
-| name                                          | description                                                                   |
-+===============================================+===============================================================================+
-| iio-trig-gpio                                 | Provides support for using GPIO pins as IIO triggers.                         |
-+-----------------------------------------------+-------------------------------------------------------------------------------+
-| iio-trig-rtc                                  | Provides support for using periodic capable real time clocks as IIO triggers. |
-+-----------------------------------------------+-------------------------------------------------------------------------------+
-| `iio-trig-sysfs <iio-trig-sysfs>`_            | Provides support for using SYSFS entry as IIO triggers.                       |
-+-----------------------------------------------+-------------------------------------------------------------------------------+
-| `iio-trig-bfin-timer <iio-trig-bfin-timer>`_  | Provides support for using a Blackfin timer as IIO triggers.                  |
-+-----------------------------------------------+-------------------------------------------------------------------------------+
++----------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| name                                                                 | description                                                                   |
++======================================================================+===============================================================================+
+| iio-trig-gpio                                                        | Provides support for using GPIO pins as IIO triggers.                         |
++----------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| iio-trig-rtc                                                         | Provides support for using periodic capable real time clocks as IIO triggers. |
++----------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-sysfs <https://wiki.analog.com/iio-trig-sysfs>`_           | Provides support for using SYSFS entry as IIO triggers.                       |
++----------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-bfin-timer <https://wiki.analog.com/iio-trig-bfin-timer>`_ | Provides support for using a Blackfin timer as IIO triggers.                  |
++----------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 
 Buffer management

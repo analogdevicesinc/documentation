@@ -7,6 +7,3 @@ Quick Start Guides are available for
 
 -  :doc:`Hardware setup guide </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/quickstart/lv_setup_guide>`
 -  :doc:`Linux on ZED </wiki-migration/resources/eval/user-guides/ad-fmcmotcon2-ebz/quickstart/zynq>`
-
-.. image:: https://wiki.analog.com/_media/navigation_ad-fmcmotcon2-ebz#introduction#./
-   :alt: Overview#Hardware

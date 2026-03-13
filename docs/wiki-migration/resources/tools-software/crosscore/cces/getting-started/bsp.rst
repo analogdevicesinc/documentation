@@ -8,7 +8,3 @@ Power On Self Test
 
 In order to ship our EZ-KITs to customers we need to verify that they are working properly. The Power On Self Test is one of the ways we ensure that our EZ-KITs function correctly. The Power On Self Test includes many of the drivers and services available for that particular processor since it has to test all components of the board. This is often the goto example for customers looking for sample code for a particular peripheral.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#debug
-   :alt: Debugging Applications#.|CCES Getting Started#led-blink-app|LED Blink Application

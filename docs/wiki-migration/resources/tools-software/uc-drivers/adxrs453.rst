@@ -11,6 +11,7 @@ Evaluation Boards
 Overview
 ========
 
+
 The :adi:`ADXRS453` is an angular rate sensor (gyroscope) intended for industrial, instrumentation, and stabilization applications in high vibration environments. An advanced, differential, quad sensor design rejects the influence of linear acceleration, enabling the :adi:`ADXRS453` to offer high accuracy rate sensing in harsh environments where shock and vibration are present.
 
 The :adi:`ADXRS453` uses an internal, continuous self-test architecture. The integrity of the electromechanical system is checked by applying a high frequency electrostatic force to the sense structure to generate a rate signal that can be differentiated from the base-band rate data and internally analyzed.
@@ -28,6 +29,7 @@ Applications
 
 .. image:: https://wiki.analog.com/_media/resources/pmods/adxrs453_pmod_gyro2.jpg
    :align: center
+
 
 
 The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.

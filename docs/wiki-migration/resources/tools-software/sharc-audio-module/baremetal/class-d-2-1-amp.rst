@@ -104,7 +104,3 @@ Finally, in ``void processaudio_callback(void)``, we're going to filter our audi
        copy_buffer(filter_mixed, audiochannel_a2b_1_left_out, AUDIO_BLOCK_SIZE);
        copy_buffer(filter_mixed, audiochannel_a2b_1_right_out, AUDIO_BLOCK_SIZE);
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#chaining-audio-elements
-   :alt: Chaining Audio Elements#.|Bare Metal Framework#simple-midi-synth|Simple MIDI Synthesizer

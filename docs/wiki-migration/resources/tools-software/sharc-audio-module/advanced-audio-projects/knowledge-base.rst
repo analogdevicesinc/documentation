@@ -94,6 +94,3 @@ Miscellaneous (but still interesting!) Concepts
    Is there something not listed that you would like to see? Check out :ez:`EngineerZone <dsp/software-and-development-tools/sharcaudiomodule>` and/or shoot us a message!
 
 
---------------
-
-`Appendix C - Common Problems#.|Advanced Audio Projects#.|Advanced Audio Projects <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.appendix-c>`_

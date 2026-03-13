@@ -159,7 +159,3 @@ CCES can be configured to automatically call **cldp.exe** at the end of the buil
 
 *Figure 2: CLDP Command Line in Project Settings Build Steps Window*
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation_cces_getting_started#led-blink-app
-   :alt: LED Blink Application#.|CCES Getting Started#.|CCES Getting Started

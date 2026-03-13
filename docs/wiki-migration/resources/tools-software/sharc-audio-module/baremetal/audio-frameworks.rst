@@ -16,7 +16,3 @@ These frameworks are similar and each really serves as an example of how various
 
 The frameworks have a very light processing footprint, usually on the order of a 3-15MHz on Core 1 (of the 450Mhz available) and less than 1 Mhz on Core 2.
 
---------------
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation_sharc_audio_module#processing-audio
-   :alt: Processing Audio within the Framework#.|Bare Metal Framework#using-shared-memory-structure|Sharing Data Between Cores

@@ -116,9 +116,6 @@ The GMSL Linux kernel drivers, the complete Linux distributions for the supporte
 
 --------------
 
-.. image:: https://wiki.analog.com/_media/navigation_ad-gmslcamrpi-adp#none#./
-   :alt: Overview#none#
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ser_interposer.jpg
    :width: 300px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/deser_interposer.jpg

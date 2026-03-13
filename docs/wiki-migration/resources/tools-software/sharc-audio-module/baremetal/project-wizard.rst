@@ -62,6 +62,3 @@ Audio Parameters Page
 
 The new project will be created for all 3 cores of the ADSP-SC589 processor within CrossCore Embedded Studio.
 
---------------
-
-`Bare Metal Framework#.|Bare Metal Framework#downloading-and-installing|Opening the Framework in CCES <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/navigation SHARC Audio Module#.>`_

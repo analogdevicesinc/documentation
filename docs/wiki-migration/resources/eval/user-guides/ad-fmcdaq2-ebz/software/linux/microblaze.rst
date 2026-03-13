@@ -1,6 +1,7 @@
 AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on Microblaze
 ===========================================
 
+
 Linux on the Xilinx FPGA development Board
 ==========================================
 
@@ -34,8 +35,7 @@ Required Software
 
 Microblaze gnu toolchain from Xilinx is no longer available on git. Please use gnu tools from Vitis installation as below:
 
-| ~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/::math:`PATH\\ ~/linux` export ARCH=microblaze
-| ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
+~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/::math:`PATH ~/linux` export ARCH=microblaze ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
 
 .. tip::
 
@@ -55,10 +55,7 @@ Get Linux kernel source
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
+   This specifies any shell prompt running on the development host
 
    
    ::
@@ -68,9 +65,7 @@ Get Linux kernel source
       remote: Counting objects: 2757163, done.
       remote: Compressing objects: 100% (495484/495484), done.
       remote: Total 2757163 (delta 2296596), reused 2687337 (delta 2234506)
-      Receiving objects: 100% (2757163/2757163), 782.04 MiB
-
-      | 1.39 MiB/s, done.
+      Receiving objects: 100% (2757163/2757163), 782.04 MiB | 1.39 MiB/s, done.
       Resolving deltas: 100% (2296596/2296596), done.
    
 
@@ -80,10 +75,7 @@ Checkout main branch
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
+   This specifies any shell prompt running on the development host
 
    
    ::
@@ -101,10 +93,7 @@ Set Environmental Variables
 
 .. container:: box
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
+   This specifies any shell prompt running on the development host
 
    
    ::
@@ -115,13 +104,15 @@ Set Environmental Variables
    
 
 
-
-
 .. tip::
 
    Instead of sourcing the Vivado settings64.sh script you can alternatively add your microblaze gcc toolchain directly to your PATH variable:
 
-   | ``~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/:$PATH``
+   
+   ::
+   
+      ~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/:$PATH
+   
 
 
 Configure Kernel
@@ -129,10 +120,7 @@ Configure Kernel
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
+   This specifies any shell prompt running on the development host
 
    
    ::
@@ -149,19 +137,11 @@ Get Root File-System
 
 The root file system or rootfs contains everything (besides the Linux kernel itself) needed to support a full Linux system. It contains all the (user) applications, configurations, services, data, etc. Without the rootfs your Linux system cannot run. You can either just download the pre-build image or build it yourself. Instructions can be found here: :doc:`Building with buildroot </wiki-migration/resources/tools-software/linux-build/generic/buildroot>`
 
-`rootfs.cpio.gz <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`_
-
-.. tip::
-
-   rootfs.cpio.gz must be placed in the root of your kernel tree. (~/linux/rootfs.cpio.gz)
-
+`rootfs.cpio.gz <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`_ rootfs.cpio.gz must be placed in the root of your kernel tree. (~/linux/rootfs.cpio.gz)
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -174,7 +154,7 @@ The root file system or rootfs contains everything (besides the Linux kernel its
       Length: 6772207 (6,5M) [application/x-gzip]
       Saving to: ‘rootfs.cpio.gz’
    
-      rootfs.cpio.gz                                     100%[===============================================================================================================>]   6,46M  3,32MB/s    in 1,9s    
+      rootfs.cpio.gz                                     100%[===============================================================================================================>]   6,46M  3,32MB/s    in 1,9s
    
       2022-01-18 09:52:12 (3,32 MB/s) - ‘rootfs.cpio.gz’ saved [6772207/6772207]
    
@@ -201,10 +181,7 @@ To see what device-trees for the different FPGA carrier and FMC module combinati
 
 .. container:: box bgblue
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
+   This specifies any shell prompt running on the target or development host
 
    
    ::
@@ -310,6 +287,8 @@ From XSDB or XSCT:
    xsdb> source run.tcl
 
 (more details, methods of how to get bit file and kernel on flash and/or boot off SD Card is appreciated)
+
+
 
 
 AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide
@@ -661,7 +640,7 @@ Below is just a example and the file-names may vary.
 
          * Xilinx Microprocessor Debugger (XMD) Engine
          * XMD v2014.2 (64-bit)
-           *** SW Build 932637 on Wed Jun 11 13:12:06 MDT 2014
+           ** SW Build 932637 on Wed Jun 11 13:12:06 MDT 2014
              ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 
 
@@ -756,7 +735,7 @@ XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows, yo
    ::
    
       * Xilinx System Debugger (XSDB) v2021.1
-        *** Build date : Jun 10 2021-20:11:58
+        ** Build date : Jun 10 2021-20:11:58
           ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
    
    
@@ -764,7 +743,7 @@ XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows, yo
       attempting to launch hw_server
    
       * Xilinx hw_server v2021.1
-        *** Build date : Jun 10 2021 at 20:11:57
+        ** Build date : Jun 10 2021 at 20:11:57
           ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
    
       INFO: hw_server application started
@@ -829,7 +808,7 @@ Then run the tcl script:
    
    
       * Xilinx System Debugger (XSDB) v2021.1
-        *** Build date : Jun 10 2021-20:11:58
+        ** Build date : Jun 10 2021-20:11:58
           ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
    
    
@@ -837,7 +816,7 @@ Then run the tcl script:
       attempting to launch hw_server
    
       * Xilinx hw_server v2021.1
-        *** Build date : Jun 10 2021 at 20:11:57
+        ** Build date : Jun 10 2021 at 20:11:57
           ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
    
       INFO: hw_server application started
@@ -905,17 +884,14 @@ You should see the kernel start-up messages as follows:
 
 .. container:: box bggreen
 
-   
-   .. note::
-
-      This specifies any shell prompt running on the target
+   This specifies any shell prompt running on the target
 
    
    ::
    
       # Early console on uartlite at 0x40600000
       bootconsole [earlyser0] enabled
-      Ramdisk addr 0x00000000, 
+      Ramdisk addr 0x00000000,
       Compiled-in FDT at 8031cda8
       Linux version 3.17.0-126658-g6807aea (michael@mhenneri-D04) (gcc version 4.8.3 20140131 (prerelease) (crosstool-NG 1.18.0) ) #1647 Fri Nov 21 10:33:05 CET 2014
       setup_cpuinfo: initialising
@@ -938,7 +914,7 @@ You should see the kernel start-up messages as follows:
         DMA zone: 196608 pages, LIFO batch:31
       early_printk_console remapping from 0x40600000 to 0xffffd000
       pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
-      pcpu-alloc: [0] 0 
+      pcpu-alloc: [0] 0
       Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 195072
       Kernel command line: console=ttyUL0,115200
       PID hash table entries: 4096 (order: 2, 16384 bytes)
@@ -1084,4 +1060,5 @@ Once the application is launched goto Settings -> Connect and enter the IP addre
    :alt: DAQ2 plugin
    :align: center
    :width: 800px
+
 
