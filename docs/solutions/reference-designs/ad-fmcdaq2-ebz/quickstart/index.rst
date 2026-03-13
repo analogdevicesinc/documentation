@@ -1,56 +1,109 @@
-AD-FMCDAQ2-EBZ Quick Start Guides
-=================================
+.. _ad_fmcdaq2_ebz quickstart:
 
-The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the AD-FMCDAQ2-EBZ boards on various FPGA development boards. They will discuss how to program the bitstream, run a no-OS program or boot a Linux distribution.
+Quickstart
+===============================================================================
 
-Supported Carriers
-------------------
+The Quick start guides provide simple step by step instructions on how to do an
+initial system setup for the :adi:`AD-FMCDAQ2-EBZ` boards on various FPGA
+development boards. In these guides, we will discuss how to program the
+bitstream, run a no-OS program or boot a Linux distribution.
 
-The AD-FMCDAQ2-EBZ is, by definition a "FPGA mezzanine card" (FMC), that means it needs a carrier to plug into. The carriers we support are:
+.. toctree::
+   :maxdepth: 1
 
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Board                                                                                                                       | Quickstart Guide                                                                                                                                      |
-+=============================================================================================================================+=======================================================================================================================================================+
-| `Arria10 SoC Dev Kit <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_  | :doc:`AD-FMCDAQ2-EBZ Arria10 SoC Development Kit Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/a10soc>`     |
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `Arria10 GX FPGA Dev Kit <https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-a10-gx-fpga.html>`_           | :doc:`AD-FMCDAQ2-EBZ Arria10 GX FPGA Development Kit Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/a10soc>` |
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `KC705 <https://www.xilinx.com/KC705>`_                                                                                     | :doc:`AD-FMCDAQ2-EBZ Microblaze Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/microblaze>`                  |
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `KCU105 <https://www.xilinx.com/KCU105>`_                                                                                   | :doc:`AD-FMCDAQ2-EBZ Microblaze Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/microblaze>`                  |
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `VC707 <https://www.xilinx.com/VC707>`_                                                                                     | :doc:`AD-FMCDAQ2-EBZ Microblaze Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/microblaze>`                  |
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `ZC706 <https://www.xilinx.com/ZC706>`_                                                                                     | :doc:`AD-FMCDAQ2-EBZ Zynq ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/zynq>`                        |
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `ZCU102 <https://www.xilinx.com/ZCU102>`_                                                                                   | :doc:`AD-FMCDAQ2-EBZ ZynqMP ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/zcu102>`                   |
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   On A10SOC <a10soc>
+   On A10GX (OBSOLETE) <a10gx>
+   On MICROBLAZE <microblaze>
+   On ZC706  <zc706>
+   On ZCU102 <zcu102>
+
+.. _ad_fmcdaq2_ebz carriers:
+
+Supported carriers
+-------------------------------------------------------------------------------
+
+The :adi:`AD-FMCDAQ2-EBZ` is an FMC (FPGA Mezzanine Card), meaning it requires a
+compatible carrier board. The officially supported carriers are listed below, as
+documented in the ADI Quick Start Guides.
+
+The carriers we support are listed below, as well as the FMC port where to
+connect the evaluation board:
+
+.. list-table::
+   :header-rows: 1
+
+   - - FPGA board
+     - EVAL-AD-FMCDAQ2-EBZ
+   - - :intel:`A10GX <content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`
+       (OBSOLETE)
+     - FMC1
+   - - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
+     - FMC HPC1
+   - - :xilinx:`KCU105`
+     - FMC HPC
+   - - :xilinx:`ZC706`
+     - FMC HPC
+   - - :xilinx:`ZCU102`
+     - FMC0 HPC0
+
+Supported Environments
+-------------------------------------------------------------------------------
 
 The supported OS are:
 
-+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------+
-| Board                                                                                                                       | HDL                                                                                                                   | Linux Software | No-OS Software |
-+=============================================================================================================================+=======================================================================================================================+================+================+
-| `Arria10 SoC Dev Kit <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_  | YES                                                                                                                   | NO             | YES            |
-+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------+
-| `Arria10 GX FPGA Dev Kit <https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-a10-gx-fpga.html>`_           | NO (only until :git-hdl:`hdl_2021_r1 <projects/daq2/a10gx>` branch)                                                   | NO             | YES            |
-+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------+
-| `KC705 <https://www.xilinx.com/KC705>`_                                                                                     | YES                                                                                                                   | YES            | YES            |
-+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------+
-| `KCU105 <https://www.xilinx.com/KCU105>`_                                                                                   | YES                                                                                                                   | YES            | YES            |
-+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------+
-| `VC707 <https://www.xilinx.com/VC707>`_                                                                                     | NO (only until :git-hdl:`hdl_2018_r2 <projects/daq2/vc707>` branch)                                                   | YES            | YES            |
-+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------+
-| `ZC706 <https://www.xilinx.com/ZC706>`_                                                                                     | YES                                                                                                                   | YES            | YES            |
-+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------+
-| `ZCU102 <https://www.xilinx.com/ZCU102>`_                                                                                   | YES                                                                                                                   | YES            | YES            |
-+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------+----------------+
+.. list-table::
+   :header-rows: 1
+
+   - - FPGA board
+     - HDL
+     - Linux software
+     - No-OS software
+   - - :intel:`A10GX <content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`
+       (OBSOLETE)
+     - ---
+     - Yes
+     - ---
+   - - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
+     - Yes
+     - Yes
+     - ---
+   - - :xilinx:`KCU105`
+     - Yes
+     - Yes
+     - Yes
+   - - :xilinx:`ZC706`
+     - Yes
+     - Yes
+     - Yes
+   - - :xilinx:`ZCU102`
+     - Yes
+     - Yes
+     - Yes
 
 Hardware Setup
---------------
+-------------------------------------------------------------------------------
 
-In most carriers, the AD-FMCDAQ2-EBZ board connects to the HPC connector (unless otherwise noted). The carrier setup requires power, UART (115200), ethernet (Linux), HDMI (if available) and/or JTAG (no-OS) connections. A typical setup is shown below.
+On most carriers, the :adi:`AD-FMCDAQ2-EBZ` board connects to the HPC connector
+(unless otherwise noted). The carrier setup requires power, UART (115200),
+ethernet (for Linux), HDMI (if available) and/or JTAG (for no‑OS). A few typical
+setups are shown below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/ad-fmcdaq2-ebz_zc706.png
-   :align: center
-   :width: 800px
+A10SOC + AD-FMCDAQ2-EBZ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ./../images/ad-fmcdaq2-ebz_a10soc_setup.jpg
+
+KCU105 + AD-FMCDAQ2-EBZ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ./../images/ad-fmcdaq2-ebz_kcu105_setup.jpg
+
+ZC706 + AD-FMCDAQ2-EBZ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ./../images/ad-fmcdaq2-ebz_zc706_linux.jpg
+
+ZCU102 + AD-FMCDAQ2-EBZ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ./../images/ad-fmcdaq2-ebz_zcu102_setup_linux.png

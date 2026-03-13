@@ -1,21 +1,15 @@
-AD-FMCDAQ2-EBZ Arria 10 GX Quick Start Guide (OBSOLETE)
-============================================
+.. _ad_fmcdaq2_ebz quickstart a10gx:
 
-|
+A10GX Quickstart (OBSOLETE)
+===============================================================================
 
 .. warning::
 
-   \ **NOTE:**
+   Support for the A10GX carrier is discontinued and will not be supported in
+   future releases. Last pre-build images can be found at :dokuwiki:`Nios2 Linux on the Altera FPGA Development Boards <resources/tools-software/linux-drivers/platforms/nios2>` page.
 
-   | Support for the A10GX carrier is discontinued and will not be supported in future releases. Last pre-build images can be found at :doc:`Nios2 Linux on the Altera FPGA Development Boards </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>` page.
-
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/arria10-fpga_daq2.jpg
-   :alt: arria10-fpga_daq2.jpg
-   :align: center
-   :width: 330px
-
-This guide provides some quick instructions on how to setup the AD-FMCDAQ2-EBZ on `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_
+This guide provides some quick instructions on how to setup the AD-FMCDAQ2-EBZ
+on :intel:`A10GX <content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`
 
 Prerequisites
 -------------
@@ -23,10 +17,12 @@ Prerequisites
 Required Hardware
 ~~~~~~~~~~~~~~~~~
 
--  `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_ board
--  :adi:`AD-FMCDAQ2-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad-fmcdaq2-ebz.html>` FMC board
--  Ethernet cable
--  Micro-USB cable
+- :intel:`A10GX <content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`
+  board
+- :adi:`AD-FMCDAQ2-EBZ <eval-ad-fmcdaq2-ebz>`
+  FMC board
+- Ethernet cable
+- Micro-USB cable
 
 Required Software
 ~~~~~~~~~~~~~~~~~
@@ -34,84 +30,84 @@ Required Software
 -  You need a Host PC (Windows)
 -  Intel Quartus 21.2
 -  Bitfile and Linux ELF image
--  IIO Scope `Download <https://wiki.analog.com/https/github.com/analogdevicesinc/iio-oscilloscope/releases>`_
+-  :git-iio-oscilloscope:`IIO Oscilloscope <releases+>`
 
 .. tip::
 
-   \ :doc:`Pre-build Images for Intel Arria 10 GX. </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>`\
-
+   :dokuwiki:`Pre-build Images for Intel Arria 10 GX <resources/tools-software/linux-drivers/platforms/nios2>`
 
 Setting up the hardware (A10GX)
 -------------------------------
 
 You will need to:
 
+#. Get the :intel:`A10GX <content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`
+   board.
+#. Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier **FMC1** socket
+   (J1).
+#. Connect the USB JTAG J3 (Micro USB) to your Host PC.
+#. Connect the Ethernet cable.
+#. Plug the Power Supply into 12V Power input connector (DC Input).
+#. Turn it on.
 
-|arria10-fpga-kit.jpg|
-
-::
-
-   -Get the [[https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx|A10GX]] board.
-   -Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier **FMC1** socket(J1).
-   -Connect the USB JTAG J3 (Micro USB) to your Host PC.
-   -Connect the Ethernet cable.
-   -Plug the Power Supply into 12V Power input connector (DC Input).
-   -Turn it on.
-
-
-.. note::
-
-   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
-
+.. esd-warning::
 
 Programming the FPGA
 --------------------
 
-Nios II Command Shell is used to program the FPGA. To run Nios II Command Shell navigate to C:\\intelFPGA_pro\\21.2\\nios2eds and start Nios II Command Shell.bat. Windows Subsystem for Linux (WSL) needs to be installed in order to run Nios II Command Shell.
+Nios II Command Shell is used to program the FPGA. To run Nios II Command Shell
+navigate to ``C:\intelFPGA_pro\21.2\nios2eds`` and start ``Nios II Command
+Shell.bat``. Windows Subsystem for Linux (WSL) needs to be installed in order to
+run Nios II Command Shell.
 
-After starting the Command Shell, navigate to the path where the pre-build images are saved. For example:
+After starting the Command Shell, navigate to the path where the pre-build
+images are saved. For example:
 
-::
+.. shell:: bash
 
-   ceshu@LADACE-L02:/mnt/c/intelFPGA_pro/21.2/nios2eds$ cd /mnt/c/Users/ladace/Downloads/a10gx_daq2_2019_r2/
+   /mnt/c/intelFPGA_pro/21.2/nios2eds
+   $cd /mnt/c/Users/<username>/Downloads/a10gx_daq2_2019_r2/
 
-Programming FPGA bitfiled image
+Programming FPGA bitfile image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To flash the bitfield pre-build image, **nios2-configure-sof** command is used. For example:
+To flash the bitfield pre-build image, **nios2-configure-sof** command is used.
+For example:
 
-::
+.. shell:: bash
 
-   ceshu@LADACE-L02:/mnt/c/Users/ladace/Downloads/a10gx_daq2_2019_r2$ nios2-configure-sof daq2_a10gx.sof
-   Searching for SOF file:
-   in .
-     daq2_a10gx.sof
-
-   Info: *******************************************************************
-   Info: Running Quartus Prime Programmer
-   Info: Command: quartus_pgm --no_banner --mode=jtag -o p;./daq2_a10gx.sof
-   Info (213045): Using programming cable "USB-BlasterII [USB-1]"
-   Info (213011): Using programming file ./daq2_a10gx.sof with checksum 0x312984DD for device 10AX115S2F45@1
-   Info (209060): Started Programmer operation at Thu Dec  9 15:10:50 2021
-   Info (209016): Configuring device index 1
-   Info (209017): Device 1 contains JTAG ID code 0x02E060DD
-   Info (209007): Configuration succeeded -- 1 device(s) configured
-   Info (209011): Successfully performed operation(s)
-   Info (209061): Ended Programmer operation at Thu Dec  9 15:11:05 2021
-   Info: Quartus Prime Programmer was successful. 0 errors, 0 warnings
-       Info: Peak virtual memory: 1829 megabytes
-       Info: Processing ended: Thu Dec  9 15:11:05 2021
-       Info: Elapsed time: 00:00:22
-       Info: System process ID: 20500
+   /mnt/c/Users/<username>/Downloads/a10gx_daq2_2019_r2
+   $nios2-configure-sof daq2_a10gx.sof
+    Searching for SOF file:
+    in .
+      daq2_a10gx.sof
+    Info: *******************************************************************
+    Info: Running Quartus Prime Programmer
+    Info: Command: quartus_pgm --no_banner --mode=jtag -o p;./daq2_a10gx.sof
+    Info (213045): Using programming cable "USB-BlasterII [USB-1]"
+    Info (213011): Using programming file ./daq2_a10gx.sof with checksum 0x312984DD for device 10AX115S2F45@1
+    Info (209060): Started Programmer operation at Thu Dec  9 15:10:50 2021
+    Info (209016): Configuring device index 1
+    Info (209017): Device 1 contains JTAG ID code 0x02E060DD
+    Info (209007): Configuration succeeded -- 1 device(s) configured
+    Info (209011): Successfully performed operation(s)
+    Info (209061): Ended Programmer operation at Thu Dec  9 15:11:05 2021
+    Info: Quartus Prime Programmer was successful. 0 errors, 0 warnings
+        Info: Peak virtual memory: 1829 megabytes
+        Info: Processing ended: Thu Dec  9 15:11:05 2021
+        Info: Elapsed time: 00:00:22
+        Info: System process ID: 20500
 
 Programming Linux image
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-To flash the Linux pre-build image, **nios2-download** command is used. For example:
+To flash the Linux pre-build image, **nios2-download** command is used. For
+example:
 
 ::
 
-   ceshu@LADACE-L02:/mnt/c/Users/ladace/Downloads/a10gx_daq2_2019_r2$ nios2-download -g zImage
+   user@host:/mnt/c/Users/<username>/Downloads/a10gx_daq2_2019_r2
+   $ nios2-download -g zImage
    Using cable "USB-BlasterII [USB-1]", device 1, instance 0x00
    Pausing target processor: OK
    Initializing CPU cache (if present)
@@ -123,21 +119,18 @@ To flash the Linux pre-build image, **nios2-download** command is used. For exam
 Nios II Terminal
 ~~~~~~~~~~~~~~~~
 
-To start the Nios II Terminal use the following **nios2-terminal.exe** command. Example of console:
+To start the Nios II Terminal use the following **nios2-terminal.exe** command.
+Example of console:
 
-.. raw:: html
+.. collapsible:: Complete kernel boot log
 
-   <details><summary>Complete kernel boot log (Click to expand)</summary>
+   .. shell:: bash
 
-.. container:: box bggreen
-
-
-   ::
-
-      ceshu@LADACE-L02:/mnt/c/Users/ladace/Downloads/a10gx_daq2_2019_r2$ nios2-terminal.exe
-      nios2-terminal: connected to hardware target using JTAG UART on cable
-      nios2-terminal: "USB-BlasterII [USB-1]", device 1, instance 0
-      nios2-terminal: (Use the IDE stop button or Ctrl-C to terminate)
+      /mnt/c/Users/<username>/Downloads/a10gx_daq2_2019_r2
+      $nios2-terminal.exe
+       nios2-terminal: connected to hardware target using JTAG UART on cable
+       nios2-terminal: "USB-BlasterII [USB-1]", device 1, instance 0
+       nios2-terminal: (Use the IDE stop button or Ctrl-C to terminate)
 
       Linux version 4.19.0-g17f4223 (jenkins@romlxbuild1.adlk.analog.com) (gcc version 8.3.1 20190416 (Altera 19.3 Build 222))
        #1874 Tue Jul 27 14:44:52 IST 2021
@@ -145,7 +138,7 @@ To start the Nios II Terminal use the following **nios2-terminal.exe** command. 
         Normal zone: 512 pages used for memmap
         Normal zone: 0 pages reserved
         Normal zone: 65536 pages, LIFO batch:15
-      pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
+      pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
       pcpu-alloc: [0] 0
       Built 1 zonelists, mobility grouping on.  Total pages: 65024
       Kernel command line: debug console=ttyJ0,115200
@@ -181,7 +174,7 @@ To start the Nios II Terminal use the following **nios2-terminal.exe** command. 
       RPC: Registered tcp NFSv4.1 backchannel transport module.
       random: fast init done
       workingset: timestamp_bits=30 max_order=16 bucket_order=0
-      jffs2: version 2.2. (NAND) , 2001-2006 Red Hat, Inc.
+      jffs2: version 2.2. (NAND) , 2001-2006 Red Hat, Inc.
       Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
       io scheduler noop registered
       io scheduler deadline registered
@@ -229,17 +222,16 @@ To start the Nios II Terminal use the following **nios2-terminal.exe** command. 
       Welcome to Buildroot
       buildroot login:
 
-.. raw:: html
-
-   </details>
-
-
 IIO Oscilloscope
 ----------------
 
-To connect the board to IIO Scope start the IIO Oscilloscope application and go to **Settings** menu and then press **Connect**. From **Select or Discover libIIO Context** select **Manual** and enter the URI in the following format **ip:<your_board_ip>** Press the **Refresh** button and then **Connect**.
+To connect the board to IIO Scope start the IIO Oscilloscope application and go
+to **Settings** menu and then press **Connect**. From **Select or Discover
+libIIO Context** select **Manual** and enter the URI in the following format
+**ip:<your_board_ip>** Press the **Refresh** button and then **Connect**.
 
-To determine the IP of the board, in Nios II Command Shell login using **root** and password **analog**. Then run the **ifconfig** command. For example:
+To determine the IP of the board, in Nios II Command Shell login using **root**
+and password **analog**. Then run the **ifconfig** command. For example:
 
 ::
 
@@ -261,79 +253,25 @@ To determine the IP of the board, in Nios II Command Shell login using **root** 
              collisions:0 txqueuelen:1000
              RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/iioscope_connect.jpg
-   :alt: iioscope_connect.jpg
+.. image:: ../images/iio_osc_connect.jpg
+   :alt: iio_osc_connect.jpg
    :align: center
 
-To plot the captured waveforms go to **File** menu then click **New Plot**. Select the channels to plot and then click **Capture / Stop** button.
+To plot the captured waveforms go to **File** menu then click **New Plot**.
+Select the channels to plot and then click **Capture / Stop** button.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/iioscope_newplot.png
+.. image:: ../images/iioscope_newplot.png
    :alt: iioscope_newplot.png
    :align: center
 
 More Information
 ----------------
 
--  :doc:`AD-FMCDAQ2-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz>`
--  :doc:`AD-FMCDAQ2-EBZ HDL Reference Design </wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz/reference_hdl>`
-
-Useful links
-------------
-
--  :doc:`AD9081/AD9082/AD9988/AD9986 Quick Start Guides </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart>`
-
-   -  :doc:`Zynq-7000 SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynq>`
-   -  :doc:`Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynqmp>`
-   -  :doc:`Virtex UltraScale+ VCU118 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/microblaze>`
-   -  :doc:`Versal ACAP VCK190 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/versal>`
-   -  `Arria10 SoC Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081/quickstart/a10soc]>`_
-
--  :doc:`AD9081-FMCA-EBZ (Single MxFE) HDL Reference Design </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl>`
-
-   -  :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
-   -  :doc:`Generic JESD204B block designs </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`
-   -  :doc:`JESD204B High-Speed Serial Interface Support </wiki-migration/resources/fpga/peripherals/jesd204>`
-
--  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
-
-::
-
-         - [[resources:tools-software:linux-drivers:jesd204:jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
-         - [[resources:tools-software:linux-drivers:iio-pll:hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
-         - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller Linux Driver]]
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_tx|JESD204B Transmit Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]]
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_rx|JESD204B Receive Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]]
-         - [[resources:tools-software:linux-drivers:jesd204:axi_adxcvr|JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_eye_scan|JESD204 Eye Scan]]
-         - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL Linux Driver]]
-         - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
-   * [[:resources:tools-software:hsx-toolbox|MATLAB Support]]
-        * MATLAB support is provided through the [[:resources:tools-software:hsx-toolbox|High Speed Converter Toolbox]]
-   * [[resources:tools-software:linux-software:pyadi-iio| Python Support]]
-        * PYTHON support is provided through the [[resources:tools-software:linux-software:pyadi-iio|Device Specific Python Interfaces For IIO Drivers]]
-        * [[https://analogdevicesinc.github.io/pyadi-iio/|PyADI-IIO Documentation]]
-        * [[https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html|AD9081 class documentation]]
-   * Product Datasheet
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9081`.pdf|AD9081]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9082`.pdf|AD9082]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9988`.pdf|AD9988]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9986`.pdf|AD9986]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578`.pdf|UG-1578, Device User Guide]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829`.pdf|UG-1829, Evaluation Board User Guide]]
+-  :ref:`AD-FMCDAQ2-EBZ User Guide <ad-fmcdaq2-ebz>`
+-  :external+hdl:ref:`daq2`
 
 Support
 -------
 
-Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
-
-Software support
-----------------
-
--  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
-
-
-.. |arria10-fpga-kit.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq2-ebz/quickstart/arria10-fpga-kit.jpg
-   :width: 330px
- 
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the :ez:`EngineerZone <fpga>`.
